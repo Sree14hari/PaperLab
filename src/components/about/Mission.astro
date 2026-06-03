@@ -1,22 +1,4 @@
 ---
-const stats = [
-  {
-    name: 'Students formatted',
-    value: '12,000+',
-  },
-  {
-    name: 'IEEE papers compiled',
-    value: '2,500+',
-  },
-  {
-    name: 'KTU Colleges reached',
-    value: '45+',
-  },
-  {
-    name: 'Hours Saved',
-    value: '50,000+',
-  },
-];
 ---
 
 <section class="py-16 sm:py-20">
@@ -26,7 +8,7 @@ const stats = [
         class="mx-auto h-auto w-full max-w-xl rounded-3xl"
         width="576"
         height="864"
-        src="/assets/about.webp"
+        src="/PL/8028015-Photoroom.png"
         alt="Our mission to simplify academic formatting"
       />
       <div class="flex flex-col gap-10">
@@ -46,17 +28,7 @@ const stats = [
           </div>
         </div>
 
-        <!-- Stats -->
-        <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {
-            stats.map((stat) => (
-              <div class="border-primary-900/10 dark:border-primary-300/10 rounded-3xl border p-6">
-                <dt class="text-base">{stat.name}</dt>
-                <dd class="text-3xl font-medium tracking-tight">{stat.value}</dd>
-              </div>
-            ))
-          }
-        </dl>
+
       </div>
     </div>
   </div>

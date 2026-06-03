@@ -18,10 +18,7 @@ const { description, title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/PL/paperlabiconlogo.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
@@ -93,11 +90,21 @@ const { description, title } = Astro.props;
     </script>
 
     <Header />
-    <main>
+    <main class="pt-24 lg:pt-28">
       <slot />
     </main>
     <Footer />
     <style is:global>
+      @font-face {
+        font-family: 'Vademecum';
+        src: url('/Vademecum.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Vademecum', sans-serif !important;
+      }
       [x-cloak] {
         display: none !important;
       }
@@ -159,9 +166,6 @@ const { description, title } = Astro.props;
           this.isDark = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
               return localStorage.getItem('theme') === 'dark';
-            }
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-              return true;
             }
             return false;
           })();
