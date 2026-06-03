@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  description="Join the PaperLab academic writing beta program. Get early access to KTU templates and IEEE builders."
+  title="Join Beta Program · PaperLab"
+>
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-8">
+        <div class="flex flex-col gap-4 sm:gap-6">
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Join the Beta Program</h2>
+          <p class="text-primary-950/70 dark:text-primary-200/70 max-w-lg text-lg sm:text-xl">
+            We are currently in a closed beta testing phase. Fill out your academic details below to get early access to our KTU report templates and IEEE publication builders.
+          </p>
+          <div class="mt-4 space-y-4 text-primary-950/70 dark:text-primary-200/70">
+            <div class="flex gap-3">
+              <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Instant access to KTU Seminar & Project templates</span>
+            </div>
+            <div class="flex gap-3">
+              <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>IEEE Double-Column Editor & compiler access</span>
+            </div>
+            <div class="flex gap-3">
+              <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Collaborate with your guide directly</span>
+            </div>
+          </div>
+        </div>
+        
+        <form action="#" method="POST" class="mt-3 flex flex-col gap-y-6">
+          <!-- Full Name -->
+          <div>
+            <label for="full-name" class="sr-only">Full name</label>
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              required
+              class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
+              placeholder="Full name"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="sr-only">Email address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
+              placeholder="Academic or Personal Email"
+            />
+          </div>
+
+          <!-- Institution Name -->
+          <div>
+            <label for="institution" class="sr-only">College / Institution</label>
+            <input
+              type="text"
+              name="institution"
+              id="institution"
+              required
+              class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
+              placeholder="College / University / Institution"
+            />
+          </div>
+
+          <!-- Role selection -->
+          <div>
+            <label for="role" class="sr-only">Your Role</label>
+            <select
+              name="role"
+              id="role"
+              required
+              class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 text-primary-950/80 dark:text-primary-200/80 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
+            >
+              <option value="" disabled selected>Select your academic role</option>
+              <option value="student-btech">B.Tech Student (KTU)</option>
+              <option value="student-mtech">M.Tech Student (KTU)</option>
+              <option value="research-scholar">Research Scholar / PhD</option>
+              <option value="faculty">Faculty / Project Guide</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Why join beta -->
+          <div>
+            <label for="message" class="sr-only">What reports/papers are you planning to write?</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="3"
+              class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
+              placeholder="What reports (e.g., KTU Design Project, Seminar) or papers are you planning to write?"></textarea>
+          </div>
+
+          <div>
+            <button
+              class="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              type="submit"
+            >
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

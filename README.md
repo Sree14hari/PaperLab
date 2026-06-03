@@ -1,6 +1,6 @@
-# Stone: Astro Theme
+# PaperLab: Landing Page
 
-Stone is a free and open-source Astro theme specially designed for Business, Marketing, SaaS and Startup websites.
+PaperLab is a premium landing page for PaperLab, an academic report formatting platform designed for KTU report templates and IEEE conference paper compilations.
 
 ## Key Features:
 

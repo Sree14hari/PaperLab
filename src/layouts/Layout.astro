@@ -30,6 +30,68 @@ const { description, title } = Astro.props;
   <body
     class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition"
   >
+    <!-- Initial Loading Screen -->
+    <div
+      id="loading-screen"
+      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-primary-50 dark:bg-primary-950 transition-opacity duration-700"
+    >
+      <div class="relative flex flex-col items-center gap-6">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="46"
+              stroke="currentColor"
+              stroke-width="3"
+              fill="transparent"
+              class="text-primary-600 dark:text-primary-400 stroke-dash-trace"
+            />
+          </svg>
+          <img
+            src="/PL/paperlabiconlogo.svg"
+            alt="PaperLab Loading..."
+            class="w-20 h-20 dark:invert animate-pulse-slow"
+          />
+        </div>
+        <span class="text-2xl font-bold tracking-widest text-primary-950 dark:text-primary-200 animate-fade-in-out">
+          PaperLab
+        </span>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function() {
+        const setupLoader = () => {
+          const loader = document.getElementById('loading-screen');
+          if (loader) {
+            if (loader.classList.contains('opacity-0')) return;
+            
+            const delay = window.hasLoadedBefore ? 150 : 800;
+            window.hasLoadedBefore = true;
+            
+            setTimeout(() => {
+              loader.classList.add('opacity-0');
+              setTimeout(() => {
+                loader.style.display = 'none';
+              }, 700);
+            }, delay);
+          }
+        };
+
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+          setupLoader();
+        } else {
+          document.addEventListener('DOMContentLoaded', setupLoader);
+        }
+
+        if (!window.hasRegisteredLoader) {
+          window.hasRegisteredLoader = true;
+          document.addEventListener('astro:page-load', setupLoader);
+        }
+      })();
+    </script>
+
     <Header />
     <main>
       <slot />
@@ -38,6 +100,52 @@ const { description, title } = Astro.props;
     <style is:global>
       [x-cloak] {
         display: none !important;
+      }
+      /* Loading Screen Animations */
+      .stroke-dash-trace {
+        stroke-dasharray: 289;
+        animation: trace 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      @keyframes trace {
+        0% {
+          stroke-dasharray: 0 300;
+          stroke-dashoffset: 0;
+          opacity: 0.3;
+        }
+        50% {
+          stroke-dasharray: 150 150;
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        100% {
+          stroke-dasharray: 300 0;
+          stroke-dashoffset: -300;
+          opacity: 0.3;
+        }
+      }
+      .animate-pulse-slow {
+        animation: pulseSlow 2s ease-in-out infinite;
+      }
+      @keyframes pulseSlow {
+        0%, 100% {
+          transform: scale(0.95);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+      .animate-fade-in-out {
+        animation: fadeInOut 2s ease-in-out infinite;
+      }
+      @keyframes fadeInOut {
+        0%, 100% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
       }
     </style>
     <script>
