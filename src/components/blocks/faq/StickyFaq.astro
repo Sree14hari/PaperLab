@@ -1,0 +1,93 @@
+---
+// Sticky FAQ
+// ------------
+// Description: A sticky FAQ section with a title and a subtitle
+// Properties:
+// - title: The title of the hero section
+// - text: The subtitle of the hero section
+// - classes: Additional classes to be added to the hero section
+
+// Components
+// - Layout
+import SectionSticky from '../../blocks/basic/StickySidebar.astro'
+// - UI
+import Header from '../../ui/Header.astro'
+import DecorationBorder from '../../ui/DecorationBorder.astro'
+
+// Content
+// - Props
+type FaqItem = {
+	question: string
+	answer: string
+}
+
+type Props = {
+	title?: string
+	subtitle?: string
+	classes?: string
+	items?: FaqItem[]
+}
+
+const defaultItems: FaqItem[] = [
+	{
+		question: "What makes Paper Lab different from Overleaf or Word?",
+		answer: "Paper Lab bridges the gap between visual WYSIWYG editing and complex LaTeX compilation. You get a rich live-preview editor, built-in vector diagramming tools, automatic citation management, and instant export to publication-ready PDFs without wrestling with manual formatting or environment setups."
+	},
+	{
+		question: "Do I need to know LaTeX syntax to write papers?",
+		answer: "Not at all. You can write your entire paper using our intuitive visual WYSIWYG editor. If you do need complex math or specific LaTeX commands, you can switch or inspect the code anytime using the built-in Monaco LaTeX editor."
+	},
+	{
+		question: "How does the Global Citation Manager work?",
+		answer: "Paper Lab lets you maintain a centralized reference library across all your projects. Simply import BibTeX files or search entries, and Paper Lab will automatically format citations in IEEE, APA, Nature, or custom style templates."
+	},
+	{
+		question: "Can I draw and embed vector diagrams directly in my document?",
+		answer: "Yes! Paper Lab includes a built-in diagramming engine. You can draw research-grade schematics and flowcharts, then insert them seamlessly as scalable SVG, PNG, or vector PDF figures into your paper."
+	},
+	{
+		question: "Can I export raw LaTeX source files or final PDFs?",
+		answer: "Yes. You can compile publication-ready PDFs with a single click or export complete LaTeX source zip packages ready for journal submissions (IEEE, Springer, Elsevier, Nature, etc.)."
+	}
+]
+
+const { title = '', subtitle = '', classes = '', items = defaultItems } = Astro.props
+---
+
+<SectionSticky classes={`${classes ? classes : ''}`}>
+	<Header
+		title={title}
+		subtitle={subtitle}
+		headingLevel="h2"
+		titleClasses="bg-white dark:bg-neutral-950 "
+		slot="sidebar"
+	/>
+
+	<div class="faq">
+		{
+			items.map((item) => (
+				<div class="faq__item">
+					<h3 class="faq__item__title">{item.question}</h3>
+					<p class="faq__item__text">{item.answer}</p>
+					<DecorationBorder type="top bottom" style="dashed" />
+				</div>
+			))
+		}
+	</div>
+</SectionSticky>
+
+<style>
+	@reference '../../../styles/global.css';
+	.faq {
+		@apply flex flex-col gap-6 lg:gap-8;
+	}
+	.faq__item {
+		@apply relative bg-white p-6 lg:p-8 dark:bg-neutral-950;
+	}
+	.faq__item__title {
+		@apply mb-2 text-2xl leading-8;
+	}
+	.faq__item__text {
+		@apply mb-0 text-xl leading-8;
+	}
+</style>

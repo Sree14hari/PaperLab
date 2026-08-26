@@ -1,0 +1,80 @@
+[
+	{
+		"title": "Smart Writing & Editing",
+		"subtitle": "Core Editor",
+		"features": [
+			{
+				"title": "Visual WYSIWYG Editor",
+				"description": "Write intuitively with rich formatting, live A4 document layout, and instant visual feedback without managing raw markup manually.",
+				"icon": "document-text"
+			},
+			{
+				"title": "Monaco LaTeX Mode",
+				"description": "Toggle into a full-featured Monaco LaTeX code editor complete with syntax highlighting, line numbers, and autocompletion.",
+				"icon": "code-bracket"
+			},
+			{
+				"title": "Modular Section Tree",
+				"description": "Organize chapters, sub-sections, and appendices with a drag-and-drop outline tree to keep long manuscripts structured.",
+				"icon": "folder"
+			},
+			{
+				"title": "Real-Time A4 Live Preview",
+				"description": "Preview your exact page margins, headers, footers, and page breaks in real time as you write.",
+				"icon": "arrows-right-left"
+			}
+		]
+	},
+	{
+		"title": "Citations & References",
+		"subtitle": "Global Bibliography",
+		"features": [
+			{
+				"title": "Global Citation Library",
+				"description": "Maintain a centralized repository of BibTeX entries across all your research projects and documents.",
+				"icon": "at-symbol"
+			},
+			{
+				"title": "One-Click Citation Insertion",
+				"description": "Search and insert inline citations directly into your text with automatic citation keys and bibliography generation.",
+				"icon": "clipboard-document-check"
+			},
+			{
+				"title": "Journal Style Formatting",
+				"description": "Format citations automatically for major academic styles including IEEE, APA, Nature, Springer, and Harvard.",
+				"icon": "document-chart-bar"
+			},
+			{
+				"title": "BibTeX Import & Sync",
+				"description": "Import existing .bib files or sync references directly from Mendeley, Zotero, and Google Scholar entries.",
+				"icon": "arrow-down-tray"
+			}
+		]
+	},
+	{
+		"title": "Diagrams & Exporting",
+		"subtitle": "Graphics & Publishing",
+		"features": [
+			{
+				"title": "Research Vector Diagramming",
+				"description": "Draw flowcharts, system architectures, and scientific diagrams right inside Paper Lab.",
+				"icon": "light-bulb"
+			},
+			{
+				"title": "Vector & Image Figure Exports",
+				"description": "Export crisp, high-resolution figures in SVG, PNG, and vector PDF formats ready for journal submission.",
+				"icon": "chart-bar"
+			},
+			{
+				"title": "Publication-Ready PDF Export",
+				"description": "Compile publication-grade PDF documents with clean typography, headers, footers, and equation numbering.",
+				"icon": "flag"
+			},
+			{
+				"title": "LaTeX Source Zip Export",
+				"description": "Download raw compiled LaTeX source archives including figures, templates, and bib files anytime.",
+				"icon": "server-stack"
+			}
+		]
+	}
+]

@@ -1,0 +1,76 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroBasic.astro'
+import ContactInfo from '../components/blocks/contact/ContactInfoCards.astro'
+import Faq from '../components/blocks/faq/StickyFaq.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Contact Us',
+	description:
+		'Get in touch with the Paper Lab team for technical support, academic licensing, or feature requests. We are here to help you write better research reports.'
+}
+// - Hero data
+const heroData = {
+	title: 'Get in Touch with Paper Lab',
+	subtitle: 'Contact Us',
+	text: 'Have a question about LaTeX compilation, citation management, or academic licensing? Send us a message and our team will get back to you promptly.'
+}
+// - Contact data
+const contactData = {
+	title: 'Choose technical support, academic licensing, or feature feedback below.'
+}
+// - FAQ data
+const faqData = {
+	title: 'Frequently Asked Questions',
+	subtitle: 'Everything you need to know'
+}
+// - CTA data
+const ctaData = {
+	title: 'Ready to Start Writing Your Paper?',
+	text: 'Launch the Paper Lab editor directly in your browser without any setup required.',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Launch Paper Lab Editor'
+}
+// - Contact FAQ items
+const contactFaqs = [
+	{
+		question: "How quickly does technical support respond?",
+		answer: "Our support team typically responds to technical inquiries within 24 hours during business days. For urgent compilation issues, priority queue support is available on Pro plans."
+	},
+	{
+		question: "Can I request custom LaTeX templates for my institution or journal?",
+		answer: "Yes! We regularly add university and journal templates. Reach out to r3actr@gmail.com or submit a request to get your institution's LaTeX style sheet onboarded."
+	},
+	{
+		question: "How do group and department licenses work?",
+		answer: "We offer discounted bulk licenses for research labs, university departments, and institutions. Contact r3actr@gmail.com for tailored quotes and invoice options."
+	},
+	{
+		question: "Where can I submit bug reports or feature ideas?",
+		answer: "We love hearing from users! Send feedback directly to r3actr@gmail.com, or submit a request using our feedback card above."
+	}
+]
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		text={heroData.text}
+	/>
+	<ContactInfo title={contactData.title} />
+	<Faq subtitle={faqData.subtitle} title={faqData.title} items={contactFaqs} />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

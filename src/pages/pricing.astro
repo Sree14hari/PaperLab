@@ -1,0 +1,53 @@
+---
+// Home Page
+// ------------
+// Description: The home page is a page that displays the most important information.
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroBasic.astro'
+import BasicTable from '../components/blocks/pricing/BasicTable.astro'
+import Faq from '../components/blocks/faq/StickyFaq.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Simple Academic Pricing',
+	description:
+		'Transparent pricing built for students, independent researchers, lab groups, and academic institutions.'
+}
+// - Hero data
+const heroData = {
+	title: 'Choose the Plan That Fits Your Research Workflow',
+	subtitle: 'Paper Lab Pricing',
+	text: 'Start writing for free or upgrade for advanced vector diagramming, global citation sync, and priority cloud LaTeX compilation.'
+}
+// - FAQ data
+const faqData = {
+	title: 'Everything you need to know about plans & billing',
+	subtitle: 'Pricing FAQ'
+}
+// - CTA data
+const ctaData = {
+	title: 'Start writing your report with Paper Lab',
+	text: 'Join thousands of researchers and students creating publication-ready academic papers with ease.',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Start writing for free!'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<BasicTable />
+	<Faq subtitle={faqData.subtitle} title={faqData.title} />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

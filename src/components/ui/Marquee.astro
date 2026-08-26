@@ -1,0 +1,80 @@
+---
+// Marquee
+// ------------
+// Description: a component that will marquee the content of the slot (slot components should be inline-block)
+// Properties:
+// - classes: additional classes
+
+// Content
+// - Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<div class:list={['marquee-wrapper group relative overflow-hidden', { [`${classes}`]: classes }]}>
+	<div class="marquee-scroll-container overflow-x-auto cursor-grab active:cursor-grabbing select-none scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]">
+		<div class="marquee flex w-max flex-row whitespace-nowrap">
+			<div class="marquee--content flex flex-row whitespace-nowrap">
+				<slot />
+			</div>
+			<div class="marquee--content-followup flex flex-row whitespace-nowrap" aria-hidden="true">
+				<slot />
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const setupMarqueeDrag = () => {
+		const containers = document.querySelectorAll('.marquee-scroll-container')
+		containers.forEach((container) => {
+			const el = container as HTMLElement
+			let isDown = false
+			let startX = 0
+			let scrollLeft = 0
+
+			el.addEventListener('mousedown', (e) => {
+				isDown = true
+				startX = e.pageX - el.offsetLeft
+				scrollLeft = el.scrollLeft
+			})
+
+			el.addEventListener('mouseleave', () => {
+				isDown = false
+			})
+
+			el.addEventListener('mouseup', () => {
+				isDown = false
+			})
+
+			el.addEventListener('mousemove', (e) => {
+				if (!isDown) return
+				e.preventDefault()
+				const x = e.pageX - el.offsetLeft
+				const walk = (x - startX) * 1.5
+				el.scrollLeft = scrollLeft - walk
+			})
+		})
+	}
+
+	setupMarqueeDrag()
+	document.addEventListener('astro:after-swap', setupMarqueeDrag)
+</script>
+
+<style>
+	@reference '../../styles/global.css';
+	.marquee-wrapper {
+		@apply before:pointer-events-none before:absolute before:top-0 before:bottom-0 before:left-0 before:z-10 before:w-12 before:bg-gradient-to-r before:from-white before:to-transparent lg:before:w-24 after:pointer-events-none after:absolute after:top-0 after:bottom-0 after:right-0 after:z-10 after:w-12 after:bg-gradient-to-l after:from-white after:to-transparent lg:after:w-24 dark:before:from-neutral-950 dark:before:to-transparent dark:after:from-neutral-950 dark:after:to-transparent;
+	}
+	.marquee-scroll-container::-webkit-scrollbar {
+		display: none;
+	}
+	.marquee--content {
+		@apply animate-marquee flex w-max flex-row whitespace-nowrap group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused];
+	}
+	.marquee--content-followup {
+		@apply animate-marqueeFollowup flex w-max flex-row whitespace-nowrap group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused];
+	}
+</style>

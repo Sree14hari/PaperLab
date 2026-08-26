@@ -1,0 +1,41 @@
+---
+// 404 Page
+// ------------
+// Description: The 404 page is a page that displays when a page is not found.
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - Blocks
+import BasicHeroSplitImageCTA from '../components/blocks/hero/BasicHeroSplitImageCTA.astro'
+
+// Content
+// - Images
+import image from '../assets/hero/screenshotpaperlb.png'
+// - SEO
+const SEO = {
+	title: '404 Page Not Found | Paper Lab',
+	description:
+		'The page or document path you are looking for does not exist. Return to Paper Lab homepage or open the editor.'
+}
+// - Hero data
+const heroData = {
+	title: '404 - Manuscript Not Found',
+	subtitle: 'Page Not Found',
+	text: 'Looks like this page or reference link has been moved or does not exist in Paper Lab. Return to the homepage or open the live editor.',
+	image: image,
+	buttonText: 'Return to Homepage',
+	buttonLink: '/'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<BasicHeroSplitImageCTA
+		subtitle={heroData.subtitle}
+		title={heroData.title}
+		text={heroData.text}
+		image={heroData.image}
+		buttonText={heroData.buttonText}
+		buttonLink={heroData.buttonLink}
+	/>
+</Layout>

@@ -1,0 +1,48 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
+import ScrollSpySteps from '../components/blocks/onboarding/Steps.astro'
+import Faq from '../components/blocks/faq/StickyFaq.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Get Started with Paper Lab | Quick Onboarding Guide',
+	description:
+		'Learn how to get started with Paper Lab in 4 easy steps: create document structures, write in WYSIWYG/LaTeX, manage citations, and export publication-ready PDFs.'
+}
+// - Hero
+const heroData = {
+	title: 'Get Started with Paper Lab',
+	subtitle: 'Step-by-Step Onboarding',
+	text: 'Follow our simple 4-step workflow to go from initial research draft to a beautifully formatted, publication-ready academic report.'
+}
+// - FAQ
+const faqData = {
+	title: 'Onboarding FAQs',
+	subtitle: 'Quick Answers'
+}
+// - CTA
+const ctaData = {
+	title: 'Ready to write your first paper?',
+	text: 'Jump into the Paper Lab editor now and experience effortless academic formatting.',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Launch Paper Lab Editor'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<ScrollSpySteps />
+	<Faq subtitle={faqData.subtitle} title={faqData.title} />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

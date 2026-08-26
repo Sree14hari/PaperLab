@@ -1,0 +1,100 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroNeutral.astro'
+import SectionSticky from '../components/blocks/basic/StickySidebarTransparent.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Conditions of Use',
+	description:
+		'Read the terms and conditions of use for Paper Lab, including LaTeX compilation services, acceptable use, and user responsibilities.'
+}
+// - Hero
+const heroData = {
+	title: 'Conditions of Use & Service Requirements',
+	subtitle: 'Service Conditions',
+	text: 'Please review our conditions of use governing the Paper Lab web application, LaTeX compilation engine, and integrated tools.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		text={heroData.text}
+		textClasses="max-w-xl!"
+	/>
+	<SectionSticky>
+		<Header
+			title="Service Conditions"
+			subtitle="Overview"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Access & Availability</h3>
+					<p>
+						Paper Lab provides web-based document editing, citation management, vector diagramming, and LaTeX compilation. We grant you a non-exclusive, non-transferable, revocable license to access and use the platform in accordance with these conditions.
+					</p>
+					<h3>Compilation Resources</h3>
+					<p>
+						To ensure fair usage across all users, compilation processes may be subject to reasonable execution time and resource limits. Automated script spamming or intentional overloading of compiler instances is strictly prohibited.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="User Responsibilities"
+			subtitle="Guidelines"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Academic Integrity</h3>
+					<p>
+						Users are responsible for ensuring that all documents, manuscripts, and references compiled using Paper Lab comply with standard academic integrity and citation ethics.
+					</p>
+					<h3>Account Security</h3>
+					<p>
+						You are responsible for keeping your login credentials secure. Any activity occurring under your account remains your responsibility.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Support & Inquiries"
+			subtitle="Contact"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Questions & Support</h3>
+					<p>
+						For any questions regarding these conditions or to report an issue, please contact us at r3actr@gmail.com.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+</Layout>

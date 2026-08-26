@@ -1,0 +1,148 @@
+---
+// Masonry Feature Grid
+// ------------
+// Description: A masonry grid of features
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// - UI
+import { Image } from 'astro:assets'
+import FeatureCard from '../../ui/cards/FeatureImageCard.astro'
+
+// Content
+// - Assets
+import step1Image from '../../../assets/features/masonry/step1.png'
+import feature02Back from '../../../assets/features/masonry/feature2.png'
+import feature03Back from '../../../assets/features/masonry/feature3.png'
+import step2Image from '../../../assets/features/masonry/step2.png'
+import step4Image from '../../../assets/features/masonry/step4.png'
+---
+
+<Section>
+	<Row classes="">
+		<Col span="4">
+			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
+				<div slot="content" class="max-w-xl">
+					<h3>Section-Based Editing</h3>
+					<p>
+						Documents are broken down into manageable sections. Drag and drop sections to restructure your document instantly.
+					</p>
+				</div>
+				<div slot="bg-back">
+					<Image
+						src={step1Image}
+						alt="Section Based Editing"
+						loading="lazy"
+						decoding="async"
+						layout="constrained"
+						class="feature__image"
+						height={300}
+					/>
+				</div>
+			</FeatureCard>
+		</Col>
+		<Col span="8">
+			<FeatureCard classes="h-full" parallaxOffset="50" style="solid" decorationType="all">
+				<div slot="content" class="max-w-lg">
+					<h3>Live A4 Preview Engine</h3>
+					<p>
+						Synchronously render the document as it will appear in print or PDF format while you type.
+					</p>
+				</div>
+				<div slot="bg-back">
+					<Image
+						src={feature02Back}
+						alt="Live A4 Preview"
+						loading="lazy"
+						decoding="async"
+						layout="constrained"
+						class="feature__image"
+						height={300}
+					/>
+				</div>
+			</FeatureCard>
+		</Col>
+		<Col span="8">
+			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
+				<div slot="content" class="max-w-xl">
+					<h3>Dedicated LaTeX Workspace</h3>
+					<p>
+						Advanced academic writing with an integrated Monaco editor, syntax highlighting, and a dedicated compilation pipeline.
+					</p>
+				</div>
+				<div slot="bg-back">
+					<Image
+						src={feature03Back}
+						alt="LaTeX Workspace"
+						loading="lazy"
+						decoding="async"
+						layout="constrained"
+						class="feature__image"
+						height={300}
+					/>
+				</div>
+			</FeatureCard>
+		</Col>
+		<Col span="4">
+			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
+				<div slot="content" class="max-w-lg">
+					<h3>Diagrams & Vector Graphics</h3>
+					<p>
+						Draw flowcharts, system architectures, and scientific diagrams right inside your document.
+					</p>
+				</div>
+				<div slot="bg-back">
+					<Image
+						src={step4Image}
+						alt="Research Diagrams"
+						loading="lazy"
+						decoding="async"
+						layout="constrained"
+						class="feature__image"
+						height={300}
+					/>
+				</div>
+			</FeatureCard>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	@reference '../../../styles/global.css';
+	.feature__image {
+		@apply ml-auto max-w-none! lg:max-w-full!;
+	}
+	.pet-sprite {
+		width: 72px;
+		height: 78px;
+		background-size: 576px auto;
+		background-repeat: no-repeat;
+		animation: petIdle 1s steps(4) infinite;
+	}
+	.pet-sprite-2 {
+		width: 72px;
+		height: 78px;
+		background-size: 576px auto;
+		background-repeat: no-repeat;
+		animation: petIdle 1.2s steps(4) infinite;
+	}
+	.pet-sprite-3 {
+		width: 72px;
+		height: 78px;
+		background-size: 576px auto;
+		background-repeat: no-repeat;
+		animation: petIdle 0.9s steps(4) infinite;
+	}
+	@keyframes petIdle {
+		0% {
+			background-position: 0px 0px;
+		}
+		100% {
+			background-position: -288px 0px;
+		}
+	}
+</style>

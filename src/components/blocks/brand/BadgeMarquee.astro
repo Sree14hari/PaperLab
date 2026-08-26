@@ -1,0 +1,107 @@
+---
+// Badge Marquee Block
+// ------------
+// Description: A marquee banner for launch badges (Product Hunt, LaunchBuff, Tiny Startups, Uneed, LaunchLoop)
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import DecorationBorder from '../../ui/DecorationBorder.astro'
+import LogosMarquee from '../../ui/Marquee.astro'
+
+// Props
+type Props = {
+	title?: string
+}
+const { title = 'FEATURED ON & LAUNCH PARTNERS' } = Astro.props
+---
+
+<Section>
+	<Row decorationBorder="top left right" gapY="0">
+		<Col
+			span="12"
+			classes="px-8 py-4 relative bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed dark:bg-[url('/bgs/dot-gray-dark.svg')] dark:bg-size-[18px] dark:bg-fixed"
+		>
+			<h2 class="h6 mb-0! text-center uppercase tracking-widest text-neutral-500 dark:text-neutral-400 font-mono text-xs font-semibold">{title}</h2>
+			<DecorationBorder type="bottom" style="dashed" />
+		</Col>
+		<Col span="12" classes="py-3 bg-white dark:bg-neutral-950">
+			<LogosMarquee classes="group">
+				<!-- LaunchBuff -->
+				<div class="badge-marquee--item">
+					<a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff">
+						<img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" class="h-9 w-auto" />
+					</a>
+				</div>
+				<!-- Product Hunt -->
+				<div class="badge-marquee--item">
+					<a href="https://www.producthunt.com/products/paper-lab?utm_source=badge-follow&utm_medium=badge&utm_source=badge-paper&#0045;lab" target="_blank" rel="noopener noreferrer">
+						<img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1289137&theme=neutral" alt="Paper Lab - Product Hunt" width="250" height="54" class="h-9 w-auto" />
+					</a>
+				</div>
+				<!-- Peerlist -->
+				<div class="badge-marquee--item">
+					<a href="https://peerlist.io/sree14hari/project/paper-lab--modern-academic-report-editor" target="_blank" rel="noreferrer">
+						<img
+							src="https://peerlist.io/api/v1/projects/embed/PRJHKKDRDNNMQ8B69FJOALNPJP9MMK?showUpvote=false&theme=light"
+							alt="Paper Lab | Modern Academic Report Editor"
+							class="h-9 w-auto block dark:hidden"
+						/>
+						<img
+							src="https://peerlist.io/api/v1/projects/embed/PRJHKKDRDNNMQ8B69FJOALNPJP9MMK?showUpvote=false&theme=dark"
+							alt="Paper Lab | Modern Academic Report Editor"
+							class="h-9 w-auto hidden dark:block"
+						/>
+					</a>
+				</div>
+				<!-- Tiny Startups -->
+				<div class="badge-marquee--item">
+					<a href="https://www.tinystartups.com/startup/paperlab" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border-radius:10px;text-decoration:none;font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,#3525E6,#D81FE0,#22B8F0);color:#fff;height:36px">
+						<svg width="24" height="24" viewBox="0 0 100 100">
+							<path d="M50 6C52 32 68 48 94 50C68 52 52 68 50 94C48 68 32 52 6 50C32 48 48 32 50 6Z" fill="#ffffff"/>
+						</svg>
+						<span style="display:flex;flex-direction:column;line-height:1.1">
+							<span style="font-family:monospace;font-size:7px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Launched on</span>
+							<span style="font-size:13px;font-weight:800;letter-spacing:-0.025em;color:#fff">Tiny Startups</span>
+						</span>
+					</a>
+				</div>
+				<!-- Uneed -->
+				<div class="badge-marquee--item">
+					<a href="https://www.uneed.best/tool/paperlab" target="_blank" rel="noopener noreferrer">
+						<img src="https://www.uneed.best/EMBED3B.png" alt="Launching Soon on Uneed" width="250" height="54" class="h-9 w-auto block dark:hidden" />
+						<img src="https://www.uneed.best/EMBED3.png" alt="Launching Soon on Uneed" width="250" height="54" class="h-9 w-auto hidden dark:block" />
+					</a>
+				</div>
+				<!-- IndieShowcase -->
+				<div class="badge-marquee--item">
+					<a href="https://indieshowcase.io" target="_blank" rel="noopener noreferrer">
+						<img src="https://indieshowcase.io/badge/featured-light.svg" alt="Featured on IndieShowcase" class="h-9 w-auto block dark:hidden" />
+						<img src="https://indieshowcase.io/badge/featured-dark.svg" alt="Featured on IndieShowcase" class="h-9 w-auto hidden dark:block" />
+					</a>
+				</div>
+				<!-- Findly.tools -->
+				<div class="badge-marquee--item">
+					<a href="https://findly.tools/paperlab?utm_source=paperlab" target="_blank" rel="noopener noreferrer">
+						<img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" class="h-9 w-auto block dark:hidden" />
+						<img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" class="h-9 w-auto hidden dark:block" />
+					</a>
+				</div>
+				<!-- Fazier -->
+				<div class="badge-marquee--item">
+					<a href="https://fazier.com/launches/paperlab.r3actr.work" target="_blank" rel="noopener noreferrer">
+						<img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=neutral" alt="Fazier badge" width="250" class="h-9 w-auto" />
+					</a>
+				</div>
+			</LogosMarquee>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	@reference '../../../styles/global.css';
+	.badge-marquee--item {
+		@apply inline-flex h-16 px-6 lg:px-10 items-center justify-center transition duration-300 hover:scale-105;
+	}
+</style>

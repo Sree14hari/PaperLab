@@ -1,0 +1,41 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
+import BasicFeatures from '../components/blocks/features/StickyBasicFeatures.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Features',
+	description:
+		'Explore the complete feature set of Paper Lab — visual WYSIWYG editing, Monaco LaTeX editor, global citation management, research diagramming, and publication-ready exports.'
+}
+// - Hero
+const heroData = {
+	title: 'Everything You Need for Academic & Technical Writing',
+	subtitle: 'Paper Lab Features',
+	text: 'Discover our comprehensive suit of tools designed to streamline report writing, reference management, figure design, and LaTeX compilation.'
+}
+// - CTA
+const ctaData = {
+	title: 'Start writing your next paper today',
+	text: 'Join researchers, students, and professionals creating publication-ready academic reports effortlessly.',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Start writing for free!'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<BasicFeatures />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

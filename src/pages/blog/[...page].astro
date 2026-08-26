@@ -1,0 +1,9 @@
+---
+import NotFound from '../404.astro'
+
+export async function getStaticPaths({ paginate }: any) {
+	return paginate([], { pageSize: 100 })
+}
+---
+
+<NotFound />

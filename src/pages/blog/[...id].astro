@@ -1,0 +1,19 @@
+---
+// Blog Post Page
+// ------------
+// Description: The blog post page is a page that displays a single blog post.
+
+// Components
+// - Layout
+import NotFound from '../404.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog')
+	return posts.map((post) => ({
+		params: { id: post.id }
+	}))
+}
+---
+
+<NotFound />

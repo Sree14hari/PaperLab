@@ -1,0 +1,25 @@
+{
+	"logo": {
+		"src": "/assets/paperlablogo.svg",
+		"srcDark": "/assets/paperlablogo.svg",
+		"alt": "Paper Lab logo",
+		"text": "PaperLab"
+	},
+	"navItems": [
+		{ "name": "Home", "link": "/" },
+		{ "name": "Get Started", "link": "/get-started" },
+		{ "name": "Features", "link": "/features" },
+		{ "name": "Pricing", "link": "/pricing" },
+		{
+			"name": "Pages",
+			"link": "#",
+			"align": "center",
+			"submenu": [
+				{ "name": "Get Started", "link": "/get-started" },
+				{ "name": "Contact", "link": "/contact" },
+				{ "name": "Terms", "link": "/terms" }
+			]
+		}
+	],
+	"navActions": [{ "name": "Try it for free!", "link": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" }]
+}

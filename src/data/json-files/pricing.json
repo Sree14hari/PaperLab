@@ -1,0 +1,55 @@
+{
+	"currency": "USD",
+	"billing_toggle": ["annually", "monthly"],
+	"note": "Prices are subject to change.",
+	"plans": [
+		{
+			"id": "free",
+			"name": "Free",
+			"tagline": "Essential tools for students and individual writers",
+			"prices": {
+				"annually": 0,
+				"monthly": 0
+			},
+			"prices_notes": {
+				"annually": "Free forever",
+				"monthly": "Free forever"
+			},
+			"cta": { "label": "Start Writing Free", "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" },
+			"features": [
+				"3 projects",
+				"Unlimited diagram boards",
+				"Unlimited compiles",
+				"Full LaTeX editor",
+				"Single boba pet",
+				"IEEE and journal templates",
+				".reporter exports and imports"
+			]
+		},
+		{
+			"id": "pro",
+			"name": "Pro",
+			"tagline": "Advanced LaTeX engine & unlimited features",
+			"prices": {
+				"annually": 10,
+				"monthly": 10
+			},
+			"prices_notes": {
+				"annually": "/month",
+				"monthly": "/month"
+			},
+			"cta": { "label": "Buy Premium", "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" },
+			"tag": "Most Popular",
+			"featured": true,
+			"features": [
+				"Everything in Free Plan",
+				"Unlimited folders",
+				"Version control",
+				"Preview tree",
+				"Custom pets",
+				"Citation manager",
+				"Collaboration (future update)"
+			]
+		}
+	]
+}

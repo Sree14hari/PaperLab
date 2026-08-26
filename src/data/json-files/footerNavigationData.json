@@ -1,0 +1,42 @@
+{
+	"logo": {
+		"src": "/assets/paperlablogo.svg",
+		"srcDark": "/assets/paperlablogo.svg",
+		"alt": "Paper Lab logo"
+	},
+	"footerAbout": {
+		"aboutText": "Paper Lab: A comprehensive, modern Research and Academic Editor designed to streamline the process of writing, formatting, and collaborating on academic papers and professional documents."
+	},
+	"footerColumns": [
+		{
+			"title": "Your Launchpad",
+			"links": [
+				{ "label": "Home", "href": "/" },
+				{ "label": "Features", "href": "/features" },
+				{ "label": "Get Started", "href": "/get-started" },
+				{ "label": "Pricing", "href": "/pricing" }
+			]
+		},
+		{
+			"title": "Meet the Crew",
+			"links": [
+				{ "label": "Contact", "href": "/contact" }
+			]
+		},
+		{
+			"title": "Let's Connect",
+			"links": [
+				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/r3actr-innovations/" },
+				{ "label": "Instagram", "href": "https://www.instagram.com/r3actr/" }
+			]
+		}
+	],
+	"copyright": {
+		"text": "Paper Lab, all rights reserved 2026",
+		"legal": [
+			{ "label": "Terms", "href": "/terms" },
+			{ "label": "Conditions", "href": "/conditions" },
+			{ "label": "Privacy Policy", "href": "/privacy" }
+		]
+	}
+}

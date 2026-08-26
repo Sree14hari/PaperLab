@@ -1,0 +1,84 @@
+{
+	"subtitle": "How Paper Lab Works",
+	"title": "A seamless workflow from research draft to publication.",
+	"nav": [
+		{ "id": "step-1", "index": "1", "label": "01. Create & Structure", "color": "#FFEAD0" },
+		{ "id": "step-2", "index": "2", "label": "02. WYSIWYG & LaTeX", "color": "#F7F2FC" },
+		{ "id": "step-3", "index": "3", "label": "03. Citation Manager", "color": "#EDF8FF" },
+		{ "id": "step-4", "index": "4", "label": "04. Diagrams & Figures", "color": "#FEF0F0" }
+	],
+	"steps": [
+		{
+			"id": "step-1",
+			"index": "01",
+			"title": "Organize sections effortlessly",
+			"subtitle": "Step 01",
+			"color": "#FFEAD0",
+			"body": [
+				"Break down complex academic reports and research papers into modular, structured sections. Drag and drop chapters or sub-sections to reorder content in seconds.",
+				"Focus on crafting compelling content while Paper Lab keeps your document tree neat, organized, and synced."
+			],
+			"cta": { "label": "Explore section editing", "href": "/features" },
+			"media": {
+				"back": {
+					"src": "/features/masonry/step1.png",
+					"alt": "Section based editing background"
+				}
+			}
+		},
+		{
+			"id": "step-2",
+			"index": "02",
+			"title": "Dual WYSIWYG and LaTeX power",
+			"subtitle": "Step 02",
+			"color": "#F7F2FC",
+			"body": [
+				"Write intuitively using a rich visual editor with real-time A4 live previews, or drop directly into the Monaco LaTeX editor for fine-grained math formatting.",
+				"Enjoy instant compilation, error highlighting, and real-time page rendering as you type."
+			],
+			"cta": { "label": "Learn about the editor", "href": "/features" },
+			"media": {
+				"back": {
+					"src": "/features/masonry/step2.png",
+					"alt": "Live A4 preview and Monaco editor background"
+				}
+			}
+		},
+		{
+			"id": "step-3",
+			"index": "03",
+			"title": "Global Citation Manager",
+			"subtitle": "Step 03",
+			"color": "#EDF8FF",
+			"body": [
+				"Manage citations, references, and BibTeX entries globally across all your projects. Seamlessly import, auto-format, and cite sources in IEEE, APA, Harvard, and custom journal styles.",
+				"Keep your bibliographies perfectly synced and accurately formatted without manual entry."
+			],
+			"cta": { "label": "Explore citation tools", "href": "/features" },
+			"media": {
+				"back": {
+					"src": "/features/masonry/feature2.png",
+					"alt": "Global Citation Manager"
+				}
+			}
+		},
+		{
+			"id": "step-4",
+			"index": "04",
+			"title": "Draw & Export Research-Grade Diagrams",
+			"subtitle": "Step 04",
+			"color": "#FEF0F0",
+			"body": [
+				"Create vector diagrams, architectural schematics, and high-resolution charts directly inside Paper Lab. Export crisp SVG, PNG, or vector PDF figures ready for academic publishing.",
+				"Seamlessly embed your diagrams straight into your document sections without quality loss."
+			],
+			"cta": { "label": "Start writing for free", "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" },
+			"media": {
+				"back": {
+					"src": "/features/masonry/step4.png",
+					"alt": "Draw & Export Research-Grade Diagrams"
+				}
+			}
+		}
+	]
+}

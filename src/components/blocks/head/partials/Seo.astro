@@ -1,0 +1,73 @@
+---
+// SEO Component
+// ------------
+// Description: Adds SEO meta tags to the page.
+// Properties:
+// - Title: the page title
+// - Description: the page description
+// - OgImage: the Open Graph image URL
+// - Canonical: whether to include canonical URL
+// - Noindex: whether to add noindex and nofollow meta tags
+
+// Props
+type Props = {
+	title?: string
+	description?: string
+	ogImage?: string
+	canonical?: boolean
+	noindex?: boolean
+}
+
+const { title, description, ogImage, canonical, noindex } = Astro.props
+
+const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin
+const canonicalURL = new URL(Astro.url.pathname, siteUrl)
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "Paper Lab",
+	"operatingSystem": "Windows, macOS, Web",
+	"applicationCategory": "EducationalApplication",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "USD"
+	},
+	"description": description || "Paper Lab is a comprehensive, modern Research and Academic Editor designed to streamline writing, formatting, and LaTeX compilation.",
+	"url": canonicalURL.toString()
+}
+---
+
+<Fragment>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="keywords" content="academic editor, LaTeX editor, report writer, research editor, paper formatting, academic paper editor, Paper Lab, WYSIWYG LaTeX, bibtex citations" />
+	<meta name="author" content="Paper Lab" />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={canonicalURL} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={new URL(ogImage || '/previe.png', siteUrl)} />
+	<meta property="og:site_name" content="Paper Lab" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={canonicalURL} />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
+	<meta property="twitter:image" content={new URL(ogImage || '/previe.png', siteUrl)} />
+
+	<!-- Canonical & Robots -->
+	<link rel="canonical" href={canonicalURL} />
+	{noindex ? (
+		<meta name="robots" content="noindex, nofollow" />
+	) : (
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	)}
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+</Fragment>

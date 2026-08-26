@@ -1,0 +1,68 @@
+---
+// Home Page
+// ------------
+// Description: The home page is a page that displays the most important information.
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+
+// - Blocks
+import Hero from '../components/blocks/hero/CenteredHeroCTA.astro'
+import BadgeMarquee from '../components/blocks/brand/BadgeMarquee.astro'
+import Features from '../components/blocks/features/MasonryGrid.astro'
+import ScrollSpySteps from '../components/blocks/onboarding/Steps.astro'
+import Faq from '../components/blocks/faq/StickyFaq.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title:
+		'Paper Lab | Modern Academic Report Editor',
+	description:
+		'Paper Lab is a comprehensive, modern Research and Academic Editor designed to streamline the process of writing, formatting, and collaborating on academic papers and professional documents.'
+}
+// - Hero data
+const heroData = {
+	title: 'Write Smarter. Format Automatically.',
+	subtitle: 'Built for academics and professionals',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Start writing for free!',
+	text: 'Paper Lab combines the ease of a rich-text WYSIWYG editor with the power of Python-based templating and LaTeX compilation.'
+}
+// - FAQ data
+const faqData = {
+	title: 'Frequently Asked Questions',
+	subtitle: 'Everything you need to know'
+}
+// - CTA data
+const ctaData = {
+	title: 'Start writing your report today',
+	text: 'Join researchers, students, and professionals already turning their ideas into reality. Get started in minutes and see how simple formatting can be when everything works together seamlessly.',
+	buttonLink: 'https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare',
+	buttonText: 'Start writing for free!'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		buttonLink={heroData.buttonLink}
+		buttonText={heroData.buttonText}
+		button2Link="/pricing"
+		button2Text="Buy Premium"
+		buttonClasses="w-full sm:w-64 text-center justify-center"
+	/>
+	<BadgeMarquee />
+	<Features />
+	<ScrollSpySteps />
+	<Faq subtitle={faqData.subtitle} title={faqData.title} />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

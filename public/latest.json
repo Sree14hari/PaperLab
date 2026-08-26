@@ -1,0 +1,10 @@
+{
+  "version": "2.5.0",
+  "notes": "✨ Live LaTeX Editor Upgrades\n\n• **Dynamic Package Downloading:** Removed offline restrictions in the LaTeX live editor! You can now import and use completely new LaTeX packages in your document, and the editor will automatically download them from the internet on the fly.\n\n🛠️ Template Formatting Fixes\n\n• **Fixed Deformed Templates:** Fixed a critical issue where the IEEE Access and Springer templates were compiling as deformed junk. The backend template compiler has been correctly reverted to use our stable, highly-compatible offline package bundle, ensuring your exported PDFs always come out perfectly formatted.\n\n• **Under the Hood:** Updated the bundled Python LaTeX rendering server to handle online/offline modes dynamically.",
+  "platforms": {
+    "windows-x86_64": {
+      "signature":"dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRamMzOGdiL1NMMEZtM1ZCRzM1OUVjR0RnaTRTZEZlNDJxaFM1WnBZWFAwbEM1bWpZR0JOMzJGV04wczdxTHl4Nmh3U3FEb2ZwbkZ0b0FYOVNneW9ySzduZzhaY2wzVGdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NzI2NzY5CWZpbGU6UGFwZXIgTGFiXzIuNS4wX3g2NF9lbi1VUy5tc2kKemd4RFlpdWZ3dzJPV3VqSnlqeUQ1L0gyek9TS3ArU2dPNkZTdzFvRUk5QW0vU3gyMmhUeUZYNFFid3llUEZQdGp6UWpxbE5Cc2ZCNktUVDAzMVozRHc9PQo=",
+      "url": "https://paperlab.r3actr.work/Paper%20Lab_2.5.0_x64_en-US.msi"
+    }
+  }
+}

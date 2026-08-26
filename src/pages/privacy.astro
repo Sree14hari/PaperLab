@@ -1,0 +1,100 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroNeutral.astro'
+import SectionSticky from '../components/blocks/basic/StickySidebarTransparent.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Privacy Policy',
+	description:
+		'Read the Privacy Policy for Paper Lab to learn how we protect your personal information, manuscripts, document data, and privacy rights.'
+}
+// - Hero
+const heroData = {
+	title: 'Privacy Policy & Data Security',
+	subtitle: 'Privacy Policy',
+	text: 'Your privacy and document security are our highest priorities. Learn how Paper Lab handles your personal data, documents, and reference libraries.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		text={heroData.text}
+		textClasses="max-w-xl!"
+	/>
+	<SectionSticky>
+		<Header
+			title="Information We Collect"
+			subtitle="Data Collection"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Account Information</h3>
+					<p>
+						When you register for Paper Lab, we collect minimal personal information such as your name and email address to manage your account and deliver services.
+					</p>
+					<h3>Document Content & References</h3>
+					<p>
+						Your manuscripts, research drafts, BibTeX citation entries, and vector figures stored within Paper Lab are private to your account. We never sell, monetize, or train third-party AI models on your private documents.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="How We Use & Protect Data"
+			subtitle="Security & Protection"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Service Provisioning</h3>
+					<p>
+						We use collected information solely to render your editor workspace, sync your document trees, process LaTeX PDF compilations, and manage your account subscriptions.
+					</p>
+					<h3>Security Measures</h3>
+					<p>
+						Paper Lab employs industry-standard encryption protocols in transit and at rest to protect your research documents and personal details against unauthorized access.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Your Data Rights"
+			subtitle="User Rights"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Data Export & Deletion</h3>
+					<p>
+						You maintain full control over your work. You can export your raw LaTeX source files and documents anytime, or request complete account and data deletion by contacting us at r3actr@gmail.com.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+</Layout>

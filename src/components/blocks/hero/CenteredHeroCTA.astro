@@ -1,0 +1,103 @@
+---
+// Centered Hero CTA
+// ------------
+// Description: A hero section with a title and a subtitle, with a centered image
+// Properties:
+// - title: The title of the hero section
+// - subtitle: The subtitle of the hero section
+// - text: The text of the hero section
+// - buttonText: The text of the button
+// - buttonLink: The link of the button
+// - buttonClasses: Additional classes for the button
+// - classes: Additional classes for the section
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+// - UI
+import Header from '../../ui/Header.astro'
+import { Image } from 'astro:assets'
+
+// Content
+// - Assets
+import screenshot from '../../../assets/hero/heroimage.png'
+
+// - Props
+type Props = {
+	title?: string
+	subtitle?: string
+	text?: string
+	titleSpan?: string
+	buttonText?: string
+	buttonLink?: string
+	button2Text?: string
+	button2Link?: string
+	buttonClasses?: string
+	classes?: string
+	image?: string
+}
+const {
+	title = '',
+	text = '',
+	subtitle = '',
+	buttonText = '',
+	buttonClasses = 'w-full sm:w-auto',
+	buttonLink = '/',
+	button2Text = '',
+	button2Link = '',
+	classes = '',
+	image
+} = Astro.props
+---
+
+<Section classes={`${classes ? classes : ''}`} spacerTop={false}>
+	<Row classes="gap-y-0!">
+		<!-- Intro Text -->
+		<Col span="12" classes="pt-8 lg:pt-12 text-center">
+			<div class="mb-6 inline-flex justify-center transition duration-300 hover:scale-105">
+				<a href="https://launchpadindia.co/listing/paper-lab" target="_blank" rel="noopener noreferrer" aria-label="#1 Product of the Week" style="display:inline-flex;align-items:center;gap:0;height:60px;box-sizing:border-box;padding:0 18px 0 6px;background:#ffffff;border:2px solid #f97316;border-radius:14px;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif;box-shadow:0 1px 2px rgba(249,115,22,0.08), 0 8px 20px -10px rgba(249,115,22,0.25);line-height:1;max-width:100%;">
+					<img src="https://launchpadindia.co/logo.png" alt="" width="40" height="40" style="object-fit:contain;display:block;flex:none;" />
+					<span style="display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;line-height:1;text-align:left;">
+						<span style="font-size:9px;font-weight:700;letter-spacing:0.16em;color:#78716c;text-transform:uppercase;white-space:nowrap;text-align:left;">#1 PRODUCT OF THE WEEK</span>
+						<span style="font-size:21px;font-weight:700;letter-spacing:-0.025em;color:#0f172a;white-space:nowrap;">LaunchPad<span style="color:#f97316;">India</span></span>
+					</span>
+				</a>
+			</div>
+			<Header
+				title={title}
+				subtitle={subtitle}
+				classes="text-center"
+				titleWidth="mx-auto max-w-3xl"
+			/>
+		</Col>
+
+		<Col
+			span="12"
+			classes=" bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed dark:bg-[url('/bgs/dot-gray-dark.svg')] "
+		>
+			<div class="mt-6 mb-14 sm:mb-20 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0 w-full max-w-xs sm:max-w-none mx-auto">
+				<Button classes={buttonClasses} link={buttonLink}>{buttonText}</Button>
+				{button2Text && (
+					<Button classes={buttonClasses} style="neutral" link={button2Link}>
+						{button2Text}
+					</Button>
+				)}
+			</div>
+			<div data-parallax-offset="80" class="parallax mx-auto max-w-5xl px-4 sm:px-6">
+				<Image
+					src={screenshot}
+					alt="Paper Lab Interface Screenshot"
+					class="w-full h-auto block rounded-xl sm:rounded-2xl shadow-2xl drop-shadow-xl"
+					layout="constrained"
+					decoding="async"
+					loading="eager"
+					fetchpriority="high"
+					width={1625}
+				/>
+			</div>
+		</Col>
+	</Row>
+</Section>

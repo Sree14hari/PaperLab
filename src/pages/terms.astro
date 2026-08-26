@@ -1,0 +1,122 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroNeutral.astro'
+import SectionSticky from '../components/blocks/basic/StickySidebarTransparent.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Paper Lab | Terms & Conditions',
+	description:
+		'Review the terms and conditions for using Paper Lab, including software usage rights, document ownership, and service policies.'
+}
+// - Hero
+const heroData = {
+	title: 'Terms of Service & Usage Guidelines',
+	subtitle: 'Terms & Conditions',
+	text: 'Welcome to Paper Lab. These Terms and Conditions outline the rules, responsibilities, and guidelines for using our academic report editor and related tools.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		text={heroData.text}
+		textClasses="max-w-xl!"
+	/>
+	<SectionSticky>
+		<Header
+			title="About This Agreement"
+			subtitle="Introduction"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Welcome to Paper Lab</h3>
+					<p>
+						Welcome to Paper Lab! Our platform is designed to help researchers, students, and professionals write, format, and compile academic and technical reports with ease. By accessing or using Paper Lab, you agree to these Terms and Conditions.
+					</p>
+					<p>
+						If you have any questions or concerns about these terms, please contact us at r3actr@gmail.com.
+					</p>
+					<h3>Document Ownership & Intellectual Property</h3>
+					<p>
+						You retain 100% ownership of all documents, manuscripts, figures, vector diagrams, and LaTeX code created or imported within Paper Lab. We do not claim any copyright or ownership over your work.
+					</p>
+					<p>
+						You are responsible for ensuring that content uploaded to Paper Lab does not infringe upon any third-party intellectual property, copyright, or academic integrity policies.
+					</p>
+					<h3>Acceptance & Changes to Terms</h3>
+					<p>
+						By accessing or using our services, you agree to comply with these Terms of Service. We may update these terms periodically to reflect new features or legal requirements. Continued use of Paper Lab constitutes acceptance of any updated terms.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Account & Software Usage"
+			subtitle="User Accounts"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>User Accounts</h3>
+					<p>
+						To access certain features of Paper Lab, you may need to register an account. You must provide accurate information and keep your credentials secure.
+					</p>
+					<h3>Acceptable Use</h3>
+					<p>
+						Paper Lab is provided for academic, scientific, and professional document editing. You agree not to misuse our services, reverse engineer platform components, or attempt to disrupt compilation servers or cloud infrastructure.
+					</p>
+					<h3>Data Storage & Backups</h3>
+					<p>
+						While Paper Lab provides cloud synchronization and export features, we strongly recommend routinely downloading local exports (.zip / .pdf) of your critical research documents.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Disclaimers & Liability"
+			subtitle="Limitations & Liability"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Service Availability</h3>
+					<p>
+						Paper Lab is provided on an “as is” and “as available” basis. While we strive for maximum uptime and reliability, we do not guarantee uninterrupted access or error-free compilation at all times.
+					</p>
+					<h3>Limitation of Liability</h3>
+					<p>
+						In no event shall Paper Lab or its creators be liable for indirect, incidental, or consequential damages resulting from lost compilation files, missed submission deadlines, or service interruptions.
+					</p>
+					<h3>Contact & Support</h3>
+					<p>
+						For support or inquiries regarding these Terms & Conditions, please contact us at r3actr@gmail.com.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+</Layout>
