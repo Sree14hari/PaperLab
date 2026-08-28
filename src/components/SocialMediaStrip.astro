@@ -1,0 +1,86 @@
+---
+const { class: className, ...props } = Astro.props
+
+import { icon, library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faBluesky,
+  faDiscord,
+  faGithub,
+  faMastodon,
+  faReddit,
+  faXTwitter,
+} from '@fortawesome/free-brands-svg-icons'
+import { cn } from '~/utils/merge'
+
+library.add(faMastodon, faBluesky, faGithub, faXTwitter, faReddit, faDiscord)
+const Mastodon = icon({ prefix: 'fab', iconName: 'mastodon' })
+const Bluesky = icon({ prefix: 'fab', iconName: 'bluesky' })
+const Github = icon({ prefix: 'fab', iconName: 'github' })
+const XTwitter = icon({ prefix: 'fab', iconName: 'x-twitter' })
+const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
+const Discord = icon({ prefix: 'fab', iconName: 'discord' })
+---
+
+<ul class={cn('flex items-center gap-4 opacity-80', className)} {...props}>
+  <li>
+    <a
+      href="https://github.com/zen-browser"
+      target="_blank"
+      class="font-bold"
+      aria-label="Visit Zen Browser on GitHub"
+    >
+      <Fragment set:html={Github.html} />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://links.zen-browser.app/twitter"
+      target="_blank"
+      class="font-normal"
+      aria-label="Visit Zen Browser on X"
+    >
+      <Fragment set:html={XTwitter.html} />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://links.zen-browser.app/masto"
+      target="_blank"
+      class="font-normal"
+      aria-label="Visit Zen Browser on Mastodon"
+    >
+      <Fragment set:html={Mastodon.html} />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://links.zen-browser.app/bsky"
+      target="_blank"
+      class="font-normal"
+      aria-label="Visit Zen Browser on Bluesky"
+    >
+      <Fragment set:html={Bluesky.html} />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://links.zen-browser.app/reddit"
+      target="_blank"
+      class="font-normal"
+      aria-label="Visit Zen Browser on Reddit"
+    >
+      <Fragment set:html={Reddit.html} />
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="https://links.zen-browser.app/discord"
+      target="_blank"
+      class="font-normal"
+      aria-label="Visit Zen Browser on Discord"
+    >
+      <Fragment set:html={Discord.html} />
+    </a>
+  </li>
+</ul>
