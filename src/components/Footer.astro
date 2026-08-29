@@ -1,0 +1,164 @@
+---
+import Button from '~/components/Button.astro'
+import Circles from '~/components/Circles.astro'
+import Description from '~/components/Description.astro'
+import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
+import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
+import { getLocale, getPath, getUI } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+const {
+  components: { footer },
+} = getUI(locale)
+---
+
+<footer
+  id="footer"
+  class="border-dark bg-dark text-paper relative flex w-full flex-col items-center overflow-hidden border-t px-4 py-16 lg:py-24"
+  role="contentinfo"
+  aria-label="Site footer"
+>
+  <div class="container relative z-10 flex w-full flex-col gap-16">
+    <!-- Main Top Content: Brand & Navigation -->
+    <div class="flex w-full flex-col justify-between gap-12 lg:flex-row lg:items-start">
+      <!-- Left Column: Branding, Mission, CTA & Socials -->
+      <div class="flex w-full flex-col items-start gap-6 lg:max-w-md">
+        <a href={getLocalePath('/')} class="flex items-center gap-2">
+          <Description id="footer-title" class="!text-paper text-5xl font-extrabold tracking-tight">
+            {footer.title}
+          </Description>
+        </a>
+        <Description class="text-paper/75 text-base leading-relaxed">
+          {footer.description}
+        </Description>
+
+        <div class="flex flex-col items-start gap-4 pt-2">
+          <Button
+            href="https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+            isPrimary
+            class="bg-paper !text-dark w-fit shadow-lg"
+            aria-label={footer.getStarted}
+          >
+            {footer.getStarted}
+            <ArrowRightIcon class="size-4" aria-hidden="true" />
+          </Button>
+        </div>
+
+        <div class="flex flex-col items-start gap-3 pt-2">
+          <span class="text-xs font-semibold tracking-wider uppercase opacity-60">
+            {footer.followUs}
+          </span>
+          <SocialMediaStrip />
+        </div>
+      </div>
+
+      <!-- Right Column: Multi-column Navigation -->
+      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-16">
+        <!-- Product & Features -->
+        <nav class="flex flex-col gap-3" aria-labelledby="footer-features-heading">
+          <h2 id="footer-features-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+            {footer.getStarted}
+          </h2>
+          <ul class="flex flex-col gap-2.5 text-sm">
+            <li>
+              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+                {footer.features}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+                WYSIWYG & LaTeX
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+                Citations & BibTeX
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-opacity">
+                Vector Diagrams
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Company & Community -->
+        <nav class="flex flex-col gap-3" aria-labelledby="footer-about-heading">
+          <h2 id="footer-about-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+            {footer.aboutUs}
+          </h2>
+          <ul class="flex flex-col gap-2.5 text-sm">
+            <li>
+              <a href={getLocalePath('/about')} class="hover:text-coral opacity-80 transition-colors">
+                {footer.aboutUs}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/invest')} class="hover:text-coral opacity-80 transition-colors">
+                {footer.invest || 'Invest & Partner'}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/gnjkkGT5RS"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-coral opacity-80 transition-colors"
+              >
+                Discord Community
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/R3ACTR"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-coral opacity-80 transition-colors"
+              >
+                GitHub Organization
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Legal -->
+        <nav class="flex flex-col gap-3" aria-labelledby="footer-legal-heading">
+          <h2 id="footer-legal-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+            Legal
+          </h2>
+          <ul class="flex flex-col gap-2.5 text-sm">
+            <li>
+              <a href={getLocalePath('/privacy-policy')} class="hover:text-coral opacity-80 transition-colors">
+                {footer.privacyPolicy}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/terms-and-conditions')} class="hover:text-coral opacity-80 transition-colors">
+                {footer.termsAndConditions}
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <section class="w-full text-center lg:text-left">
+      <p
+        class="text-sm opacity-75"
+        set:html={footer.madeWith.replace('{link}', getLocalePath('/about'))}
+      />
+    </section>
+  </div>
+
+  <!-- Ambient logo decoration in corner -->
+  <section class="pointer-events-none absolute right-0 bottom-0 hidden lg:block">
+    <img 
+      src="/logos/paperlablogo.svg" 
+      alt="" 
+      class="w-96 h-96 max-w-none translate-x-1/2 translate-y-1/2 opacity-80 invert dark:invert-0" 
+      aria-hidden="true"
+    />
+  </section>
+</footer>

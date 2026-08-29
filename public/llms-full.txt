@@ -1,0 +1,26 @@
+# Paper Lab: Complete Overview
+
+> A modern academic report editor built for students and researchers.
+
+## Introduction
+Paper Lab (available at https://paperlab.r3actr.work) is a comprehensive online platform designed to streamline the academic writing process. It addresses the common pain points of setting up local LaTeX environments by providing a powerful, accessible, and fast web-based editor.
+
+## Core Capabilities
+
+### 1. Advanced LaTeX Editing
+At its core, Paper Lab offers a fully functional LaTeX engine running in the cloud. This allows users to write complex mathematical formulas, format references automatically, and generate professional-grade PDF documents without installing any local dependencies.
+
+### 2. High-Performance Cloud Compiling
+To ensure a smooth user experience, Paper Lab uses priority cloud compilation. This means that document previews and final PDF generations are processed quickly on dedicated servers, significantly reducing wait times for large documents.
+
+### 3. Integrated WYSIWYG Diagram Editor
+One of the most unique features is the built-in "What You See Is What You Get" (WYSIWYG) diagram editor. Instead of writing complex TikZ or importing external images, users can draw diagrams directly within the platform and insert them instantly into their reports.
+
+## Target Audience
+Paper Lab is primarily built for:
+- University students writing assignments, lab reports, and theses.
+- Academic researchers publishing papers in scientific journals.
+- Anyone who needs the typesetting power of LaTeX combined with a modern UI.
+
+## Support & Resources
+- **Main Platform**: https://paperlab.r3actr.work

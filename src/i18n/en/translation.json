@@ -1,0 +1,592 @@
+{
+  "routes": {
+    "index": {
+      "title": "Paper Lab",
+      "hero": {
+        "title": [
+          {
+            "text": "Write ",
+            "highlight": false
+          },
+          {
+            "text": "Smarter.",
+            "highlight": true
+          },
+          {
+            "text": "\n",
+            "highlight": false
+          },
+          {
+            "text": "Format ",
+            "highlight": false
+          },
+          {
+            "text": "Automatically.",
+            "highlight": true
+          }
+        ],
+        "description": [
+          "Built for academics and professionals.",
+          "Paper Lab combines the ease of a rich-text WYSIWYG editor with the power of Python-based templating and LaTeX compilation."
+        ],
+        "buttons": {
+          "beta": "Start writing for free!",
+          "support": "Buy Premium"
+        }
+      },
+      "features": {
+        "titles": [
+          "Formatting ",
+          "made ",
+          "simple"
+        ],
+        "description": "Paper Lab is packed with features that help you stay productive and focused. Focus on writing, and let us handle the complex LaTeX formatting.",
+        "featureTabs": {
+          "workspaces": {
+            "title": "Section-Based Editing",
+            "description": "Documents are broken down into manageable sections. Drag and drop sections to restructure your document instantly."
+          },
+          "compactMode": {
+            "title": "Live A4 Preview Engine",
+            "description": "Synchronously render the document as it will appear in print or PDF format while you type."
+          },
+          "glance": {
+            "title": "Dedicated LaTeX Workspace",
+            "description": "Advanced academic writing with an integrated Monaco editor, syntax highlighting, and a dedicated compilation pipeline."
+          },
+          "splitView": {
+            "title": "Diagrams & Vector Graphics",
+            "description": "Draw flowcharts, system architectures, and scientific diagrams right inside your document."
+          }
+        }
+      },
+      "sponsors": {
+        "title": "Our Sponsors",
+        "description": "A huge thank you to our incredible sponsors for making this project possible.<br />Want to see your logo here? <a href=\"/donate\" class=\"zen-link\">Support us directly</a>!",
+        "sponsors": {
+          "r3actr": {
+            "name": "R3ACTR",
+            "url": "https://r3actr.work/"
+          }
+        }
+      },
+      "community": {
+        "title": [
+          "Citation ",
+          "Made ",
+          "Easy"
+        ],
+        "description": "Focus on your research, not your references. Automatically format citations and bibliographies in any academic style with zero hassle.",
+        "lists": {
+          "freeAndOpenSource": {
+            "title": "Free and open-source",
+            "description": "Zen is free and open-source software, which means you can use it without any cost and can modify it to suit your needs."
+          },
+          "simpleYetPowerful": {
+            "title": "Simple yet powerful",
+            "description": "Zen is simple to use, but powerful enough to handle your daily tasks."
+          },
+          "privateAndAlwaysUpToDate": {
+            "title": "Private and always up-to-date",
+            "description": "Zen is private and always up-to-date, which means you can use it without any cost and can modify it to suit your needs."
+          }
+        },
+        "images": {
+          "community": {
+            "alt": "Community"
+          }
+        }
+      }
+    },
+    "about": {
+      "title": "About Paper Lab",
+      "description": "Paper Lab is a modern academic report and research paper editor designed to streamline writing, citations, and publication. We believe writing technical and scholarly work should be distraction-free, beautifully formatted, and accessible to students and researchers worldwide.",
+      "littleHelp": "Get Paper Lab",
+      "mainTeam": {
+        "title": "Team & Creators",
+        "description": "The creators and contributors driving the vision and development of Paper Lab.",
+        "subTitle": {
+          "core": "Core Team & Contributors"
+        },
+        "members": {
+          "core": {
+            "sreehari": {
+              "name": "Sreehari R",
+              "description": "Developer and Technical",
+              "link": "https://github.com/Sree14hari"
+            },
+            "abhinav": {
+              "name": "Abhinav R",
+              "description": "Design and Social ",
+              "link": false
+            },
+            "kalidas": {
+              "name": "Kalidas V S",
+              "description": "Testing & QA",
+              "link": false
+            },
+            "neeraj": {
+              "name": "Neeraj Sukumaran",
+              "description": "Design and Testing",
+              "link": false
+            },
+            "diya": {
+              "name": "Diya Thresia Daniel",
+              "description": "Ideation and Feature Improvement",
+              "link": false
+            },
+            "neha": {
+              "name": "Neha Siju",
+              "description": "Promotion and Reach",
+              "link": false
+            }
+          }
+        }
+      },
+      "contributors": {
+        "title": "Community & Ecosystem",
+        "description": "Paper Lab thrives on feedback, templates, and contributions from students, researchers, and open source developers.",
+        "browser": "GitHub Repository",
+        "website": "R3ACTR Ecosystem"
+      }
+    },
+    "features": {
+      "hero": {
+        "badge": "Paper Lab Features",
+        "title": "Everything You Need for Academic & Technical Writing",
+        "description": "Discover our comprehensive suite of tools designed to streamline report writing, reference management, figure design, and LaTeX compilation."
+      },
+      "cta": {
+        "title": "Start writing your next paper today",
+        "description": "Join researchers, students, and professionals creating publication-ready academic reports effortlessly.",
+        "buttonText": "Start writing for free!",
+        "buttonLink": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+      },
+      "sections": [
+        {
+          "title": "Smart Writing & Editing",
+          "subtitle": "Core Editor",
+          "features": [
+            {
+              "title": "Visual WYSIWYG Editor",
+              "description": "Write intuitively with rich formatting, live A4 document layout, and instant visual feedback without managing raw markup manually.",
+              "icon": "document-text"
+            },
+            {
+              "title": "Monaco LaTeX Mode",
+              "description": "Toggle into a full-featured Monaco LaTeX code editor complete with syntax highlighting, line numbers, and autocompletion.",
+              "icon": "code-bracket"
+            },
+            {
+              "title": "Modular Section Tree",
+              "description": "Organize chapters, sub-sections, and appendices with a drag-and-drop outline tree to keep long manuscripts structured.",
+              "icon": "folder"
+            },
+            {
+              "title": "Real-Time A4 Live Preview",
+              "description": "Preview your exact page margins, headers, footers, and page breaks in real time as you write.",
+              "icon": "arrows-right-left"
+            }
+          ]
+        },
+        {
+          "title": "Citations & References",
+          "subtitle": "Global Bibliography",
+          "features": [
+            {
+              "title": "Global Citation Library",
+              "description": "Maintain a centralized repository of BibTeX entries across all your research projects and documents.",
+              "icon": "at-symbol"
+            },
+            {
+              "title": "One-Click Citation Insertion",
+              "description": "Search and insert inline citations directly into your text with automatic citation keys and bibliography generation.",
+              "icon": "clipboard-document-check"
+            },
+            {
+              "title": "Journal Style Formatting",
+              "description": "Format citations automatically for major academic styles including IEEE, APA, Nature, Springer, and Harvard.",
+              "icon": "document-chart-bar"
+            },
+            {
+              "title": "BibTeX Import & Sync",
+              "description": "Import existing .bib files or sync references directly from Mendeley, Zotero, and Google Scholar entries.",
+              "icon": "arrow-down-tray"
+            }
+          ]
+        },
+        {
+          "title": "Diagrams & Exporting",
+          "subtitle": "Graphics & Publishing",
+          "features": [
+            {
+              "title": "Research Vector Diagramming",
+              "description": "Draw flowcharts, system architectures, and scientific diagrams right inside Paper Lab.",
+              "icon": "light-bulb"
+            },
+            {
+              "title": "Vector & Image Figure Exports",
+              "description": "Export crisp, high-resolution figures in SVG, PNG, and vector PDF formats ready for journal submission.",
+              "icon": "chart-bar"
+            },
+            {
+              "title": "Publication-Ready PDF Export",
+              "description": "Compile publication-grade PDF documents with clean typography, headers, footers, and equation numbering.",
+              "icon": "flag"
+            },
+            {
+              "title": "LaTeX Source Zip Export",
+              "description": "Download raw compiled LaTeX source archives including figures, templates, and bib files anytime.",
+              "icon": "server-stack"
+            }
+          ]
+        }
+      ]
+    },
+    "invest": {
+      "title": "Invest & Partner with Paper Lab",
+      "description": "We are building the next generation of academic and technical document authoring tools. If you are an angel investor, venture partner, or university institution interested in supporting Paper Lab, connect with our founding team directly.",
+      "email": {
+        "title": "Email Us Directly",
+        "description": "Reach out directly for pitch decks, investment terms, and institutional deployment partnerships.",
+        "address": "r3actr@gmail.com",
+        "button": "Send Email",
+        "link": "mailto:r3actr@gmail.com?subject=Paper%20Lab%20Investment%20%26%20Partnership"
+      },
+      "discord": {
+        "title": "Join Official Discord",
+        "description": "Join our official Discord community to chat directly with our founders, developers, and team members in real-time.",
+        "button": "Connect on Discord",
+        "link": "https://discord.gg/gnjkkGT5RS"
+      },
+      "highlights": {
+        "title": "Why Partner with Paper Lab?",
+        "market": {
+          "title": "Massive Academic Market",
+          "description": "Millions of researchers, students, and professors struggle daily with complex LaTeX compilation and fragmented reference management tools."
+        },
+        "privacy": {
+          "title": "Local-First Privacy",
+          "description": "Zero telemetry and completely local document storage fulfill the strict compliance requirements of leading research universities and labs."
+        },
+        "innovation": {
+          "title": "All-in-One Writing Suite",
+          "description": "Seamlessly blending visual WYSIWYG editing, raw Monaco LaTeX code, automatic citations, and vector diagramming into a single cohesive ecosystem."
+        }
+      }
+    },
+    "donate": {
+      "title": "Invest & Partner with Paper Lab",
+      "description": "We are building the next generation of academic and technical document authoring tools. If you are an angel investor, venture partner, or university institution interested in supporting Paper Lab, connect with our founding team directly.",
+      "patreon": {
+        "title": "Email Inquiry",
+        "description": "Reach out directly for pitch decks, investment terms, and institutional deployment partnerships.",
+        "button": "Send Email"
+      },
+      "koFi": {
+        "title": "Discord",
+        "description": "Join our official Discord community to chat directly with our founders, developers, and team members in real-time.",
+        "button": "Connect on Discord"
+      }
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: 2026-08-29",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "body": "Welcome to Paper Lab! Your privacy is our priority. This Privacy Policy outlines how your data is handled when you use Paper Lab.",
+          "summary": "We don't sell data - We don't collect data - We don't track you"
+        },
+        "noCollect": {
+          "title": "1. Information We Do Not Collect",
+          "body": "Paper Lab is designed with privacy in mind. We do not collect, store, or share any of your personal data. Here's what that means:"
+        },
+        "noTelemetry": {
+          "title": "1.1. No Telemetry",
+          "body": "We do not collect any telemetry data or crash reports.",
+          "body2": "Paper Lab does not include any analytics or telemetry."
+        },
+        "noPersonalData": {
+          "title": "1.2. No Personal Data Collection",
+          "body": "Paper Lab does not collect any personal information such as your IP address or document contents."
+        },
+        "noThirdParty": {
+          "title": "1.3. No Third-Party Tracking",
+          "body": "We do not allow third-party trackers or analytics tools to operate within Paper Lab. Your writing activity remains entirely private and is not shared with any third party."
+        },
+        "externalConnections": {
+          "title": "1.4. External connections",
+          "body": "Paper Lab may make external connections to check for updates or to fetch templates. We do not collect any data from these connections. These connections are necessary for the proper functioning of the app and are not used for tracking or profiling purposes."
+        },
+        "localStorage": {
+          "title": "2. Information Stored Locally on Your Device"
+        },
+        "browsingData": {
+          "title": "2.1. Document Data",
+          "body": "Paper Lab stores certain data locally on your device to enhance your writing experience. This includes:"
+        },
+        "cookies": {
+          "title": "Local Projects",
+          "body": "Your projects and documents are stored entirely locally on your device and are not shared with Paper Lab."
+        },
+        "cache": {
+          "title": "Cache and Temporary Files",
+          "body": "Paper Lab may store cache files (like LaTeX compilation artifacts) locally to improve performance."
+        },
+        "settings": {
+          "title": "2.2. Settings and Preferences",
+          "body": "Any customizations, settings, and preferences you make within Paper Lab are stored locally on your device. We do not have access to or control over this data."
+        },
+        "sync": {
+          "title": "3. Sync Feature",
+          "body": "Currently, Paper Lab does not have an active cloud sync feature. All data remains on your local file system.",
+          "link1": "",
+          "link2": ""
+        },
+        "addons": {
+          "title": "4. Templates and Plugins",
+          "body": "You can install Templates and Plugins. These are hosted by our services. We do not collect any data from these downloads, they are purely static content."
+        },
+        "security": {
+          "title": "5. Data Security",
+          "body": "Although Paper Lab does not collect your data, we are committed to protecting the information that is stored locally on your device. We recommend that you enable device encryption and regularly update your software to ensure your data remains safe.",
+          "note": "Note that your documents are only as secure as your local machine."
+        },
+        "control": {
+          "title": "6. Your Control",
+          "deletionTitle": "6.1. Data Deletion",
+          "deletionBody": "You have full control over all data stored locally on your device by Paper Lab. You can delete your projects and cache at any time."
+        },
+        "website": {
+          "title": "7. Our Website and Services",
+          "body": "Paper Lab's website and services do not use any third-party analytics, tracking, or CDN services. We do not collect any personal information from users visiting our website.",
+          "externalLinksTitle": "7.1. External links",
+          "externalLinksBody": "Paper Lab may contain links to external websites or services that are not owned or operated by us. We are not responsible for the content or privacy practices of these sites."
+        },
+        "changes": {
+          "title": "8. Changes to This Privacy Policy",
+          "body": "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by updating the effective date at the top of this policy. Continued use of Paper Lab after such changes constitutes your acceptance of the new terms."
+        },
+        "otherTelemetry": {
+          "title": "9. Other telemetry",
+          "body": "We disable all telemetry data collection in Paper Lab.",
+          "firefoxPrivacyNotice": "",
+          "forMoreInformation": ""
+        },
+        "contact": {
+          "title": "10. Contact Us",
+          "body": "If you have any questions or concerns about this Privacy Policy or Paper Lab, please contact us at:",
+          "discord": "Discord: ",
+          "discordLink": "Paper Lab's Discord",
+          "github": "GitHub: ",
+          "githubLink": "Organization"
+        }
+      }
+    },
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "Last updated: 2026-08-29",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "body": "Welcome to Paper Lab. By accessing or using our application, you agree to be bound by these Terms and Conditions."
+        },
+        "license": {
+          "title": "1. License to Use",
+          "body": "We grant you a limited, non-exclusive, non-transferable license to use Paper Lab for your personal or academic purposes."
+        },
+        "userContent": {
+          "title": "2. User Content",
+          "body": "You retain all rights to the documents and content you create using Paper Lab. We claim no ownership over your work."
+        },
+        "disclaimer": {
+          "title": "3. Disclaimer of Warranties",
+          "body": "Paper Lab is provided 'as is' without warranties of any kind. We do not guarantee that the software will be error-free or uninterrupted."
+        }
+      }
+    },
+    "welcome": {
+      "title": [
+        "Welcome ",
+        "to ",
+        "Zen!"
+      ]
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you are looking for does not exist or has been moved.",
+      "button": "Go Home"
+    },
+    "pricing": {
+      "title": "Choose the Plan That Fits Your Research Workflow",
+      "subtitle": "Paper Lab Pricing",
+      "text": "Start writing for free or upgrade for advanced vector diagramming, global citation sync, and priority cloud LaTeX compilation.",
+      "plans": [
+        {
+          "id": "free",
+          "name": "Free",
+          "tagline": "Essential tools for students and individual writers",
+          "prices": {
+            "annually": 0,
+            "monthly": 0
+          },
+          "prices_notes": {
+            "annually": "Free forever",
+            "monthly": "Free forever"
+          },
+          "cta": {
+            "label": "Start Writing Free",
+            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+          },
+          "features": [
+            "3 projects",
+            "Unlimited diagram boards",
+            "Unlimited compiles",
+            "Full LaTeX editor",
+            "Single boba pet",
+            "IEEE and journal templates",
+            ".reporter exports and imports"
+          ]
+        },
+        {
+          "id": "pro",
+          "name": "Pro",
+          "tagline": "Advanced LaTeX engine & unlimited features",
+          "prices": {
+            "annually": 10,
+            "monthly": 10
+          },
+          "prices_notes": {
+            "annually": "/month (billed monthly)",
+            "monthly": "/month (billed monthly)"
+          },
+          "cta": {
+            "label": "Buy Premium",
+            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+          },
+          "tag": "Most Popular",
+          "featured": true,
+          "features": [
+            "Everything in Free Plan",
+            "Unlimited folders",
+            "Version control",
+            "Preview tree",
+            "Custom pets",
+            "Citation manager",
+            "Collaboration (future update)"
+          ]
+        }
+      ],
+      "faq": {
+        "title": "Everything you need to know about plans & billing",
+        "subtitle": "Pricing FAQ"
+      },
+      "cta": {
+        "title": "Start writing your report with Paper Lab",
+        "text": "Join thousands of researchers and students creating publication-ready academic papers with ease.",
+        "buttonText": "Start writing for free!"
+      }
+    }
+  },
+  "layout": {
+    "index": {
+      "title": "Paper Lab | Modern Academic Report Editor",
+      "description": "Paper Lab is a comprehensive, modern Research and Academic Editor designed to streamline the process of writing, formatting, and collaborating on academic papers and professional documents."
+    },
+    "mods": {
+      "title": "Zen Mods",
+      "description": "Browse our diverse collection of Zen Mods, community-made plugins and themes for Zen. Discover a theme to match every mood, and a plugin to fulfill every requirement. Start customizing your browser experience today!"
+    },
+    "releaseNotes": {
+      "title": "Release notes - Zen",
+      "description": "Stay up to date with the latest changes to Zen! Since the first release till {latestVersion}, we've been working hard to make Zen the best it can be. Thanks everyone for your feedback! ❤️"
+    },
+    "about": {
+      "title": "About - Paper Lab",
+      "description": "Learn more about Paper Lab, the modern academic paper and report editor built for researchers and students."
+    },
+    "features": {
+      "title": "Features | Paper Lab",
+      "description": "Explore the complete feature set of Paper Lab — visual WYSIWYG editing, Monaco LaTeX editor, global citation management, research diagramming, and publication-ready exports."
+    },
+    "invest": {
+      "title": "Invest & Partner | Paper Lab",
+      "description": "Learn about investment, institutional grants, and partnership opportunities with Paper Lab."
+    },
+    "donate": {
+      "title": "Invest & Partner | Paper Lab",
+      "description": "Learn about investment, institutional grants, and partnership opportunities with Paper Lab."
+    },
+    "download": {
+      "title": "Download - Paper Lab",
+      "description": "Download Paper Lab and experience modern academic report and paper editing."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy - Paper Lab",
+      "description": "Your privacy is our priority. This Privacy Policy outlines how your data is handled when you use Paper Lab."
+    },
+    "termsAndConditions": {
+      "title": "Terms and Conditions - Paper Lab",
+      "description": "Read the terms and conditions for using Paper Lab, the modern academic report editor."
+    },
+    "welcome": {
+      "title": "Welcome!",
+      "description": "Welcome to Paper Lab!"
+    },
+    "whatsNew": {
+      "title": "What's New in {latestVersion.version}!"
+    }
+  },
+  "components": {
+    "footer": {
+      "title": "Paper Lab",
+      "description": "Modern Academic Report Editor. Built for academics and professionals.",
+      "followUs": "Follow Us",
+      "aboutUs": "About Us",
+      "teamAndContributors": "Team & Contributors",
+      "privacyPolicy": "Privacy Policy",
+      "termsAndConditions": "Terms & Conditions",
+      "getStarted": "Get Started",
+      "features": "Features",
+      "invest": "Invest",
+      "documentation": "Documentation",
+      "getHelp": "Get Help",
+      "securtiy": "Security",
+      "discord": "Discord",
+      "uptimeStatus": "Uptime Status",
+      "reportAnIssue": "Report an Issue",
+      "twilight": "Beta",
+      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='zen-link font-bold whitespace-nowrap'>Paper Lab Team</a>"
+    },
+    "nav": {
+      "brand": "Paper Lab",
+      "menu": {
+        "gettingStarted": "Getting Started",
+        "usefulLinks": "Useful Links",
+        "features": "Features",
+        "featuresDesc": "Explore WYSIWYG editing, LaTeX, citations, and diagramming.",
+        "mods": "Mods",
+        "download": "Download",
+        "discord": "Discord",
+        "releaseNotes": "Release Notes",
+        "zenMods": "Templates",
+        "tryZenMods": "Try Templates",
+        "zenModsDesc": "Enhance your documents with modern templates.",
+        "releaseNotesDesc": "Stay up to date with the latest features and improvements.",
+        "discordDesc": "Join our community on Discord to chat with other Paper Lab users!",
+        "invest": "Invest 💼",
+        "investDesc": "Partner with Paper Lab or explore investment opportunities.",
+        "donate": "Invest 💼",
+        "donateDesc": "Partner with Paper Lab or explore investment opportunities.",
+        "aboutUs": "About Us 🌟",
+        "aboutUsDesc": "Learn more about Paper Lab and our mission.",
+        "documentation": "Documentation",
+        "documentationDesc": "Learn how to use Paper Lab with our documentation.",
+        "github": "GitHub",
+        "githubDesc": "Contribute to the development of Paper Lab on GitHub.",
+        "menu": "Menu"
+      }
+    }
+  }
+}
