@@ -45,9 +45,15 @@ const locale = getLocale(Astro)
     <meta name="description" content={description ?? defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="sitemap" href="/sitemap-0.xml" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.work')} />
+    <link
+      rel="canonical"
+      href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.work')}
+    />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab" />
+    <meta
+      name="keywords"
+      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab"
+    />
 
     {
       isHome && (
@@ -67,7 +73,9 @@ const locale = getLocale(Astro)
       )
     }
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
     <meta name="generator" content={Astro.generator} />
@@ -80,7 +88,11 @@ const locale = getLocale(Astro)
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:site_name" content="Paper Lab" />
     <meta property="og:locale" content={locale} />
-    <meta property="og:image" content={ogImage ?? new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href} />
+    <meta
+      property="og:image"
+      content={ogImage ??
+        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href}
+    />
     <meta property="og:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <meta property="og:description" content={description ?? defaultDescription} />
     <meta property="og:color" content="#da755b" />
@@ -89,7 +101,11 @@ const locale = getLocale(Astro)
     <meta name="twitter:site" content="@paperlab" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description ?? defaultDescription} />
-    <meta name="twitter:image" content={ogImage ?? new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href} />
+    <meta
+      name="twitter:image"
+      content={ogImage ??
+        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href}
+    />
     <meta name="twitter:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <!-- RSS Feed -->
     <link
