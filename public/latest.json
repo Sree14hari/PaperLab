@@ -1,0 +1,11 @@
+{
+  "version": "3.0.1",
+  "notes": "What's new:\n- Added new features\n- Bug fixes and performance improvements",
+  "pub_date": "2026-08-29T12:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIGJ1aWxkCg...",
+      "url": "https://paperlab.r3actr.work/downloads/Paper_Lab_3.0.1_x64-setup.nsis.zip"
+    }
+  }
+}
