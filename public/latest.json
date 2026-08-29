@@ -1,16 +1,6 @@
 {
   "version": "3.0.0",
-  "notes": "🚀Paper Lab v3.0.0 Release Notes
-⚡ Tectonic Compilation Engine & Pipeline Fixes
-
-Integrated Tectonic Compiler: Upgraded the PDF rendering backend with automatic detection and prioritization of the Tectonic typesetting engine for fast, single-pass compilation.
-Resilient pdflatex Fallback: Automatic detection and fallback to local pdflatex / bibtex environments when required.
-Auto Font-Map Patching (cmap.sty): Injected dynamic fallback shims for missing TeX font map definitions, eliminating fatal compilation aborts across legacy and journal templates.
-🖥️ Desktop & Tauri Experience
-
-Native External Link Interceptor: All outbound hyperlinks and documentation references now automatically open in your default OS web browser instead of navigating within the Tauri desktop container.
-Dual Distribution Formats: Added both MSI (Paper Lab_3.0.0_x64_en-US.msi) and portable NSIS Setup (Paper Lab_3.0.0_x64-setup.exe) builds.
-Bundled Engine Binaries: Updated desktop packaging configuration to include standalone binary sidecars and updater signatures (.sig) for seamless in-app auto-updating.",
+  "notes": "🚀 Paper Lab v3.0.0 Release Notes\n⚡ Tectonic Compilation Engine & Pipeline Fixes\nIntegrated Tectonic Compiler: Upgraded the PDF rendering backend with automatic detection and prioritization of the Tectonic typesetting engine for fast, single-pass compilation.\nResilient pdflatex Fallback: Automatic detection and fallback to local pdflatex / bibtex environments when required.\nAuto Font-Map Patching (cmap.sty): Injected dynamic fallback shims for missing TeX font map definitions, eliminating fatal compilation aborts across legacy and journal templates.\n🖥️ Desktop & Tauri Experience\nNative External Link Interceptor: All outbound hyperlinks and documentation references now automatically open in your default OS web browser instead of navigating within the Tauri desktop container.\nDual Distribution Formats: Added both MSI (Paper Lab_3.0.0_x64_en-US.msi) and portable NSIS Setup (Paper Lab_3.0.0_x64-setup.exe) builds.\nBundled Engine Binaries: Updated desktop packaging configuration to include standalone binary sidecars and updater signatures (.sig) for seamless in-app auto-updating.",
   "pub_date": "2026-08-29T12:00:00Z",
   "platforms": {
     "windows-x86_64": {
