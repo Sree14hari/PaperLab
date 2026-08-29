@@ -1,11 +1,21 @@
 {
-  "version": "3.0.1",
-  "notes": "What's new:\n- Added new features\n- Bug fixes and performance improvements",
+  "version": "3.0.0",
+  "notes": "🚀Paper Lab v3.0.0 Release Notes
+⚡ Tectonic Compilation Engine & Pipeline Fixes
+
+Integrated Tectonic Compiler: Upgraded the PDF rendering backend with automatic detection and prioritization of the Tectonic typesetting engine for fast, single-pass compilation.
+Resilient pdflatex Fallback: Automatic detection and fallback to local pdflatex / bibtex environments when required.
+Auto Font-Map Patching (cmap.sty): Injected dynamic fallback shims for missing TeX font map definitions, eliminating fatal compilation aborts across legacy and journal templates.
+🖥️ Desktop & Tauri Experience
+
+Native External Link Interceptor: All outbound hyperlinks and documentation references now automatically open in your default OS web browser instead of navigating within the Tauri desktop container.
+Dual Distribution Formats: Added both MSI (Paper Lab_3.0.0_x64_en-US.msi) and portable NSIS Setup (Paper Lab_3.0.0_x64-setup.exe) builds.
+Bundled Engine Binaries: Updated desktop packaging configuration to include standalone binary sidecars and updater signatures (.sig) for seamless in-app auto-updating.",
   "pub_date": "2026-08-29T12:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIGJ1aWxkCg...",
-      "url": "https://paperlab.r3actr.work/downloads/Paper_Lab_3.0.1_x64-setup.nsis.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRamMzOGdiL1NMMEo1My9McXNTdGZkU3NsVmpLMmNHWE42WEN4YnZpSUFjTXFBL0dBMjNvNlNoSTZTRDJqSUtOcnJpeUNqd0s5MENKZEp0Y0V3NXJ3Y0hmWnM4eGRLWndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDE1OTY4CWZpbGU6UGFwZXIgTGFiXzMuMC4wX3g2NF9lbi1VUy5tc2kKSDBMM2pBS3hTL2NlYjlRcm53REVNTGtaUlprNVFTWWR4aS9QYll5cUt4ajZ6ckdaV0dmY0dTaTJoRjJzTDRxZVk5eEVySXNPRGhqalBGV1FsZlBSQUE9PQo=",
+      "url": "https://github.com/Sree14hari/PaperLab/releases/download/V3.0.0/Paper.Lab_3.0.0_x64_en-US.msi"
     }
   }
 }
