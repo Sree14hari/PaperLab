@@ -14,7 +14,7 @@ export default defineConfig({
   site: 'https://paperlab.r3actr.work',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    locales: ['en'],
     routing: {
       fallbackType: 'rewrite',
       prefixDefaultLocale: false,

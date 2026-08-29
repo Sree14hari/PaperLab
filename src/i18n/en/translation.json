@@ -35,11 +35,7 @@
         }
       },
       "features": {
-        "titles": [
-          "Formatting ",
-          "made ",
-          "simple"
-        ],
+        "titles": ["Formatting ", "made ", "simple"],
         "description": "Paper Lab is packed with features that help you stay productive and focused. Focus on writing, and let us handle the complex LaTeX formatting.",
         "featureTabs": {
           "workspaces": {
@@ -71,11 +67,7 @@
         }
       },
       "community": {
-        "title": [
-          "Citation ",
-          "Made ",
-          "Easy"
-        ],
+        "title": ["Citation ", "Made ", "Easy"],
         "description": "Focus on your research, not your references. Automatically format citations and bibliographies in any academic style with zero hassle.",
         "lists": {
           "freeAndOpenSource": {
@@ -407,11 +399,7 @@
       }
     },
     "welcome": {
-      "title": [
-        "Welcome ",
-        "to ",
-        "Zen!"
-      ]
+      "title": ["Welcome ", "to ", "Zen!"]
     },
     "notFound": {
       "title": "Page Not Found",
@@ -495,12 +483,12 @@
       "description": "Paper Lab is a comprehensive, modern Research and Academic Editor designed to streamline the process of writing, formatting, and collaborating on academic papers and professional documents."
     },
     "mods": {
-      "title": "Zen Mods",
-      "description": "Browse our diverse collection of Zen Mods, community-made plugins and themes for Zen. Discover a theme to match every mood, and a plugin to fulfill every requirement. Start customizing your browser experience today!"
+      "title": "Templates",
+      "description": "Browse our collection of templates and plugins for Paper Lab. Start enhancing your document workflow today!"
     },
     "releaseNotes": {
-      "title": "Release notes - Zen",
-      "description": "Stay up to date with the latest changes to Zen! Since the first release till {latestVersion}, we've been working hard to make Zen the best it can be. Thanks everyone for your feedback! ❤️"
+      "title": "Release notes - Paper Lab",
+      "description": "Stay up to date with the latest changes to Paper Lab! We're working hard to make Paper Lab the best academic editor."
     },
     "about": {
       "title": "About - Paper Lab",
@@ -557,7 +545,7 @@
       "uptimeStatus": "Uptime Status",
       "reportAnIssue": "Report an Issue",
       "twilight": "Beta",
-      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='zen-link font-bold whitespace-nowrap'>Paper Lab Team</a>"
+      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='paper-link font-bold whitespace-nowrap'>Paper Lab Team</a>"
     },
     "nav": {
       "brand": "Paper Lab",

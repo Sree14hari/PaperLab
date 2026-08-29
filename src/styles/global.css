@@ -3,13 +3,11 @@
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme inline {
-  --color-paper: var(--zen-paper);
+  --color-paper: var(--paper-bg);
   --color-coral: #f76f53;
-  --color-dark: var(--zen-dark);
-  --color-subtle: var(--zen-subtle);
-  --color-muted: var(--zen-muted);
-  --color-zen-blue: #6287f5;
-  --color-zen-green: #63f78b;
+  --color-dark: var(--paper-dark);
+  --color-subtle: var(--paper-subtle);
+  --color-muted: var(--paper-muted);
   --font-junicode: Junicode, serif;
   --animate-fadeIn: fadeIn 2s ease-in-out;
   --animate-breathe: breathe 5s ease-in-out infinite;
@@ -73,17 +71,17 @@
 }
 
 :root {
-  --zen-paper: #f2f0e3;
-  --zen-dark: #2e2e2e;
-  --zen-muted: rgba(0, 0, 0, 0.05);
-  --zen-subtle: rgba(0, 0, 0, 0.05);
+  --paper-bg: #f2f0e3;
+  --paper-dark: #2e2e2e;
+  --paper-muted: rgba(0, 0, 0, 0.05);
+  --paper-subtle: rgba(0, 0, 0, 0.05);
 }
 
 :root[data-theme='dark'] {
-  --zen-paper: #1f1f1f;
-  --zen-dark: #d1cfc0;
-  --zen-muted: rgba(255, 255, 255, 0.05);
-  --zen-subtle: rgba(255, 255, 255, 0.1);
+  --paper-bg: #1f1f1f;
+  --paper-dark: #d1cfc0;
+  --paper-muted: rgba(255, 255, 255, 0.05);
+  --paper-subtle: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
@@ -114,6 +112,7 @@ h1 .italic {
   font-style: normal;
 }
 
+.paper-link,
 .zen-link {
   @apply text-coral underline underline-offset-4;
 }

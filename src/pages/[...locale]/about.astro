@@ -17,7 +17,7 @@ const {
   <main class="container flex min-h-screen w-full flex-col gap-24 py-24">
     <div class="flex w-full flex-col gap-6">
       <Description class="text-6xl leading-none font-bold">{about.title}</Description>
-      <Description class="max-w-4xl text-lg opacity-80 leading-relaxed">
+      <Description class="max-w-4xl text-lg leading-relaxed opacity-80">
         {about.description}
       </Description>
       <Button
@@ -38,15 +38,20 @@ const {
         {
           Object.entries(about.mainTeam.members).map(([team, members]) => (
             <div class="flex flex-col gap-4">
-              <div class="text-2xl font-semibold text-coral">
+              <div class="text-coral text-2xl font-semibold">
                 {about.mainTeam.subTitle[team as keyof typeof about.mainTeam.subTitle]}
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {Object.entries(members).map(([_key, member]) => (
                   <div class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200">
-                    <div class="text-xl font-bold flex items-center justify-between">
+                    <div class="flex items-center justify-between text-xl font-bold">
                       {member.link && typeof member.link === 'string' ? (
-                        <a href={member.link} target="_blank" rel="noopener noreferrer" class="zen-link font-bold">
+                        <a
+                          href={member.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="paper-link font-bold"
+                        >
                           {member.name} &nearr;
                         </a>
                       ) : (
@@ -68,19 +73,22 @@ const {
       <Description class="opacity-80">
         {about.contributors.description}
       </Description>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
+      <div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2">
         <a
           href="https://github.com/Sree14hari/PaperLab"
           target="_blank"
           rel="noopener noreferrer"
-          class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200 group"
+          class="border-subtle bg-subtle/50 hover:border-coral group flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200"
         >
-          <div class="text-2xl font-bold flex items-center justify-between">
+          <div class="flex items-center justify-between text-2xl font-bold">
             {about.contributors.browser}
-            <span class="text-lg opacity-60 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <span class="text-lg opacity-60 transition-transform group-hover:translate-x-1"
+              >&rarr;</span
+            >
           </div>
           <p class="text-sm opacity-75">
-            Explore the Paper Lab open source ecosystem, report issues, submit feature requests, and contribute.
+            Explore the Paper Lab open source ecosystem, report issues, submit feature requests, and
+            contribute.
           </p>
         </a>
 
@@ -88,11 +96,13 @@ const {
           href="https://r3actr.work/"
           target="_blank"
           rel="noopener noreferrer"
-          class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200 group"
+          class="border-subtle bg-subtle/50 hover:border-coral group flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200"
         >
-          <div class="text-2xl font-bold flex items-center justify-between">
+          <div class="flex items-center justify-between text-2xl font-bold">
             {about.contributors.website}
-            <span class="text-lg opacity-60 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <span class="text-lg opacity-60 transition-transform group-hover:translate-x-1"
+              >&rarr;</span
+            >
           </div>
           <p class="text-sm opacity-75">
             Discover design, branding, and upcoming product innovations powered by R3ACTR.
@@ -102,4 +112,3 @@ const {
     </div>
   </main>
 </Layout>
-
