@@ -40,7 +40,13 @@ const {
         </button>
         <DropdownItems>
           <div class="navbar-dropdown">
-            <a class="dropdown-item" href="https://discord.gg/zen-browser">
+            <a class="dropdown-item" href={getLocalePath('/features')}>
+              <div class="dropdown-title">{menu.features}</div>
+              <div class="dropdown-description">
+                {menu.featuresDesc}
+              </div>
+            </a>
+            <a class="dropdown-item" href="https://discord.gg/gnjkkGT5RS" target="_blank" rel="noopener noreferrer">
               <div class="dropdown-title">{menu.discord}</div>
               <div class="dropdown-description">
                 {menu.discordDesc}
@@ -58,10 +64,10 @@ const {
         </button>
         <DropdownItems>
           <div class="navbar-dropdown !grid-cols-1 gap-1">
-            <a class="dropdown-item" href={getLocalePath('/donate')}>
-              <div class="dropdown-title">{menu.donate}</div>
+            <a class="dropdown-item" href={getLocalePath('/invest')}>
+              <div class="dropdown-title">{menu.invest || menu.donate}</div>
               <div class="dropdown-description">
-                {menu.donateDesc}
+                {menu.investDesc || menu.donateDesc}
               </div>
             </a>
             <a class="dropdown-item" href={getLocalePath('/about')}>
@@ -69,19 +75,6 @@ const {
               <div class="dropdown-description">
                 {menu.aboutUsDesc}
               </div>
-            </a>
-            <a class="dropdown-item" href="https://docs.zen-browser.app">
-              <div class="dropdown-title">{menu.documentation}</div>
-              <div class="dropdown-description">
-                {menu.documentationDesc}
-              </div>
-            </a>
-            <a class="dropdown-item" href="https://github.com/zen-browser" target="_blank">
-              <div class="dropdown-title">{menu.github}</div>
-              <div class="dropdown-description">
-                {menu.githubDesc}
-              </div>
-            </a>
           </div>
         </DropdownItems>
       </Dropdown>

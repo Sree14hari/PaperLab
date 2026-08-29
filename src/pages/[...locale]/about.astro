@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import Description from '~/components/Description.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
@@ -18,73 +17,89 @@ const {
   <main class="container flex min-h-screen w-full flex-col gap-24 py-24">
     <div class="flex w-full flex-col gap-6">
       <Description class="text-6xl leading-none font-bold">{about.title}</Description>
-      <Description class="max-w-4xl">
+      <Description class="max-w-4xl text-lg opacity-80 leading-relaxed">
         {about.description}
       </Description>
-      <Button href="/donate" class="w-fit" isPrimary>{about.littleHelp}</Button>
+      <Button
+        href="https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+        class="w-fit"
+        isPrimary
+      >
+        {about.littleHelp}
+      </Button>
     </div>
-    <div class="flex w-full flex-col gap-4">
+
+    <div class="flex w-full flex-col gap-6">
       <div class="text-4xl leading-none font-bold lg:text-5xl">{about.mainTeam.title}</div>
-      <Description>
+      <Description class="opacity-80">
         {about.mainTeam.description}
       </Description>
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-8">
         {
           Object.entries(about.mainTeam.members).map(([team, members]) => (
-            <div class="flex flex-col gap-2">
-              <div class="text-3xl font-semibold">
+            <div class="flex flex-col gap-4">
+              <div class="text-2xl font-semibold text-coral">
                 {about.mainTeam.subTitle[team as keyof typeof about.mainTeam.subTitle]}
               </div>
-              <ul class="flex flex-col gap-2">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(members).map(([_key, member]) => (
-                  <li class="text-sm">
-                    {member.link && typeof member.link === 'string' ? (
-                      <a href={member.link}>
-                        <strong class="zen-link font-bold">{member.name}</strong>
-                      </a>
-                    ) : (
-                      <strong class="font-bold">{member.name}</strong>
-                    )}
-                    <span class="opacity-80">: {member.description}</span>
-                  </li>
+                  <div class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200">
+                    <div class="text-xl font-bold flex items-center justify-between">
+                      {member.link && typeof member.link === 'string' ? (
+                        <a href={member.link} target="_blank" rel="noopener noreferrer" class="zen-link font-bold">
+                          {member.name} &nearr;
+                        </a>
+                      ) : (
+                        <span class="font-bold">{member.name}</span>
+                      )}
+                    </div>
+                    <p class="text-sm opacity-75">{member.description}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))
         }
       </div>
     </div>
-    <div class="flex w-full flex-col gap-4">
+
+    <div class="flex w-full flex-col gap-6">
       <div class="text-4xl leading-none font-bold lg:text-5xl">{about.contributors.title}</div>
-      <Description>
+      <Description class="opacity-80">
         {about.contributors.description}
       </Description>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl"
-          >{about.contributors.browser}</Description
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
+        <a
+          href="https://github.com/Sree14hari/PaperLab"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200 group"
         >
-        <a href="https://github.com/zen-browser/desktop/graphs/contributors"
-          ><Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/desktop"
-            alt="Contributors"
-            width={500}
-            height={500}
-          /></a
+          <div class="text-2xl font-bold flex items-center justify-between">
+            {about.contributors.browser}
+            <span class="text-lg opacity-60 group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+          <p class="text-sm opacity-75">
+            Explore the Paper Lab open source ecosystem, report issues, submit feature requests, and contribute.
+          </p>
+        </a>
+
+        <a
+          href="https://r3actr.work/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-subtle bg-subtle/50 hover:border-coral flex flex-col gap-2 rounded-2xl border p-6 transition-all duration-200 group"
         >
-      </div>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl"
-          >{about.contributors.website}</Description
-        >
-        <a href="https://github.com/zen-browser/www/graphs/contributors"
-          ><Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/www"
-            alt="Contributors (website)"
-            width={500}
-            height={500}
-          /></a
-        >
+          <div class="text-2xl font-bold flex items-center justify-between">
+            {about.contributors.website}
+            <span class="text-lg opacity-60 group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+          <p class="text-sm opacity-75">
+            Discover design, branding, and upcoming product innovations powered by R3ACTR.
+          </p>
+        </a>
       </div>
     </div>
   </main>
 </Layout>
+

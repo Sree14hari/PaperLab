@@ -1,9 +1,10 @@
 export const PUBLIC_ROUTES = [
   '/',
-  '/welcome',
+  '/features',
   '/about',
   '/privacy-policy',
-  '/download',
+  '/terms-and-conditions',
   '/donate',
-  '/whatsnew',
+  '/invest',
+  '/pricing',
 ] as const

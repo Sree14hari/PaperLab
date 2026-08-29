@@ -46,7 +46,12 @@ const {
         <div class="mb-2 font-bold">{menu.gettingStarted}</div>
         <ul class="ml-4 space-y-2">
           <li>
-            <a href="https://discord.gg/zen-browser" class="text-dark hover:text-coral block"
+            <a href={getLocalePath('/features')} class="text-dark hover:text-coral block"
+              >{menu.features}</a
+            >
+          </li>
+          <li>
+            <a href="https://discord.gg/gnjkkGT5RS" target="_blank" rel="noopener noreferrer" class="text-dark hover:text-coral block"
               >{menu.discord}</a
             >
           </li>
@@ -57,27 +62,14 @@ const {
         <div class="mb-2 font-bold">{menu.usefulLinks}</div>
         <ul class="ml-4 space-y-2">
           <li>
-            <a href={getLocalePath('/donate')} class="text-dark hover:text-coral block"
-              >{menu.donate}</a
+            <a href={getLocalePath('/invest')} class="text-dark hover:text-coral block"
+              >{menu.invest || menu.donate}</a
             >
           </li>
           <li>
             <a href={getLocalePath('/about')} class="text-dark hover:text-coral block"
               >{menu.aboutUs}</a
             >
-          </li>
-          <li>
-            <a href="https://docs.zen-browser.app" class="text-dark hover:text-coral block"
-              >{menu.documentation}</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/zen-browser"
-              target="_blank"
-              class="text-dark hover:text-coral block">{menu.github}</a
-            >
-          </li>
         </ul>
       </li>
       <!-- Extra Links -->

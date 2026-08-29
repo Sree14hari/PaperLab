@@ -1,0 +1,138 @@
+---
+import { getLocale, getPath } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+
+const pricing = {
+	"currency": "USD",
+	"note": "Prices are subject to change.",
+	"plans": [
+		{
+			"id": "free",
+			"name": "Free",
+			"tagline": "Essential tools for students and individual writers",
+			"price": 0,
+			"price_note": "Free forever",
+			"cta": { "label": "Start Writing Free", "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" },
+			"features": [
+				"3 projects",
+				"Unlimited diagram boards",
+				"Unlimited compiles",
+				"Full LaTeX editor",
+				"Single boba pet",
+				"IEEE and journal templates",
+				".reporter exports and imports"
+			]
+		},
+		{
+			"id": "pro",
+			"name": "Pro",
+			"tagline": "Advanced LaTeX engine & unlimited features",
+			"price": 10,
+			"price_note": "/month",
+			"cta": { "label": "Buy Premium", "href": getLocalePath('/pricing') },
+			"tag": "Most Popular",
+			"featured": true,
+			"features": [
+				"Everything in Free Plan",
+				"Unlimited folders",
+				"Version control",
+				"Preview tree",
+				"Custom pets",
+				"Citation manager",
+				"Collaboration (future update)"
+			]
+		}
+	]
+}
+---
+
+<section id="pricing" class="relative flex w-full flex-col py-12 text-start lg:py-36">
+  <div class="mb-12 text-center">
+    <h2 class="mb-2 text-4xl font-bold sm:text-6xl">Simple, transparent pricing</h2>
+    <p class="text-lg opacity-80 lg:mx-auto lg:w-1/2">
+      Focus on your research, not your wallet. Choose the plan that works for you.
+    </p>
+  </div>
+
+  <div class="mx-auto flex w-full max-w-5xl flex-col gap-6 lg:flex-row">
+    {
+      pricing.plans.map((plan) => (
+        <div class={`relative flex flex-1 flex-col rounded-3xl p-8 shadow-lg transition-transform hover:-translate-y-1 ${plan.featured ? 'bg-dark text-paper border-2 border-coral scale-105' : 'bg-subtle text-dark border border-muted'}`}>
+          {plan.featured && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-sm font-bold text-white">
+              {plan.tag}
+            </div>
+          )}
+          
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold">{plan.name}</h3>
+            <p class={`mt-2 text-sm ${plan.featured ? 'opacity-90' : 'opacity-70'}`}>{plan.tagline}</p>
+          </div>
+
+          <div class="mb-6 flex items-end gap-2">
+            <span class="text-5xl font-extrabold price-amount" data-price={plan.price}>${plan.price}</span>
+            <span class={`text-lg font-medium ${plan.featured ? 'opacity-90' : 'opacity-70'}`}>{plan.price_note}</span>
+          </div>
+
+          <a 
+            href={plan.cta.href} 
+            target={plan.cta.href.startsWith('http') ? '_blank' : undefined}
+            rel={plan.cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class={`mb-8 flex w-full justify-center rounded-xl py-3 font-semibold transition-colors ${plan.featured ? 'bg-coral text-white hover:opacity-90' : 'bg-muted text-dark hover:bg-dark hover:text-paper'}`}
+          >
+            {plan.cta.label}
+          </a>
+
+          <div class="flex-1">
+            <p class="mb-4 font-semibold">What's included:</p>
+            <ul class="flex flex-col gap-3">
+              {plan.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg class={`h-5 w-5 flex-shrink-0 ${plan.featured ? 'text-coral' : 'text-coral'}`} viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script is:inline>
+  (function() {
+    try {
+      const updatePricing = () => {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        if (tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta') {
+          const priceElements = document.querySelectorAll('.price-amount');
+          priceElements.forEach(el => {
+            const price = el.getAttribute('data-price');
+            if (price === "10") {
+              el.innerHTML = '&#8377;99';
+            } else if (price === "0") {
+              el.innerHTML = '&#8377;0';
+            }
+          });
+        }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updatePricing);
+      } else {
+        updatePricing();
+      }
+    } catch (e) {
+      console.error("Error setting regional pricing:", e);
+    }
+  })();
+</script>
+
+<style>
+  @reference '../styles/global.css';
+</style>

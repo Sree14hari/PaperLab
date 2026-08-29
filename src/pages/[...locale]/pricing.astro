@@ -1,0 +1,99 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+import Title from '~/components/Title.astro'
+import Description from '~/components/Description.astro'
+import PricingCard from '~/components/PricingCard.astro'
+import Button from '~/components/Button.astro'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const {
+  routes: { pricing }
+} = getUI(locale)
+---
+
+<Layout title={`${pricing.title} - Paper Lab`} description={pricing.text}>
+  <main class="flex min-h-screen flex-col items-center justify-center px-4 py-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl w-full flex flex-col gap-16">
+      
+      <!-- Hero Section -->
+      <section class="flex flex-col items-center text-center gap-6">
+        <h2 class="text-coral font-bold tracking-wider uppercase text-sm">{pricing.subtitle}</h2>
+        <Title class="max-w-3xl !text-4xl sm:!text-5xl md:!text-6xl">{pricing.title}</Title>
+        <Description class="max-w-2xl text-lg opacity-80">
+          {pricing.text}
+        </Description>
+      </section>
+
+      <!-- Pricing Cards -->
+      <section class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+        {pricing.plans.map((plan: any) => (
+          <PricingCard 
+            id={plan.id}
+            title={plan.name}
+            tagline={plan.tagline}
+            prices={plan.prices}
+            pricesNotes={plan.prices_notes}
+            tag={plan.tag}
+            featured={plan.featured}
+            features={plan.features}
+            cta={plan.cta}
+          />
+        ))}
+      </section>
+
+      <!-- Regional Pricing Script -->
+      <script is:inline>
+        (function() {
+          try {
+            const updatePricing = () => {
+              const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+              if (tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta') {
+                const priceElements = document.querySelectorAll('.card--pricing-price__amount, [data-price-annually]');
+                priceElements.forEach(el => {
+                  const price = el.getAttribute('data-price-annually');
+                  if (price === "10") {
+                    el.innerHTML = '&#8377;99';
+                  } else if (price === "0") {
+                    el.innerHTML = '&#8377;0';
+                  }
+                });
+                const noteElements = document.querySelectorAll('[data-price-annually-note], [data-price-monthly-note]');
+                noteElements.forEach(el => {
+                  el.innerHTML = '/month (billed monthly)';
+                });
+              }
+            };
+            
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', updatePricing);
+            } else {
+              updatePricing();
+            }
+          } catch (e) {
+            console.error("Error setting regional pricing:", e);
+          }
+        })();
+      </script>
+
+      <!-- FAQ Section -->
+      <section class="mx-auto max-w-3xl w-full flex flex-col items-center text-center gap-6 mt-12 border-t border-dark/10 pt-16">
+        <h2 class="text-coral font-bold tracking-wider uppercase text-sm">{pricing.faq.subtitle}</h2>
+        <Title class="!text-3xl">{pricing.faq.title}</Title>
+        
+        <div class="mt-8 flex flex-col gap-6 text-left w-full">
+          <div class="bg-subtle p-6 rounded-2xl border border-dark/5">
+            <h3 class="font-bold font-headings text-lg mb-2">What happens if I cancel my Pro subscription?</h3>
+            <p class="text-dark/70 text-sm">Your account will revert to the Free plan at the end of your billing cycle. You'll keep access to your existing documents, but won't be able to use premium features like custom pets or advanced export options until you resubscribe.</p>
+          </div>
+          <div class="bg-subtle p-6 rounded-2xl border border-dark/5">
+            <h3 class="font-bold font-headings text-lg mb-2">Is there a discount for academic institutions?</h3>
+            <p class="text-dark/70 text-sm">Yes, we offer bulk licensing and discounts for university labs and academic institutions. Please contact us via the Invest/Partner page for more details.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</Layout>

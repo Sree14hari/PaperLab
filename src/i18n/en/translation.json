@@ -4,11 +4,26 @@
       "title": "Paper Lab",
       "hero": {
         "title": [
-          { "text": "Write ", "highlight": false },
-          { "text": "Smarter.", "highlight": true },
-          { "text": "\n", "highlight": false },
-          { "text": "Format ", "highlight": false },
-          { "text": "Automatically.", "highlight": true }
+          {
+            "text": "Write ",
+            "highlight": false
+          },
+          {
+            "text": "Smarter.",
+            "highlight": true
+          },
+          {
+            "text": "\n",
+            "highlight": false
+          },
+          {
+            "text": "Format ",
+            "highlight": false
+          },
+          {
+            "text": "Automatically.",
+            "highlight": true
+          }
         ],
         "description": [
           "Built for academics and professionals.",
@@ -20,7 +35,11 @@
         }
       },
       "features": {
-        "titles": ["Formatting ", "made ", "simple"],
+        "titles": [
+          "Formatting ",
+          "made ",
+          "simple"
+        ],
         "description": "Paper Lab is packed with features that help you stay productive and focused. Focus on writing, and let us handle the complex LaTeX formatting.",
         "featureTabs": {
           "workspaces": {
@@ -43,25 +62,21 @@
       },
       "sponsors": {
         "title": "Our Sponsors",
-        "description": "We are grateful to our sponsors for their support. They help us to keep the project alive.<br />You can also be part of this journey by <a href=\"/donate\" class=\"zen-link\">donating to us directly</a>!",
+        "description": "A huge thank you to our incredible sponsors for making this project possible.<br />Want to see your logo here? <a href=\"/donate\" class=\"zen-link\">Support us directly</a>!",
         "sponsors": {
-          "tuta": {
-            "name": "Tuta",
-            "url": "https://tuta.com/"
-          },
-          "blacksmith": {
-            "name": "BlackSmith",
-            "url": "https://www.blacksmith.sh/"
-          },
-          "crowdin": {
-            "name": "Crowdin",
-            "url": "https://crowdin.com/"
+          "r3actr": {
+            "name": "R3ACTR",
+            "url": "https://r3actr.work/"
           }
         }
       },
       "community": {
-        "title": ["Our ", "Core ", "Values"],
-        "description": "We make it not only a priority, but a necessity to ensure that Zen always strikes the right balance between beauty, performance, and privacy.",
+        "title": [
+          "Citation ",
+          "Made ",
+          "Easy"
+        ],
+        "description": "Focus on your research, not your references. Automatically format citations and bibliographies in any academic style with zero hassle.",
         "lists": {
           "freeAndOpenSource": {
             "title": "Free and open-source",
@@ -83,352 +98,395 @@
         }
       }
     },
-    "mods": {
-      "title": "Zen Mods",
-      "description": "Browse our diverse collection of Zen Mods, community-made plugins and themes for Zen Browser. Discover a theme to match every mood, and a plugin to fulfill every requirement. Start customizing your browser experience today!",
-      "pagination": {
-        "pagination": "{input} of {totalPages} ({totalItems} items)"
-      },
-      "search": "Type to search...",
-      "by": "by",
-      "sort": {
-        "lastCreated": "Last created",
-        "lastUpdated": "Last updated",
-        "perPage": "Per page"
-      },
-      "noResults": "No results found",
-      "noResultsDescription": "Try searching for a different term or check back later.",
-      "slug": {
-        "title": "{name} - Zen Mods",
-        "description": "Learn more about {name} mod available on Zen Browser",
-        "alert": {
-          "description": "You need to have Zen Browser installed to install this theme.",
-          "button": "Download now!"
-        },
-        "createdBy": "Created by {author} • <b>v{version}</b>",
-        "creationDate": "Creation date: <b>{createdAt}</b>",
-        "latestUpdate": "Latest update: <b>{updatedAt}</b>",
-        "visitModHomepage": "Visit mod homepage",
-        "installMod": "Install Mod 🎉",
-        "uninstallMod": "Uninstall Mod",
-        "back": "Back"
-      }
-    },
-    "releaseNotes": {
-      "topSection": {
-        "title": "Changelog",
-        "description": "Stay up to date with the latest changes to Zen! Since the <a class=\"zen-link\" href=\"#1.0.0-a.1\">first release</a> till <a class=\"zen-link\" href=\"#{latestVersion}\">{latestVersion}</a>, we've been working hard to make Zen Browser the best it can be. Thanks everyone for your feedback! ❤️"
-      },
-      "list": {
-        "support": "Give us some support!",
-        "navigateToVersion": "Navigate to version..."
-      },
-      "itemType": {
-        "fix": "Fixed",
-        "feature": "Added",
-        "known": "Known",
-        "break": "Breaking",
-        "theme": "Theme",
-        "security": "Security",
-        "change": "Change"
-      },
-      "backToTop": "Back to the top",
-      "chooseVersion": "Choose version",
-      "components": {
-        "releaseNoteItem": {
-          "twilight": "Twilight",
-          "twilightChanges": "Twilight changes",
-          "releaseChanges": "v{version}",
-          "firefoxVersion": "Firefox {version}",
-          "githubRelease": "GitHub Release",
-          "workflowRun": "Workflow run",
-          "compareChanges": "Compare changes",
-          "twilightWarning": "Please note that Twilight is a pre-release version of Zen Browser. It may contain bugs and unfinished features.",
-          "reportIssues": " If you encounter any issues, please report them on <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://github.com/zen-browser/desktop/issues/\" class=\"zen-link\">the issues page</a>.",
-          "learnMore": "Learn more",
-          "viewIssue": "View issue number {issue} on GitHub"
-        }
-      },
-      "slug": {
-        "title": "Release notes",
-        "redirect": "Redirecting to release notes for version {version}..."
-      }
-    },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected.",
-      "littleHelp": "A little help?",
+      "title": "About Paper Lab",
+      "description": "Paper Lab is a modern academic report and research paper editor designed to streamline writing, citations, and publication. We believe writing technical and scholarly work should be distraction-free, beautifully formatted, and accessible to students and researchers worldwide.",
+      "littleHelp": "Get Paper Lab",
       "mainTeam": {
-        "title": "Main Team",
-        "description": "This list shows the main team members who are working hard to bring you the best browsing experience.",
+        "title": "Team & Creators",
+        "description": "The creators and contributors driving the vision and development of Paper Lab.",
         "subTitle": {
-          "browser": "Browser",
-          "website": "Website and Branding"
+          "core": "Core Team & Contributors"
         },
         "members": {
-          "browser": {
-            "mauro": {
-              "name": "Mauro V.",
-              "description": "Creator, Main Developer",
-              "link": "https://cheff.dev/"
+          "core": {
+            "sreehari": {
+              "name": "Sreehari R",
+              "description": "Developer and Technical",
+              "link": "https://github.com/Sree14hari"
             },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "Active contributor and helps with MacOS builds",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "Huge contributor on theme functionalities",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "Site Reliability Engineer (SRE) and code signing.",
+            "abhinav": {
+              "name": "Abhinav R",
+              "description": "Design and Social ",
               "link": false
             },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "MacOS certificate and app notarization maintainer",
+            "kalidas": {
+              "name": "Kalidas V S",
+              "description": "Testing & QA",
               "link": false
             },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "Active contributor with great contributions",
-              "link": "https://github.com/BrhmDev"
+            "neeraj": {
+              "name": "Neeraj Sukumaran",
+              "description": "Design and Testing",
+              "link": false
             },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "Active contributor with split views / workspaces",
-              "link": "https://github.com/kristijanribaric"
+            "diya": {
+              "name": "Diya Thresia Daniel",
+              "description": "Ideation and Feature Improvement",
+              "link": false
             },
-            "larvey": {
-              "name": "Larvey",
-              "description": "AUR maintainer",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "Big contributor with the gradient generator",
-              "link": "https://github.com/StudioMovieGirl"
-            }
-          },
-          "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "Core Website Architect, Spearheading Refactoring and Technical Enhancements",
-              "link": "https://github.com/taroj1205"
-            },
-            "jace": {
-              "name": "Jace",
-              "description": "Contributes to website design and branding",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "Active contributor, and very active in issue handling and website management",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "Branding and design",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "Active contributor and release notes writer",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "Documentation writer",
-              "link": "https://iamjafeth.com/"
+            "neha": {
+              "name": "Neha Siju",
+              "description": "Promotion and Reach",
+              "link": false
             }
           }
         }
       },
       "contributors": {
-        "title": "Contributors",
-        "description": "This list shows the contributors who have helped us to make Zen Browser the best it can be.",
-        "browser": "Browser",
-        "website": "Website"
+        "title": "Community & Ecosystem",
+        "description": "Paper Lab thrives on feedback, templates, and contributions from students, researchers, and open source developers.",
+        "browser": "GitHub Repository",
+        "website": "R3ACTR Ecosystem"
+      }
+    },
+    "features": {
+      "hero": {
+        "badge": "Paper Lab Features",
+        "title": "Everything You Need for Academic & Technical Writing",
+        "description": "Discover our comprehensive suite of tools designed to streamline report writing, reference management, figure design, and LaTeX compilation."
+      },
+      "cta": {
+        "title": "Start writing your next paper today",
+        "description": "Join researchers, students, and professionals creating publication-ready academic reports effortlessly.",
+        "buttonText": "Start writing for free!",
+        "buttonLink": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+      },
+      "sections": [
+        {
+          "title": "Smart Writing & Editing",
+          "subtitle": "Core Editor",
+          "features": [
+            {
+              "title": "Visual WYSIWYG Editor",
+              "description": "Write intuitively with rich formatting, live A4 document layout, and instant visual feedback without managing raw markup manually.",
+              "icon": "document-text"
+            },
+            {
+              "title": "Monaco LaTeX Mode",
+              "description": "Toggle into a full-featured Monaco LaTeX code editor complete with syntax highlighting, line numbers, and autocompletion.",
+              "icon": "code-bracket"
+            },
+            {
+              "title": "Modular Section Tree",
+              "description": "Organize chapters, sub-sections, and appendices with a drag-and-drop outline tree to keep long manuscripts structured.",
+              "icon": "folder"
+            },
+            {
+              "title": "Real-Time A4 Live Preview",
+              "description": "Preview your exact page margins, headers, footers, and page breaks in real time as you write.",
+              "icon": "arrows-right-left"
+            }
+          ]
+        },
+        {
+          "title": "Citations & References",
+          "subtitle": "Global Bibliography",
+          "features": [
+            {
+              "title": "Global Citation Library",
+              "description": "Maintain a centralized repository of BibTeX entries across all your research projects and documents.",
+              "icon": "at-symbol"
+            },
+            {
+              "title": "One-Click Citation Insertion",
+              "description": "Search and insert inline citations directly into your text with automatic citation keys and bibliography generation.",
+              "icon": "clipboard-document-check"
+            },
+            {
+              "title": "Journal Style Formatting",
+              "description": "Format citations automatically for major academic styles including IEEE, APA, Nature, Springer, and Harvard.",
+              "icon": "document-chart-bar"
+            },
+            {
+              "title": "BibTeX Import & Sync",
+              "description": "Import existing .bib files or sync references directly from Mendeley, Zotero, and Google Scholar entries.",
+              "icon": "arrow-down-tray"
+            }
+          ]
+        },
+        {
+          "title": "Diagrams & Exporting",
+          "subtitle": "Graphics & Publishing",
+          "features": [
+            {
+              "title": "Research Vector Diagramming",
+              "description": "Draw flowcharts, system architectures, and scientific diagrams right inside Paper Lab.",
+              "icon": "light-bulb"
+            },
+            {
+              "title": "Vector & Image Figure Exports",
+              "description": "Export crisp, high-resolution figures in SVG, PNG, and vector PDF formats ready for journal submission.",
+              "icon": "chart-bar"
+            },
+            {
+              "title": "Publication-Ready PDF Export",
+              "description": "Compile publication-grade PDF documents with clean typography, headers, footers, and equation numbering.",
+              "icon": "flag"
+            },
+            {
+              "title": "LaTeX Source Zip Export",
+              "description": "Download raw compiled LaTeX source archives including figures, templates, and bib files anytime.",
+              "icon": "server-stack"
+            }
+          ]
+        }
+      ]
+    },
+    "invest": {
+      "title": "Invest & Partner with Paper Lab",
+      "description": "We are building the next generation of academic and technical document authoring tools. If you are an angel investor, venture partner, or university institution interested in supporting Paper Lab, connect with our founding team directly.",
+      "email": {
+        "title": "Email Us Directly",
+        "description": "Reach out directly for pitch decks, investment terms, and institutional deployment partnerships.",
+        "address": "r3actr@gmail.com",
+        "button": "Send Email",
+        "link": "mailto:r3actr@gmail.com?subject=Paper%20Lab%20Investment%20%26%20Partnership"
+      },
+      "discord": {
+        "title": "Join Official Discord",
+        "description": "Join our official Discord community to chat directly with our founders, developers, and team members in real-time.",
+        "button": "Connect on Discord",
+        "link": "https://discord.gg/gnjkkGT5RS"
+      },
+      "highlights": {
+        "title": "Why Partner with Paper Lab?",
+        "market": {
+          "title": "Massive Academic Market",
+          "description": "Millions of researchers, students, and professors struggle daily with complex LaTeX compilation and fragmented reference management tools."
+        },
+        "privacy": {
+          "title": "Local-First Privacy",
+          "description": "Zero telemetry and completely local document storage fulfill the strict compliance requirements of leading research universities and labs."
+        },
+        "innovation": {
+          "title": "All-in-One Writing Suite",
+          "description": "Seamlessly blending visual WYSIWYG editing, raw Monaco LaTeX code, automatic citations, and vector diagramming into a single cohesive ecosystem."
+        }
       }
     },
     "donate": {
-      "title": "Donate",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us.",
+      "title": "Invest & Partner with Paper Lab",
+      "description": "We are building the next generation of academic and technical document authoring tools. If you are an angel investor, venture partner, or university institution interested in supporting Paper Lab, connect with our founding team directly.",
       "patreon": {
-        "title": "Patreon",
-        "description": "Patreon allows you to support us with a monthly donation. You can choose the level of support that works best for you.",
-        "button": "Go to Patreon"
+        "title": "Email Inquiry",
+        "description": "Reach out directly for pitch decks, investment terms, and institutional deployment partnerships.",
+        "button": "Send Email"
       },
       "koFi": {
-        "title": "Ko-fi",
-        "description": "Ko-fi allows you to support us with a one-time donation. You can choose the amount that works best for you. Monthly donations are also available.",
-        "button": "Go to Ko-fi"
-      }
-    },
-    "download": {
-      "title": "Start your journey",
-      "description": "Download Zen for your platform and experience a more mindful internet browsing experience.<br/>Zen is available for macOS, Windows, and Linux.",
-      "twilightInfo": "You're viewing Twilight releases. These are pre-release builds of Zen Browser with the latest experimental features and updates.",
-      "beta": "Zen is currently in ",
-      "otherDownload": "If your device has been wrongly detected, <a href='https://github.com/zen-browser/desktop/releases/latest/' class='zen-link'>see other downloads</a>.<br />Please report any issues you encounter on <a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-[1px]'>GitHub</a>.",
-      "alertInfo": {
-        "description": "You're viewing Twilight releases. These are pre-release builds of Zen Browser with the latest experimental features and updates."
-      },
-      "platformSelector": {
-        "title": "Platform Selector",
-        "description": "Select your platform to download Zen."
-      },
-      "additionalResources": {
-        "title": "Additional Resources",
-        "sourceCode": {
-          "title": "Source Code",
-          "description": "Explore Zen's source code on GitHub. Contribute to the project or build your own version."
-        },
-        "documentation": {
-          "title": "Documentation",
-          "description": "Access comprehensive documentation, guides, and tutorials for Zen."
-        }
-      },
-      "securityNotice": {
-        "title": "Verified & Secure Downloads",
-        "description": "All Zen downloads are signed and verified for your security. We recommend downloading directly from our official website or GitHub repository. If your download seems broken or gets flagged by your antivirus, please <a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-1'>report it to us</a>."
-      },
-      "platformNames": {
-        "mac": "macOS",
-        "windows": "Windows",
-        "linux": "Linux"
-      },
-      "platformDescriptions": {
-        "mac": "Works on both new Apple (M-Series) and older Intel Macs.<br />Requires macOS 11.0 or later.",
-        "windows": "Works on Windows 10 and Windows 11.<br />Not sure which version to get? Most people should choose the 64-bit installer.",
-        "linux": "Works with many Linux versions.<br />Pick the download that matches your system."
-      },
-      "links": {
-        "macos": { "universal": "Universal" },
-        "windows": { "64bit": "64-bit (Recommended)", "ARM64": "ARM64" },
-        "linux": {
-          "flathub": "Flathub",
-          "x86_64": "Tarball",
-          "aarch64": "Tarball"
-        }
-      },
-      "buttonCard": {
-        "copy": "Copy",
-        "showChecksum": "Show SHA-256",
-        "beta": "Beta"
+        "title": "Discord",
+        "description": "Join our official Discord community to chat directly with our founders, developers, and team members in real-time.",
+        "button": "Connect on Discord"
       }
     },
     "privacyPolicy": {
       "title": "Privacy Policy",
-      "lastUpdated": "Last updated: 2025-02-5",
+      "lastUpdated": "Last updated: 2026-08-29",
       "sections": {
         "introduction": {
           "title": "Introduction",
-          "body": "Welcome to Zen! Your privacy is our priority. This Privacy Policy outlines the types of personal information we collect, how we use it, and the steps we take to protect your data when you use Zen.",
+          "body": "Welcome to Paper Lab! Your privacy is our priority. This Privacy Policy outlines how your data is handled when you use Paper Lab.",
           "summary": "We don't sell data - We don't collect data - We don't track you"
         },
         "noCollect": {
           "title": "1. Information We Do Not Collect",
-          "body": "Zen is designed with privacy in mind. We do not collect, store, or share any of your personal data. Here's what that means:"
+          "body": "Paper Lab is designed with privacy in mind. We do not collect, store, or share any of your personal data. Here's what that means:"
         },
         "noTelemetry": {
           "title": "1.1. No Telemetry",
           "body": "We do not collect any telemetry data or crash reports.",
-          "body2": "Zen has stripped out telemetry built into Mozilla Firefox. We have removed all telemetry data collection and crash reports."
+          "body2": "Paper Lab does not include any analytics or telemetry."
         },
         "noPersonalData": {
           "title": "1.2. No Personal Data Collection",
-          "body": "Zen does not collect any personal information such as your IP address, browsing history, search queries, or form data."
+          "body": "Paper Lab does not collect any personal information such as your IP address or document contents."
         },
         "noThirdParty": {
           "title": "1.3. No Third-Party Tracking",
-          "body": "We do not allow third-party trackers or analytics tools to operate within Zen. Your browsing activity remains entirely private and is not shared with any third party. Mozilla is not considered a third party as it is the base of Zen."
+          "body": "We do not allow third-party trackers or analytics tools to operate within Paper Lab. Your writing activity remains entirely private and is not shared with any third party."
         },
         "externalConnections": {
-          "title": "1.4. External connections made at startup",
-          "body": "Zen may make external connections at startup to check for updates and ensure the browser is up to date on plugins, addons, check for connectivity and Geolocation/push notifications services in order to comply with web standards. We, at Zen, do not collect any data from these connections, but they may be logged by third-party services or websites you visit. These connections are necessary for the proper functioning of the browser and are not used for tracking or profiling purposes. They can be disabled through the browser flags (about:config)."
+          "title": "1.4. External connections",
+          "body": "Paper Lab may make external connections to check for updates or to fetch templates. We do not collect any data from these connections. These connections are necessary for the proper functioning of the app and are not used for tracking or profiling purposes."
         },
         "localStorage": {
           "title": "2. Information Stored Locally on Your Device"
         },
         "browsingData": {
-          "title": "2.1. Browsing Data",
-          "body": "Zen stores certain data locally on your device to enhance your browsing experience. This includes:"
+          "title": "2.1. Document Data",
+          "body": "Paper Lab stores certain data locally on your device to enhance your writing experience. This includes:"
         },
         "cookies": {
-          "title": "Cookies",
-          "body": "Cookies are stored locally on your device and are not shared with Zen or any third party. You have full control over the management of cookies through the browser's settings."
+          "title": "Local Projects",
+          "body": "Your projects and documents are stored entirely locally on your device and are not shared with Paper Lab."
         },
         "cache": {
           "title": "Cache and Temporary Files",
-          "body": "Zen may store cache files and other temporary data locally to improve performance. These files can be cleared at any time through the browser's settings."
+          "body": "Paper Lab may store cache files (like LaTeX compilation artifacts) locally to improve performance."
         },
         "settings": {
           "title": "2.2. Settings and Preferences",
-          "body": "Any customizations, settings, and preferences you make within Zen are stored locally on your device. We do not have access to or control over this data."
+          "body": "Any customizations, settings, and preferences you make within Paper Lab are stored locally on your device. We do not have access to or control over this data."
         },
         "sync": {
           "title": "3. Sync Feature",
-          "body": "Zen offers a \"Sync\" feature, which is implemented using Mozilla Firefox's Sync feature. This feature allows you to synchronize your bookmarks, history, passwords, and other data across multiple devices. For this feature to work, your data is encrypted and stored on Mozilla's servers and is treated in accordance with their Privacy Policy. We, at Zen, cannot view any of this data.",
-          "link1": "Mozilla Firefox Sync",
-          "link2": "This is how we store your passwords"
+          "body": "Currently, Paper Lab does not have an active cloud sync feature. All data remains on your local file system.",
+          "link1": "",
+          "link2": ""
         },
         "addons": {
-          "title": "4. Add-ons and \"Mods\"",
-          "body": "You can install Add-ons from addons.mozilla.org. Zen periodically checks for updates to these Add-ons.\nYou can also install \"Mods\" from zen-browser.app/mods. These Mods are hosted by our services and follow the same privacy policy our website. We do not collect any data from these Mods, they are purely static content that is downloaded to your device."
+          "title": "4. Templates and Plugins",
+          "body": "You can install Templates and Plugins. These are hosted by our services. We do not collect any data from these downloads, they are purely static content."
         },
         "security": {
           "title": "5. Data Security",
-          "body": "Although Zen does not collect your data, we are committed to protecting the information that is stored locally on your device and, if you use the Sync feature, the encrypted data stored on Mozilla's servers. We recommend that you use secure passwords, enable device encryption, and regularly update your software to ensure your data remains safe.",
-          "note": "Note that most of the security measures are taken care by Mozilla Firefox."
+          "body": "Although Paper Lab does not collect your data, we are committed to protecting the information that is stored locally on your device. We recommend that you enable device encryption and regularly update your software to ensure your data remains safe.",
+          "note": "Note that your documents are only as secure as your local machine."
         },
         "control": {
           "title": "6. Your Control",
           "deletionTitle": "6.1. Data Deletion",
-          "deletionBody": "You have full control over all data stored locally on your device by Zen. You can clear your browsing data, cookies, and cache at any time using the browser's settings."
+          "deletionBody": "You have full control over all data stored locally on your device by Paper Lab. You can delete your projects and cache at any time."
         },
         "website": {
           "title": "7. Our Website and Services",
-          "body": "Zen's website and services do not use any third-party analytics, tracking, or CDN services. We do not collect any personal information from users visiting our website. The website is hosted on Cloudflare but with analytics and tracking disabled, Cloudflare may collect some analytics data from HTTP requests in order to provide security and performance improvements. However, this data is not linked to any personal information and is not used for tracking purposes.",
+          "body": "Paper Lab's website and services do not use any third-party analytics, tracking, or CDN services. We do not collect any personal information from users visiting our website.",
           "externalLinksTitle": "7.1. External links",
-          "externalLinksBody": "Zen may contain links to external websites or services that are not owned or operated by us. We are not responsible for the content or privacy practices of these sites. We recommend that you review the privacy policies of these sites before providing them with any personal information."
+          "externalLinksBody": "Paper Lab may contain links to external websites or services that are not owned or operated by us. We are not responsible for the content or privacy practices of these sites."
         },
         "changes": {
           "title": "8. Changes to This Privacy Policy",
-          "body": "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by updating the effective date at the top of this policy. Continued use of Zen after such changes constitutes your acceptance of the new terms."
+          "body": "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by updating the effective date at the top of this policy. Continued use of Paper Lab after such changes constitutes your acceptance of the new terms."
         },
         "otherTelemetry": {
-          "title": "9. Other telemetry done by Mozilla Firefox",
-          "body": "We try to disable all telemetry data collection in Zen. But, we may have missed some. Check the below links for more information.",
-          "firefoxPrivacyNotice": "Firefox Privacy Notice",
-          "forMoreInformation": "for more information."
+          "title": "9. Other telemetry",
+          "body": "We disable all telemetry data collection in Paper Lab.",
+          "firefoxPrivacyNotice": "",
+          "forMoreInformation": ""
         },
         "contact": {
           "title": "10. Contact Us",
-          "body": "If you have any questions or concerns about this Privacy Policy or Zen, please contact us at:",
+          "body": "If you have any questions or concerns about this Privacy Policy or Paper Lab, please contact us at:",
           "discord": "Discord: ",
-          "discordLink": "Zen's Discord",
+          "discordLink": "Paper Lab's Discord",
           "github": "GitHub: ",
           "githubLink": "Organization"
         }
       }
     },
-    "welcome": {
-      "title": ["Welcome ", "to ", "Zen!"]
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "Last updated: 2026-08-29",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "body": "Welcome to Paper Lab. By accessing or using our application, you agree to be bound by these Terms and Conditions."
+        },
+        "license": {
+          "title": "1. License to Use",
+          "body": "We grant you a limited, non-exclusive, non-transferable license to use Paper Lab for your personal or academic purposes."
+        },
+        "userContent": {
+          "title": "2. User Content",
+          "body": "You retain all rights to the documents and content you create using Paper Lab. We claim no ownership over your work."
+        },
+        "disclaimer": {
+          "title": "3. Disclaimer of Warranties",
+          "body": "Paper Lab is provided 'as is' without warranties of any kind. We do not guarantee that the software will be error-free or uninterrupted."
+        }
+      }
     },
-    "whatsNew": {
-      "title": "What's New in {latestVersion.version}!",
-      "reportIssue": "Report an issue",
-      "joinDiscord": "Join our Discord",
-      "readFullReleaseNotes": "Read the full release notes"
+    "welcome": {
+      "title": [
+        "Welcome ",
+        "to ",
+        "Zen!"
+      ]
     },
     "notFound": {
       "title": "Page Not Found",
       "description": "Sorry, the page you are looking for does not exist or has been moved.",
       "button": "Go Home"
+    },
+    "pricing": {
+      "title": "Choose the Plan That Fits Your Research Workflow",
+      "subtitle": "Paper Lab Pricing",
+      "text": "Start writing for free or upgrade for advanced vector diagramming, global citation sync, and priority cloud LaTeX compilation.",
+      "plans": [
+        {
+          "id": "free",
+          "name": "Free",
+          "tagline": "Essential tools for students and individual writers",
+          "prices": {
+            "annually": 0,
+            "monthly": 0
+          },
+          "prices_notes": {
+            "annually": "Free forever",
+            "monthly": "Free forever"
+          },
+          "cta": {
+            "label": "Start Writing Free",
+            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+          },
+          "features": [
+            "3 projects",
+            "Unlimited diagram boards",
+            "Unlimited compiles",
+            "Full LaTeX editor",
+            "Single boba pet",
+            "IEEE and journal templates",
+            ".reporter exports and imports"
+          ]
+        },
+        {
+          "id": "pro",
+          "name": "Pro",
+          "tagline": "Advanced LaTeX engine & unlimited features",
+          "prices": {
+            "annually": 10,
+            "monthly": 10
+          },
+          "prices_notes": {
+            "annually": "/month (billed monthly)",
+            "monthly": "/month (billed monthly)"
+          },
+          "cta": {
+            "label": "Buy Premium",
+            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+          },
+          "tag": "Most Popular",
+          "featured": true,
+          "features": [
+            "Everything in Free Plan",
+            "Unlimited folders",
+            "Version control",
+            "Preview tree",
+            "Custom pets",
+            "Citation manager",
+            "Collaboration (future update)"
+          ]
+        }
+      ],
+      "faq": {
+        "title": "Everything you need to know about plans & billing",
+        "subtitle": "Pricing FAQ"
+      },
+      "cta": {
+        "title": "Start writing your report with Paper Lab",
+        "text": "Join thousands of researchers and students creating publication-ready academic papers with ease.",
+        "buttonText": "Start writing for free!"
+      }
     }
   },
   "layout": {
@@ -445,24 +503,36 @@
       "description": "Stay up to date with the latest changes to Zen! Since the first release till {latestVersion}, we've been working hard to make Zen the best it can be. Thanks everyone for your feedback! ❤️"
     },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected."
+      "title": "About - Paper Lab",
+      "description": "Learn more about Paper Lab, the modern academic paper and report editor built for researchers and students."
+    },
+    "features": {
+      "title": "Features | Paper Lab",
+      "description": "Explore the complete feature set of Paper Lab — visual WYSIWYG editing, Monaco LaTeX editor, global citation management, research diagramming, and publication-ready exports."
+    },
+    "invest": {
+      "title": "Invest & Partner | Paper Lab",
+      "description": "Learn about investment, institutional grants, and partnership opportunities with Paper Lab."
     },
     "donate": {
-      "title": "Donate - Zen",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us."
+      "title": "Invest & Partner | Paper Lab",
+      "description": "Learn about investment, institutional grants, and partnership opportunities with Paper Lab."
     },
     "download": {
-      "title": "Download - Zen",
-      "description": "Download Zen for your platform and experience a more mindful internet browsing experience."
+      "title": "Download - Paper Lab",
+      "description": "Download Paper Lab and experience modern academic report and paper editing."
     },
     "privacyPolicy": {
-      "title": "Privacy Policy - Zen",
-      "description": "Your privacy is our priority. This Privacy Policy outlines the types of personal information we collect, how we use it, and the steps we take to protect your data when you use Zen."
+      "title": "Privacy Policy - Paper Lab",
+      "description": "Your privacy is our priority. This Privacy Policy outlines how your data is handled when you use Paper Lab."
+    },
+    "termsAndConditions": {
+      "title": "Terms and Conditions - Paper Lab",
+      "description": "Read the terms and conditions for using Paper Lab, the modern academic report editor."
     },
     "welcome": {
       "title": "Welcome!",
-      "description": "Welcome to Zen!"
+      "description": "Welcome to Paper Lab!"
     },
     "whatsNew": {
       "title": "What's New in {latestVersion.version}!"
@@ -472,45 +542,49 @@
     "footer": {
       "title": "Paper Lab",
       "description": "Modern Academic Report Editor. Built for academics and professionals.",
-      "download": "Download",
       "followUs": "Follow Us",
       "aboutUs": "About Us",
       "teamAndContributors": "Team & Contributors",
       "privacyPolicy": "Privacy Policy",
+      "termsAndConditions": "Terms & Conditions",
       "getStarted": "Get Started",
+      "features": "Features",
+      "invest": "Invest",
       "documentation": "Documentation",
-      "zenMods": "Paper Lab Templates",
-      "releaseNotes": "Release Notes",
       "getHelp": "Get Help",
       "securtiy": "Security",
       "discord": "Discord",
       "uptimeStatus": "Uptime Status",
       "reportAnIssue": "Report an Issue",
       "twilight": "Beta",
-      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='zen-link inline-block font-bold'>Paper Lab Team</a>"
+      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='zen-link font-bold whitespace-nowrap'>Paper Lab Team</a>"
     },
     "nav": {
       "brand": "Paper Lab",
       "menu": {
         "gettingStarted": "Getting Started",
         "usefulLinks": "Useful Links",
+        "features": "Features",
+        "featuresDesc": "Explore WYSIWYG editing, LaTeX, citations, and diagramming.",
         "mods": "Mods",
         "download": "Download",
         "discord": "Discord",
         "releaseNotes": "Release Notes",
-        "zenMods": "Zen Mods",
-        "tryZenMods": "Try Zen Mods",
-        "zenModsDesc": "Customize your browsing experience with Zen Mods.",
+        "zenMods": "Templates",
+        "tryZenMods": "Try Templates",
+        "zenModsDesc": "Enhance your documents with modern templates.",
         "releaseNotesDesc": "Stay up to date with the latest features and improvements.",
-        "discordDesc": "Join our community on Discord to chat with other Zen users!",
-        "donate": "Donate ❤️",
-        "donateDesc": "Support the development of Zen with a donation.",
+        "discordDesc": "Join our community on Discord to chat with other Paper Lab users!",
+        "invest": "Invest 💼",
+        "investDesc": "Partner with Paper Lab or explore investment opportunities.",
+        "donate": "Invest 💼",
+        "donateDesc": "Partner with Paper Lab or explore investment opportunities.",
         "aboutUs": "About Us 🌟",
-        "aboutUsDesc": "Learn more about the team behind Zen.",
+        "aboutUsDesc": "Learn more about Paper Lab and our mission.",
         "documentation": "Documentation",
-        "documentationDesc": "Learn how to use Zen with our documentation.",
+        "documentationDesc": "Learn how to use Paper Lab with our documentation.",
         "github": "GitHub",
-        "githubDesc": "Contribute to the development of Zen on GitHub.",
+        "githubDesc": "Contribute to the development of Paper Lab on GitHub.",
         "menu": "Menu"
       }
     }

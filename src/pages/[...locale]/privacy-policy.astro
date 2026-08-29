@@ -71,20 +71,29 @@ const {
       {privacyPolicy.sections.sync.title}
     </Title>
     <p>{privacyPolicy.sections.sync.body}</p>
-    <ul>
-      <li>
-        <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/mozilla-accounts/"
-          >{privacyPolicy.sections.sync.link1}</a
-        >
-      </li>
-      <li>
-        <a
-          class="zen-link"
-          href="https://support.mozilla.org/en-US/kb/how-firefox-securely-saves-passwords#:~:text=Firefox%20Desktop%20encrypts%20your%20passwords,cryptography%20to%20obscure%20your%20passwords."
-          >{privacyPolicy.sections.sync.link2}</a
-        >
-      </li>
-    </ul>
+    {
+      (privacyPolicy.sections.sync.link1 || privacyPolicy.sections.sync.link2) && (
+        <ul>
+          {privacyPolicy.sections.sync.link1 && (
+            <li>
+              <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/mozilla-accounts/">
+                {privacyPolicy.sections.sync.link1}
+              </a>
+            </li>
+          )}
+          {privacyPolicy.sections.sync.link2 && (
+            <li>
+              <a
+                class="zen-link"
+                href="https://support.mozilla.org/en-US/kb/how-firefox-securely-saves-passwords#:~:text=Firefox%20Desktop%20encrypts%20your%20passwords,cryptography%20to%20obscure%20your%20passwords."
+              >
+                {privacyPolicy.sections.sync.link2}
+              </a>
+            </li>
+          )}
+        </ul>
+      )
+    }
     <Title class="mt-16 text-4xl font-bold" id="4-add-ons-and-mods">
       {privacyPolicy.sections.addons.title}
     </Title>
@@ -123,14 +132,18 @@ const {
     <p>
       {privacyPolicy.sections.otherTelemetry.body}
     </p>
-    <ul>
-      <li>
-        Please check <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/"
-          >{privacyPolicy.sections.otherTelemetry.firefoxPrivacyNotice}</a
-        >
-        {privacyPolicy.sections.otherTelemetry.forMoreInformation}
-      </li>
-    </ul>
+    {
+      (privacyPolicy.sections.otherTelemetry.firefoxPrivacyNotice || privacyPolicy.sections.otherTelemetry.forMoreInformation) && (
+        <ul>
+          <li>
+            Please check <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/"
+              >{privacyPolicy.sections.otherTelemetry.firefoxPrivacyNotice}</a
+            >
+            {privacyPolicy.sections.otherTelemetry.forMoreInformation}
+          </li>
+        </ul>
+      )
+    }
     <Title class="mt-16 text-4xl font-bold" id="10-contact-us">
       {privacyPolicy.sections.contact.title}
     </Title>
@@ -140,13 +153,13 @@ const {
     <ul>
       <li>
         {privacyPolicy.sections.contact.discord}
-        <a class="zen-link" href="https://discord.gg/zen-browser">
+        <a class="zen-link" href="https://discord.gg/gnjkkGT5RS" target="_blank" rel="noopener noreferrer">
           {privacyPolicy.sections.contact.discordLink}
         </a>
       </li>
       <li>
         {privacyPolicy.sections.contact.github}
-        <a class="zen-link" href="https://github.com/zen-browser">
+        <a class="zen-link" href="https://github.com/Sree14hari/PaperLab" target="_blank" rel="noopener noreferrer">
           {privacyPolicy.sections.contact.githubLink}
         </a>
       </li>

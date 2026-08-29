@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description, ogImage, isHome, redirect } = Astro.props
 const defaultDescription =
-  'Zen Browser is built for speed, security, and true privacy. Download now to enjoy a beautifully-designed, distraction-free web experience packed with features.'
+  'Paper Lab is a modern academic report editor built for students and researchers. Features a full LaTeX engine, priority cloud compiles, and a WYSIWYG diagram editor.'
 import '@fontsource/bricolage-grotesque/400.css'
 import '@fontsource/bricolage-grotesque/500.css'
 import '@fontsource/bricolage-grotesque/600.css'
@@ -44,8 +44,10 @@ const locale = getLocale(Astro)
     {redirect ? <meta http-equiv="refresh" content={`0;url=${redirect}`} /> : null}
     <meta name="description" content={description ?? defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-0.xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.work')} />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab" />
 
     {
       isHome && (
@@ -57,16 +59,16 @@ const locale = getLocale(Astro)
             set:html={JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'Zen Browser',
-              url: 'https://zen-browser.app/',
+              name: 'Paper Lab',
+              url: 'https://paperlab.r3actr.work',
             })}
           />
         </>
       )
     }
 
-    <!-- ICO favicon as a fallback for browsers that don't support SVG favicons (Safari) -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -75,25 +77,34 @@ const locale = getLocale(Astro)
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Paper Lab" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:image" content={ogImage ?? new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href} />
+    <meta property="og:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <meta property="og:description" content={description ?? defaultDescription} />
     <meta property="og:color" content="#da755b" />
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@paperlab" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description ?? defaultDescription} />
+    <meta name="twitter:image" content={ogImage ?? new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href} />
+    <meta name="twitter:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <!-- RSS Feed -->
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Zen Browser Release Notes"
+      title="Paper Lab Release Notes"
       href={`${Astro.url.origin}/feed.xml`}
     />
 
     <script>
       // eslint-disable-next-line no-console
       console.log(
-        '%c✌️ Zen-Browser%c\nWelcome to a calmer internet!',
+        '%c📝 Paper Lab%c\nWelcome to a better research workflow!',
         'filter: invert(1); font-size: 28px; font-weight: bolder; font-family: "Rubik"; margin-top: 20px; margin-bottom: 8px;',
-        'color: #f76f53; font-size: 16px; font-family: "Rubik"; margin-bottom: 20px;'
+        'color: #ea580c; font-size: 16px; font-family: "Rubik"; margin-bottom: 20px;'
       )
     </script>
   </head>

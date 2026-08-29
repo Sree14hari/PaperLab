@@ -1,0 +1,55 @@
+---
+import Title from '~/components/Title.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+const {
+  routes: { termsAndConditions },
+  layout,
+} = getUI(locale)
+---
+
+<Layout title={layout.termsAndConditions.title} description={layout.termsAndConditions.description}>
+  <main class="mx-auto mt-52 w-1/2 pb-24">
+    <Title id="terms-and-conditions" class="xl:text-6xl xl:leading-none">{termsAndConditions.title}</Title>
+    <div class="ml-4 font-bold">{termsAndConditions.lastUpdated}</div>
+    <Title class="mt-16 text-4xl font-bold" id="introduction">
+      {termsAndConditions.sections.introduction.title}
+    </Title>
+    <p>{termsAndConditions.sections.introduction.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="1-license-to-use">
+      {termsAndConditions.sections.license.title}
+    </Title>
+    <p>{termsAndConditions.sections.license.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="2-user-content">
+      {termsAndConditions.sections.userContent.title}
+    </Title>
+    <p>{termsAndConditions.sections.userContent.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="3-disclaimer">
+      {termsAndConditions.sections.disclaimer.title}
+    </Title>
+    <p>{termsAndConditions.sections.disclaimer.body}</p>
+  </main>
+</Layout>
+<style>
+  @reference '../../styles/global.css';
+
+  p,
+  li {
+    @apply opacity-55 mt-4;
+  }
+
+  ul {
+    @apply mt-4;
+  }
+
+  li {
+    @apply ml-4 list-disc;
+  }
+</style>

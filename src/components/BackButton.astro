@@ -4,12 +4,6 @@ import { getLocale, getUI } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
 
-const {
-  routes: {
-    mods: { slug },
-  },
-} = getUI(locale)
-
 const { href, ...props } = Astro.props
 
 if (!href) {
@@ -19,5 +13,5 @@ if (!href) {
 
 <a href={href} class="mb-8 flex w-fit items-center gap-2" {...props} data-testid="back-button">
   <ArrowLeftIcon class="size-4" />
-  {slug.back}
+  Back
 </a>

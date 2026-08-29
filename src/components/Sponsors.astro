@@ -1,8 +1,4 @@
 ---
-import Image from 'astro/components/Image.astro'
-import blacksmithLogo from '~/assets/sponsors/blacksmith-logo-dark.svg'
-import crowdinLogo from '~/assets/sponsors/crowdin-logo-dark.svg'
-import tutaLogo from '~/assets/sponsors/tutaLogo-dark.svg'
 import { getLocale, getUI } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
@@ -32,34 +28,10 @@ const {
     <div
       class="sponsors__sponsor relative flex flex-wrap items-center justify-center gap-8 md:gap-12"
     >
-      <a href={sponsors.sponsors['blacksmith'].url} target="_blank" class="w-fit">
-        <Image
-          src={blacksmithLogo}
-          alt={sponsors.sponsors['blacksmith'].name}
-          class="h-16 w-fit object-contain dark:invert"
-        />
-      </a>
-      <a
-        href={sponsors.sponsors['crowdin'].url}
-        target="_blank"
-        class="w-fit"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-      >
-        <Image
-          src={crowdinLogo}
-          alt={sponsors.sponsors['crowdin'].name}
-          class="h-16 w-fit object-contain dark:invert"
-        />
-      </a>
-      <a
-        href={sponsors.sponsors['tuta'].url}
-        target="_blank"
-        class="w-fit"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-      >
-        <Image
-          src={tutaLogo}
-          alt={sponsors.sponsors['tuta'].name}
+      <a href={sponsors.sponsors['r3actr'].url} target="_blank" class="w-fit">
+        <img
+          src="/logos/R3ACTRLOGOWHITE.svg"
+          alt={sponsors.sponsors['r3actr'].name}
           class="h-16 w-fit object-contain dark:invert"
         />
       </a>

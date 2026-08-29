@@ -1,4 +1,6 @@
 User-agent: *
+Allow: /
 Disallow: /.env/
+Disallow: /api/
 
-Sitemap: https://zen-browser.app/sitemap-0.xml
+Sitemap: https://paperlab.r3actr.work/sitemap-0.xml

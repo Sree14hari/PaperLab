@@ -1,0 +1,14 @@
+# Paper Lab
+
+> A modern academic report editor built for students and researchers.
+
+## Overview
+Paper Lab is a platform that features a full LaTeX engine, priority cloud compiles, and a WYSIWYG diagram editor.
+
+## Key Features
+- **Full LaTeX Engine**: Write documents with the power and flexibility of LaTeX.
+- **Priority Cloud Compiles**: Fast and reliable document generation in the cloud.
+- **WYSIWYG Diagram Editor**: Create diagrams visually and embed them seamlessly into your reports.
+
+## Official Resources
+- **Website**: [Paper Lab](https://paperlab.r3actr.work)
