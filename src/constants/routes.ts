@@ -2,7 +2,7 @@ export const PUBLIC_ROUTES = [
   '/',
   '/features',
   '/about',
-  '/privacy-policy',
+  '/privacy',
   '/terms-and-conditions',
   '/donate',
   '/invest',

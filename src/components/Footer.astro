@@ -19,7 +19,7 @@ const {
   role="contentinfo"
   aria-label="Site footer"
 >
-  <div class="container relative z-10 flex w-full flex-col gap-16">
+  <div class="relative z-10 container flex w-full flex-col gap-16">
     <!-- Main Top Content: Brand & Navigation -->
     <div class="flex w-full flex-col justify-between gap-12 lg:flex-row lg:items-start">
       <!-- Left Column: Branding, Mission, CTA & Socials -->
@@ -57,27 +57,42 @@ const {
       <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-16">
         <!-- Product & Features -->
         <nav class="flex flex-col gap-3" aria-labelledby="footer-features-heading">
-          <h2 id="footer-features-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+          <h2
+            id="footer-features-heading"
+            class="text-xs font-bold tracking-wider uppercase opacity-60"
+          >
             {footer.getStarted}
           </h2>
           <ul class="flex flex-col gap-2.5 text-sm">
             <li>
-              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/features')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 {footer.features}
               </a>
             </li>
             <li>
-              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/features')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 WYSIWYG & LaTeX
               </a>
             </li>
             <li>
-              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/features')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 Citations & BibTeX
               </a>
             </li>
             <li>
-              <a href={getLocalePath('/features')} class="hover:text-coral opacity-80 transition-opacity">
+              <a
+                href={getLocalePath('/features')}
+                class="hover:text-coral opacity-80 transition-opacity"
+              >
                 Vector Diagrams
               </a>
             </li>
@@ -86,17 +101,26 @@ const {
 
         <!-- Company & Community -->
         <nav class="flex flex-col gap-3" aria-labelledby="footer-about-heading">
-          <h2 id="footer-about-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+          <h2
+            id="footer-about-heading"
+            class="text-xs font-bold tracking-wider uppercase opacity-60"
+          >
             {footer.aboutUs}
           </h2>
           <ul class="flex flex-col gap-2.5 text-sm">
             <li>
-              <a href={getLocalePath('/about')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/about')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 {footer.aboutUs}
               </a>
             </li>
             <li>
-              <a href={getLocalePath('/invest')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/invest')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 {footer.invest || 'Invest & Partner'}
               </a>
             </li>
@@ -125,17 +149,26 @@ const {
 
         <!-- Legal -->
         <nav class="flex flex-col gap-3" aria-labelledby="footer-legal-heading">
-          <h2 id="footer-legal-heading" class="text-xs font-bold tracking-wider uppercase opacity-60">
+          <h2
+            id="footer-legal-heading"
+            class="text-xs font-bold tracking-wider uppercase opacity-60"
+          >
             Legal
           </h2>
           <ul class="flex flex-col gap-2.5 text-sm">
             <li>
-              <a href={getLocalePath('/privacy-policy')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/privacy')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 {footer.privacyPolicy}
               </a>
             </li>
             <li>
-              <a href={getLocalePath('/terms-and-conditions')} class="hover:text-coral opacity-80 transition-colors">
+              <a
+                href={getLocalePath('/terms-and-conditions')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
                 {footer.termsAndConditions}
               </a>
             </li>
@@ -154,10 +187,10 @@ const {
 
   <!-- Ambient logo decoration in corner -->
   <section class="pointer-events-none absolute right-0 bottom-0 hidden lg:block">
-    <img 
-      src="/logos/paperlablogo.svg" 
-      alt="" 
-      class="w-96 h-96 max-w-none translate-x-1/2 translate-y-1/2 opacity-80 invert dark:invert-0" 
+    <img
+      src="/logos/paperlablogo.svg"
+      alt=""
+      class="h-96 w-96 max-w-none translate-x-1/2 translate-y-1/2 opacity-80 invert dark:invert-0"
       aria-hidden="true"
     />
   </section>
