@@ -15,7 +15,7 @@ const {
 
 <footer
   id="footer"
-  class="border-dark bg-dark text-paper relative flex w-full flex-col items-center overflow-hidden border-t px-4 py-16 lg:py-24"
+  class="relative flex w-full flex-col items-center overflow-hidden border-t border-neutral-800 bg-[#1e1d1b] px-4 py-16 text-[#e8e6dc] lg:py-24 dark:bg-[#141414]"
   role="contentinfo"
   aria-label="Site footer"
 >
@@ -25,19 +25,22 @@ const {
       <!-- Left Column: Branding, Mission, CTA & Socials -->
       <div class="flex w-full flex-col items-start gap-6 lg:max-w-md">
         <a href={getLocalePath('/')} class="flex items-center gap-2">
-          <Description id="footer-title" class="!text-paper text-5xl font-extrabold tracking-tight">
+          <Description
+            id="footer-title"
+            class="text-5xl font-extrabold tracking-tight !text-[#f5f3e9]"
+          >
             {footer.title}
           </Description>
         </a>
-        <Description class="text-paper/75 text-base leading-relaxed">
+        <Description class="text-base leading-relaxed text-[#e8e6dc]/75">
           {footer.description}
         </Description>
 
         <div class="flex flex-col items-start gap-4 pt-2">
           <Button
-            href="https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+            href="https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
             isPrimary
-            class="bg-paper !text-dark w-fit shadow-lg"
+            class="bg-coral w-fit font-bold !text-white shadow-lg hover:opacity-90"
             aria-label={footer.getStarted}
           >
             {footer.getStarted}
@@ -114,6 +117,14 @@ const {
                 class="hover:text-coral opacity-80 transition-colors"
               >
                 {footer.aboutUs}
+              </a>
+            </li>
+            <li>
+              <a
+                href={getLocalePath('/blogs')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
+                {footer.blogs || 'Blog'}
               </a>
             </li>
             <li>

@@ -1,0 +1,8 @@
+---
+import { getLocale, getPath } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+return Astro.redirect(getPath(locale)('/blogs'))
+---

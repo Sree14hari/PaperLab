@@ -1,0 +1,80 @@
+---
+import type { BlogPost } from '~/utils/blog'
+import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
+import { getPath, type Locale } from '~/utils/i18n'
+
+interface Props {
+  post: BlogPost
+  locale?: Locale
+  isFeatured?: boolean
+}
+
+const { post, locale, isFeatured = false } = Astro.props
+const getLocalePath = getPath(locale)
+const postUrl = getLocalePath(`/blogs/${post.slug}`)
+---
+
+<article
+  class:list={[
+    'group border-dark/10 bg-subtle/50 hover:border-coral/50 relative flex flex-col justify-between overflow-hidden rounded-3xl border transition-all duration-300 hover:shadow-xl',
+    isFeatured ? 'p-8 sm:p-10' : 'p-6 sm:p-8',
+  ]}
+>
+  <div class="flex flex-col gap-5">
+    <!-- Meta badges: Tags, Date, Reading Time -->
+    <div class="flex flex-wrap items-center gap-2.5 text-xs font-semibold">
+      {
+        post.tags
+          .slice(0, 3)
+          .map(tag => <span class="bg-coral/10 text-coral rounded-full px-3 py-1">{tag}</span>)
+      }
+      <span class="text-dark/40">•</span>
+      <span class="text-dark/70">{post.date}</span>
+      <span class="text-dark/40">•</span>
+      <span class="text-dark/70">{post.readingTime}</span>
+    </div>
+
+    <!-- Title and Subtitle -->
+    <div class="flex flex-col gap-2.5">
+      <h2
+        class:list={[
+          'font-junicode text-dark group-hover:text-coral font-bold tracking-tight transition-colors duration-200',
+          isFeatured ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-xl sm:text-2xl',
+        ]}
+      >
+        <a href={postUrl} class="focus:outline-hidden">
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          {post.title}
+        </a>
+      </h2>
+      <p class="text-dark/75 line-clamp-3 text-base leading-relaxed">
+        {post.subtitle || post.excerpt}
+      </p>
+    </div>
+  </div>
+
+  <!-- Author and Read More footer -->
+  <div class="border-dark/10 mt-8 flex items-center justify-between border-t pt-5">
+    <div class="flex items-center gap-3">
+      <div class="border-coral/30 bg-coral/10 size-10 overflow-hidden rounded-full border p-1">
+        <img
+          src={post.author.avatar}
+          alt={post.author.name}
+          class="size-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex flex-col text-left">
+        <span class="text-dark text-sm font-semibold">{post.author.name}</span>
+        <span class="text-dark/60 text-xs">{post.author.role}</span>
+      </div>
+    </div>
+
+    <div
+      class="text-coral flex items-center gap-1.5 text-sm font-semibold transition-transform duration-200 group-hover:translate-x-1"
+    >
+      <span>Read Article</span>
+      <ArrowRightIcon class="size-4" />
+    </div>
+  </div>
+</article>

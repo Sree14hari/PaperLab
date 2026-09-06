@@ -152,7 +152,7 @@
         "title": "Start writing your next paper today",
         "description": "Join researchers, students, and professionals creating publication-ready academic reports effortlessly.",
         "buttonText": "Start writing for free!",
-        "buttonLink": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+        "buttonLink": "https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
       },
       "sections": [
         {
@@ -425,7 +425,7 @@
           },
           "cta": {
             "label": "Start Writing Free",
-            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+            "href": "https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
           },
           "features": [
             "3 projects",
@@ -451,7 +451,7 @@
           },
           "cta": {
             "label": "Buy Premium",
-            "href": "https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare"
+            "href": "https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
           },
           "tag": "Most Popular",
           "featured": true,
@@ -475,6 +475,11 @@
         "text": "Join thousands of researchers and students creating publication-ready academic papers with ease.",
         "buttonText": "Start writing for free!"
       }
+    },
+    "blogs": {
+      "title": "Paper Lab Insights",
+      "subtitle": "Articles, Guides & Deep Dives",
+      "description": "Explore thoughts on academic research, LaTeX workflows, typesetting, and product updates."
     }
   },
   "layout": {
@@ -493,6 +498,10 @@
     "about": {
       "title": "About - Paper Lab",
       "description": "Learn more about Paper Lab, the modern academic paper and report editor built for researchers and students."
+    },
+    "blogs": {
+      "title": "Blog | Paper Lab",
+      "description": "Explore updates, deep dives, and insights on modern academic writing and Paper Lab."
     },
     "features": {
       "title": "Features | Paper Lab",
@@ -537,6 +546,7 @@
       "termsAndConditions": "Terms & Conditions",
       "getStarted": "Get Started",
       "features": "Features",
+      "blogs": "Blog",
       "invest": "Invest",
       "documentation": "Documentation",
       "getHelp": "Get Help",
@@ -554,6 +564,8 @@
         "usefulLinks": "Useful Links",
         "features": "Features",
         "featuresDesc": "Explore WYSIWYG editing, LaTeX, citations, and diagramming.",
+        "blogs": "Blog",
+        "blogsDesc": "Insights, deep dives, and tutorials on academic writing.",
         "mods": "Mods",
         "download": "Download",
         "discord": "Discord",

@@ -38,65 +38,103 @@ const {
   featured = false,
   features = [],
   cta,
-  classes = ''
+  classes = '',
 } = Astro.props
 ---
 
-<div class:list={["flex flex-col h-full rounded-2xl border transition-shadow duration-300", featured ? "border-coral shadow-lg bg-paper" : "border-dark/10 bg-subtle", classes]}>
+<div
+  class:list={[
+    'flex h-full flex-col rounded-2xl border transition-shadow duration-300',
+    featured ? 'border-coral bg-paper shadow-lg' : 'border-dark/10 bg-subtle',
+    classes,
+  ]}
+>
   <div class="p-8 pb-0">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="text-2xl font-bold font-headings text-dark">
+    <div class="mb-4 flex items-center justify-between">
+      <h3 class="font-headings text-dark text-2xl font-bold">
         {title}
       </h3>
-      {tag && (
-        <span class="inline-flex items-center rounded-full bg-coral/10 px-3 py-1 text-sm font-medium text-coral">
-          {tag}
-        </span>
-      )}
-    </div>
-    {tagline && <p class="text-sm opacity-70 mb-6">{tagline}</p>}
-    
-    {prices && (
-      <div class="flex items-baseline gap-2 mb-8 border-b border-dark/10 pb-8">
-        <span class="text-5xl font-bold font-headings text-dark" data-price-monthly={prices.monthly} data-price-annually={prices.annually}>
-          ${prices.monthly ?? prices.annually}
-        </span>
-        {pricesNotes && (
-          <span class="text-sm opacity-60 font-medium" data-price-monthly-note={pricesNotes.monthly} data-price-annually-note={pricesNotes.annually}>
-            {pricesNotes.monthly ?? pricesNotes.annually}
+      {
+        tag && (
+          <span class="bg-coral/10 text-coral inline-flex items-center rounded-full px-3 py-1 text-sm font-medium">
+            {tag}
           </span>
-        )}
-      </div>
-    )}
+        )
+      }
+    </div>
+    {tagline && <p class="mb-6 text-sm opacity-70">{tagline}</p>}
+
+    {
+      prices && (
+        <div class="border-dark/10 mb-8 flex items-baseline gap-2 border-b pb-8">
+          <span
+            class="font-headings text-dark text-5xl font-bold"
+            data-price-monthly={prices.monthly}
+            data-price-annually={prices.annually}
+          >
+            ${prices.monthly ?? prices.annually}
+          </span>
+          {pricesNotes && (
+            <span
+              class="text-sm font-medium opacity-60"
+              data-price-monthly-note={pricesNotes.monthly}
+              data-price-annually-note={pricesNotes.annually}
+            >
+              {pricesNotes.monthly ?? pricesNotes.annually}
+            </span>
+          )}
+        </div>
+      )
+    }
   </div>
 
-  <div class="p-8 pt-0 flex-1 flex flex-col">
-    {features.length > 0 && (
-      <ul class="flex-1 space-y-4 mb-8">
-        {features.map((f) => (
-          <li class="flex items-start gap-3">
-            <svg class="h-6 w-6 shrink-0 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm opacity-80">{f}</span>
-          </li>
-        ))}
-      </ul>
-    )}
+  <div class="flex flex-1 flex-col p-8 pt-0">
+    {
+      features.length > 0 && (
+        <ul class="mb-8 flex-1 space-y-4">
+          {features.map(f => (
+            <li class="flex items-start gap-3">
+              <svg
+                class="text-coral h-6 w-6 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm opacity-80">{f}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
 
-    {cta && !featured && (
-      <Button href={cta.href} class="w-full text-center py-4 bg-dark/5 hover:bg-dark/10 text-dark font-semibold rounded-xl border border-dark/10 transition-colors">
-        {cta.label}
-      </Button>
-    )}
-    
-    {cta && featured && (
-      <div class="razorpay-trigger w-full" data-plan={id} data-amount={prices?.annually ? prices.annually * 100 : 0} data-key={import.meta.env.PUBLIC_RAZORPAY_KEY_ID}>
-        <button class="w-full text-center py-4 bg-coral hover:bg-coral-dark text-paper font-semibold rounded-xl transition-colors shadow-md hover:shadow-lg cursor-pointer">
+    {
+      cta && !featured && (
+        <Button
+          href={cta.href}
+          class="bg-dark/5 hover:bg-dark/10 text-dark border-dark/10 w-full rounded-xl border py-4 text-center font-semibold transition-colors"
+        >
           {cta.label}
-        </button>
-      </div>
-    )}
+        </Button>
+      )
+    }
+
+    {
+      cta && featured && (
+        <div
+          class="razorpay-trigger w-full"
+          data-plan={id}
+          data-amount={prices?.annually ? prices.annually * 100 : 0}
+          data-key={import.meta.env.PUBLIC_RAZORPAY_KEY_ID}
+        >
+          <button class="bg-coral hover:bg-coral-dark w-full cursor-pointer rounded-xl py-4 text-center font-semibold text-white shadow-md transition-colors hover:shadow-lg">
+            {cta.label}
+          </button>
+        </div>
+      )
+    }
   </div>
 </div>
 
@@ -105,11 +143,12 @@ const {
   if (typeof window !== 'undefined') {
     const initRazorpay = () => {
       const showError = (title, message) => {
-        let errModal = document.getElementById('custom-error-modal');
+        let errModal = document.getElementById('custom-error-modal')
         if (!errModal) {
-          errModal = document.createElement('dialog');
-          errModal.id = 'custom-error-modal';
-          errModal.className = "p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-sm m-auto fixed inset-0 z-[60] transition-opacity";
+          errModal = document.createElement('dialog')
+          errModal.id = 'custom-error-modal'
+          errModal.className =
+            'p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-sm m-auto fixed inset-0 z-[60] transition-opacity'
           errModal.innerHTML = `
             <div class="bg-paper border border-dark/10 rounded-2xl p-6 shadow-xl relative overflow-hidden text-center">
               <div class="relative z-10">
@@ -123,31 +162,34 @@ const {
                 <button type="button" id="error-modal-close" class="w-full px-5 py-2.5 rounded-xl font-medium bg-dark/5 hover:bg-dark/10 text-dark transition-colors cursor-pointer">Close</button>
               </div>
             </div>
-          `;
-          document.body.appendChild(errModal);
-          document.getElementById('error-modal-close').addEventListener('click', () => errModal.close());
+          `
+          document.body.appendChild(errModal)
+          document
+            .getElementById('error-modal-close')
+            .addEventListener('click', () => errModal.close())
         }
-        document.getElementById('error-modal-title').innerText = title;
-        document.getElementById('error-modal-message').innerText = message;
-        errModal.showModal();
-      };
+        document.getElementById('error-modal-title').innerText = title
+        document.getElementById('error-modal-message').innerText = message
+        errModal.showModal()
+      }
 
-      const triggers = document.querySelectorAll('.razorpay-trigger');
+      const triggers = document.querySelectorAll('.razorpay-trigger')
       triggers.forEach(trigger => {
-        const planId = trigger.getAttribute('data-plan');
+        const planId = trigger.getAttribute('data-plan')
         if (planId === 'pro') {
-          trigger.addEventListener('click', async (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+          trigger.addEventListener('click', async e => {
+            e.preventDefault()
+            e.stopPropagation()
 
-            const rzpKey = trigger.getAttribute('data-key');
-            const amount = 9900; 
+            const rzpKey = trigger.getAttribute('data-key')
+            const amount = 9900
 
-            let modal = document.getElementById('custom-email-modal');
+            let modal = document.getElementById('custom-email-modal')
             if (!modal) {
-              modal = document.createElement('dialog');
-              modal.id = 'custom-email-modal';
-              modal.className = "p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-md m-auto fixed inset-0 z-50 transition-opacity";
+              modal = document.createElement('dialog')
+              modal.id = 'custom-email-modal'
+              modal.className =
+                'p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-md m-auto fixed inset-0 z-50 transition-opacity'
               modal.innerHTML = `
                 <div class="bg-paper border border-dark/10 rounded-2xl p-6 shadow-xl relative overflow-hidden">
                   <div class="relative z-10 text-left">
@@ -160,66 +202,72 @@ const {
                       </div>
                       <div class="flex gap-3 justify-end">
                         <button type="button" id="email-modal-cancel" class="px-5 py-2.5 rounded-xl font-medium text-dark/70 hover:bg-dark/5 transition-colors cursor-pointer">Cancel</button>
-                        <button type="submit" class="px-5 py-2.5 rounded-xl font-medium bg-coral hover:bg-coral-dark text-paper transition-colors shadow-md hover:shadow-lg cursor-pointer">Continue</button>
+                        <button type="submit" class="px-5 py-2.5 rounded-xl font-medium bg-coral hover:bg-coral-dark text-white transition-colors shadow-md hover:shadow-lg cursor-pointer">Continue</button>
                       </div>
                     </form>
                   </div>
                 </div>
-              `;
-              document.body.appendChild(modal);
+              `
+              document.body.appendChild(modal)
             }
 
-            const input = document.getElementById('premium-email');
-            const form = document.getElementById('email-modal-form');
-            const cancelBtn = document.getElementById('email-modal-cancel');
-            
-            input.value = '';
-            modal.showModal();
+            const input = document.getElementById('premium-email')
+            const form = document.getElementById('email-modal-form')
+            const cancelBtn = document.getElementById('email-modal-cancel')
 
-            const userEmail = await new Promise((resolve) => {
-              form.onsubmit = (event) => {
-                event.preventDefault();
-                resolve(input.value);
-                modal.close();
-              };
+            input.value = ''
+            modal.showModal()
+
+            const userEmail = await new Promise(resolve => {
+              form.onsubmit = event => {
+                event.preventDefault()
+                resolve(input.value)
+                modal.close()
+              }
               cancelBtn.onclick = () => {
-                resolve(null);
-                modal.close();
-              };
-            });
+                resolve(null)
+                modal.close()
+              }
+            })
 
             if (!userEmail || !userEmail.includes('@')) {
-              return;
+              return
             }
 
             try {
               const orderRes = await fetch('/api/create-order', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ amount, currency: 'INR', email: userEmail })
-              });
-              const order = await orderRes.json();
+                body: JSON.stringify({ amount, currency: 'INR', email: userEmail }),
+              })
+              const order = await orderRes.json()
 
               if (order.error) {
-                if (order.error.includes("Account not found")) {
-                  showError("Account Not Found", "We couldn't find an account with that email. Please download and log into the Paper Lab app first!");
-                } else if (order.error.includes("already have Premium access") || order.error.includes("Lifetime Premium")) {
-                  showError("Already Premium", order.error);
+                if (order.error.includes('Account not found')) {
+                  showError(
+                    'Account Not Found',
+                    "We couldn't find an account with that email. Please download and log into the Paper Lab app first!"
+                  )
+                } else if (
+                  order.error.includes('already have Premium access') ||
+                  order.error.includes('Lifetime Premium')
+                ) {
+                  showError('Already Premium', order.error)
                 } else {
-                  showError("Order Failed", order.error);
+                  showError('Order Failed', order.error)
                 }
-                return;
+                return
               }
 
               const options = {
                 key: rzpKey,
                 amount: order.amount,
                 currency: order.currency,
-                name: "Paper Lab",
-                description: "Upgrade to Pro",
+                name: 'Paper Lab',
+                description: 'Upgrade to Pro',
                 order_id: order.id,
                 prefill: {
-                  email: userEmail
+                  email: userEmail,
                 },
                 handler: async function (response) {
                   try {
@@ -229,43 +277,45 @@ const {
                       body: JSON.stringify({
                         razorpay_order_id: response.razorpay_order_id,
                         razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_signature: response.razorpay_signature
-                      })
-                    });
-                    const verifyData = await verifyRes.json();
+                        razorpay_signature: response.razorpay_signature,
+                      }),
+                    })
+                    const verifyData = await verifyRes.json()
                     if (verifyData.success) {
-                      alert('Payment successful! You are now a Premium user.');
+                      alert('Payment successful! You are now a Premium user.')
                     } else {
-                      showError('Verification Failed', 'Payment verification failed. If you were charged, please contact support.');
+                      showError(
+                        'Verification Failed',
+                        'Payment verification failed. If you were charged, please contact support.'
+                      )
                     }
                   } catch (err) {
-                    showError('Verification Error', 'Failed to verify payment with our servers.');
+                    showError('Verification Error', 'Failed to verify payment with our servers.')
                   }
                 },
-                theme: { color: "#ea580c" }
-              };
+                theme: { color: '#ea580c' },
+              }
 
-              const rzp = new window.Razorpay(options);
+              const rzp = new window.Razorpay(options)
               rzp.on('payment.failed', function (response) {
-                showError("Payment Failed", response.error.description);
-              });
-              rzp.open();
-
+                showError('Payment Failed', response.error.description)
+              })
+              rzp.open()
             } catch (err) {
-              console.error(err);
-              showError('Checkout Error', 'Failed to initiate checkout. Please try again later.');
+              console.error(err)
+              showError('Checkout Error', 'Failed to initiate checkout. Please try again later.')
             }
-          });
+          })
         }
-      });
-    };
+      })
+    }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initRazorpay);
+      document.addEventListener('DOMContentLoaded', initRazorpay)
     } else {
-      initRazorpay();
+      initRazorpay()
     }
-    
-    document.addEventListener('astro:page-load', initRazorpay);
+
+    document.addEventListener('astro:page-load', initRazorpay)
   }
 </script>

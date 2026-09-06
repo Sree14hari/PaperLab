@@ -46,7 +46,12 @@ const {
                 {menu.featuresDesc}
               </div>
             </a>
-            <a class="dropdown-item" href="https://discord.gg/gnjkkGT5RS" target="_blank" rel="noopener noreferrer">
+            <a
+              class="dropdown-item"
+              href="https://discord.gg/gnjkkGT5RS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div class="dropdown-title">{menu.discord}</div>
               <div class="dropdown-description">
                 {menu.discordDesc}
@@ -70,11 +75,18 @@ const {
                 {menu.investDesc || menu.donateDesc}
               </div>
             </a>
+            <a class="dropdown-item" href={getLocalePath('/blogs')}>
+              <div class="dropdown-title">{menu.blogs || 'Blog'}</div>
+              <div class="dropdown-description">
+                {menu.blogsDesc || 'Deep dives and insights on research & writing'}
+              </div>
+            </a>
             <a class="dropdown-item" href={getLocalePath('/about')}>
               <div class="dropdown-title">{menu.aboutUs}</div>
               <div class="dropdown-description">
                 {menu.aboutUsDesc}
               </div>
+            </a>
           </div>
         </DropdownItems>
       </Dropdown>
@@ -83,7 +95,11 @@ const {
       <div id="theme-switcher">
         <ThemeSwitch label="Toggle theme" />
       </div>
-      <Button href="https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" class="hidden lg:flex" isPrimary>
+      <Button
+        href="https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
+        class="hidden lg:flex"
+        isPrimary
+      >
         <span class="hidden items-center gap-2 lg:flex">
           {menu.download}
           <ArrowRightIcon class="size-4" />

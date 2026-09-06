@@ -51,8 +51,11 @@ const {
             >
           </li>
           <li>
-            <a href="https://discord.gg/gnjkkGT5RS" target="_blank" rel="noopener noreferrer" class="text-dark hover:text-coral block"
-              >{menu.discord}</a
+            <a
+              href="https://discord.gg/gnjkkGT5RS"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-dark hover:text-coral block">{menu.discord}</a
             >
           </li>
         </ul>
@@ -67,15 +70,22 @@ const {
             >
           </li>
           <li>
+            <a href={getLocalePath('/blogs')} class="text-dark hover:text-coral block"
+              >{menu.blogs || 'Blog'}</a
+            >
+          </li>
+          <li>
             <a href={getLocalePath('/about')} class="text-dark hover:text-coral block"
               >{menu.aboutUs}</a
             >
+          </li>
         </ul>
       </li>
       <!-- Extra Links -->
       <li>
-        <a href="https://apps.microsoft.com/detail/XPDP8QMTJCPTZS?hl=en-IN&gl=IN&ocid=pdpshare" class="text-dark hover:text-coral block font-bold"
-          >{menu.download}</a
+        <a
+          href="https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
+          class="text-dark hover:text-coral block font-bold">{menu.download}</a
         >
       </li>
     </ul>
