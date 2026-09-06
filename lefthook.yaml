@@ -40,7 +40,7 @@ commit-msg:
   commands:
     commitlint:
       run: |
-        pnpm commitlint --edit {1}
+        pnpm commitlint {1}
 
 post-merge:
   commands:
