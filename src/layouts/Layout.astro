@@ -17,25 +17,32 @@ import '../styles/global.css'
 import Footer from '~/components/Footer.astro'
 import NavBar from '~/components/NavBar.astro'
 import { getLocale } from '~/utils/i18n'
+import { ClientRouter } from 'astro:transitions'
 const locale = getLocale(Astro)
 ---
 
 <script is:inline data-cfasync="false">
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme') ?? 'light'
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
+  ;(function applyTheme() {
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme') ?? 'light'
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+      }
+      return 'light'
+    })()
+    document.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
   })()
-
-  if (theme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light')
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark')
-  }
+  // Re-apply theme after View Transition swap to prevent flash
+  document.addEventListener('astro:after-swap', function () {
+    var theme =
+      localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    document.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  })
 </script>
 
 <html lang={locale}>
@@ -43,7 +50,10 @@ const locale = getLocale(Astro)
     <meta charset="UTF-8" />
     {redirect ? <meta http-equiv="refresh" content={`0;url=${redirect}`} /> : null}
     <meta name="description" content={description ?? defaultDescription} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <ClientRouter />
     <link rel="sitemap" href="/sitemap-0.xml" />
     <link
       rel="canonical"
@@ -52,21 +62,35 @@ const locale = getLocale(Astro)
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab"
+      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab, ORIGYN AI, AI content detection, AI report"
     />
 
     {
       isHome && (
         <>
-          {/* Injecting schema to homepage only (for SEO) */}
+          {/* Injecting expanded schema to homepage only (for SEO) */}
           <script
             is:inline
             type="application/ld+json"
             set:html={JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'WebSite',
+              '@type': ['SoftwareApplication', 'Organization'],
               name: 'Paper Lab',
               url: 'https://paperlab.r3actr.work',
+              applicationCategory: 'EducationalApplication',
+              operatingSystem: 'Windows, macOS, Linux, Web',
+              featureList: [
+                'WYSIWYG LaTeX Editor',
+                'Cloud Compilation',
+                'ORIGYN AI Content Detection across 6 neural and statistical models',
+              ],
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+              logo: 'https://paperlab.r3actr.work/favicon.png',
+              description: defaultDescription,
             })}
           />
         </>

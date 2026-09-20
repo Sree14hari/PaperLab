@@ -39,7 +39,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
   </p>
 
   <div class="mt-6 flex flex-col gap-6 lg:flex-row lg:justify-between lg:gap-12">
-    <div class="flex w-full flex-col lg:w-2/5 z-10">
+    <div class="z-10 flex w-full flex-col lg:w-2/5">
       <!-- Mobile Tabs -->
       <div class="flex gap-2 overflow-x-auto overflow-y-clip lg:hidden">
         {
@@ -127,80 +127,88 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
 <script>
   import { animate, stagger } from 'animejs'
 
-  // Animate Titles
-  animate('.title-line', {
-    opacity: [0, 1],
-    delay: stagger(200, { start: 200 }),
-    duration: 600,
-    easing: 'easeOutQuad',
-  })
+  function initFeatures() {
+    const section = document.getElementById('features')
+    if (!section) return
 
-  animate('.feature-description-text', {
-    opacity: [0, 1],
-    delay: 600,
-    duration: 600,
-    easing: 'easeOutQuad',
-  })
-
-  animate('.feature-tab, .feature', {
-    opacity: [0, 1],
-    delay: stagger(200, { start: 800 }),
-    duration: 500,
-    easing: 'easeOutQuad',
-  })
-
-  const features = document.querySelectorAll('.feature, .feature-tab') as NodeListOf<HTMLElement>
-  const descriptionEl = document.querySelector('.feature-description') as HTMLDivElement | null
-  const descriptions = descriptionEl?.dataset.descriptions?.split('|||')
-  const videos = document.querySelectorAll('.feature-video') as NodeListOf<HTMLVideoElement>
-
-  function changeToFeature({ target }: { target: HTMLElement }) {
-    const targetEl = target?.closest('.feature, .feature-tab') as HTMLElement | null
-    if (!targetEl) return
-
-    const index = parseInt(targetEl.dataset.index as string, 10)
-    if (isNaN(index)) return
-
-    // Toggle active states
-    features.forEach((el, i) => {
-      if (i % 4 === index) {
-        el.setAttribute('data-active', 'true')
-      } else {
-        el.removeAttribute('data-active')
-      }
+    // Animate Titles
+    animate('.title-line', {
+      opacity: [0, 1],
+      delay: stagger(200, { start: 200 }),
+      duration: 600,
+      easing: 'easeOutQuad',
     })
 
-    // Update mobile description
-    if (descriptionEl && descriptions) {
-      descriptionEl.textContent = descriptions[index]
+    animate('.feature-description-text', {
+      opacity: [0, 1],
+      delay: 600,
+      duration: 600,
+      easing: 'easeOutQuad',
+    })
+
+    animate('.feature-tab, .feature', {
+      opacity: [0, 1],
+      delay: stagger(200, { start: 800 }),
+      duration: 500,
+      easing: 'easeOutQuad',
+    })
+
+    const features = document.querySelectorAll('.feature, .feature-tab') as NodeListOf<HTMLElement>
+    const descriptionEl = document.querySelector('.feature-description') as HTMLDivElement | null
+    const descriptions = descriptionEl?.dataset.descriptions?.split('|||')
+    const videos = document.querySelectorAll('.feature-video') as NodeListOf<HTMLVideoElement>
+
+    function changeToFeature({ target }: { target: HTMLElement }) {
+      const targetEl = target?.closest('.feature, .feature-tab') as HTMLElement | null
+      if (!targetEl) return
+
+      const index = parseInt(targetEl.dataset.index as string, 10)
+      if (isNaN(index)) return
+
+      // Toggle active states
+      features.forEach((el, i) => {
+        if (i % 4 === index) {
+          el.setAttribute('data-active', 'true')
+        } else {
+          el.removeAttribute('data-active')
+        }
+      })
+
+      // Update mobile description
+      if (descriptionEl && descriptions) {
+        descriptionEl.textContent = descriptions[index]
+      }
+
+      // Animate videos
+      videos.forEach((vid, i) => {
+        const yOffset = (i - index) * 20
+        const zOffset = i === index ? 0 : -100 - Math.abs(i - index) * 50
+        const scale = i === index ? 1 : 0.95
+        const rotation = (i - index) * 3
+
+        if (i === index) {
+          vid.setAttribute('data-active', 'true')
+          vid.style.opacity = '1'
+          vid.style.transform = `translate3d(-50%, 0, 0) scale(${scale})`
+          vid.style.zIndex = '10'
+          vid.currentTime = 0
+          vid.play()
+        } else {
+          vid.removeAttribute('data-active')
+          vid.style.transform = `translate3d(-50%, ${yOffset}px, ${zOffset}px) rotate3d(1, 0, 0, ${rotation}deg) scale(${scale})`
+          vid.style.zIndex = String(1 - Math.abs(i - index))
+          vid.pause()
+        }
+      })
     }
 
-    // Animate videos
-    videos.forEach((vid, i) => {
-      const yOffset = (i - index) * 20
-      const zOffset = i === index ? 0 : -100 - Math.abs(i - index) * 50
-      const scale = i === index ? 1 : 0.95
-      const rotation = (i - index) * 3
-
-      if (i === index) {
-        vid.setAttribute('data-active', 'true')
-        vid.style.opacity = '1'
-        vid.style.transform = `translate3d(-50%, 0, 0) scale(${scale})`
-        vid.style.zIndex = '10'
-        vid.currentTime = 0
-        vid.play()
-      } else {
-        vid.removeAttribute('data-active')
-        vid.style.transform = `translate3d(-50%, ${yOffset}px, ${zOffset}px) rotate3d(1, 0, 0, ${rotation}deg) scale(${scale})`
-        vid.style.zIndex = String(1 - Math.abs(i - index))
-        vid.pause()
-      }
-    })
+    // Set up event listeners
+    features.forEach(f => f.addEventListener('click', changeToFeature as unknown as EventListener))
+    changeToFeature({ target: features[0] })
   }
 
-  // Set up event listeners
-  features.forEach(f => f.addEventListener('click', changeToFeature as unknown as EventListener))
-  changeToFeature({ target: features[0] })
+  initFeatures()
+  document.addEventListener('astro:page-load', initFeatures)
 </script>
 <style>
   @reference '../styles/global.css';

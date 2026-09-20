@@ -3,6 +3,8 @@
     "index": {
       "title": "Paper Lab",
       "hero": {
+        "origynTitle": "Introducing ORIGYN AI",
+        "origynDesc": "Compare content across 6 different neural and statistical models to generate comprehensive AI detection reports. Available exclusively for Premium users.",
         "title": [
           {
             "text": "Write ",
@@ -474,6 +476,7 @@
             "Preview tree",
             "Custom pets",
             "Citation manager",
+            "ORIGYN AI Content Detection",
             "Collaboration (future update)"
           ]
         }

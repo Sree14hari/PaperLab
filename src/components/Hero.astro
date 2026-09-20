@@ -53,7 +53,7 @@ const {
         class="flex w-2/3 flex-col items-center justify-center gap-3 sm:gap-4 md:w-fit md:flex-row"
       >
         <div
-          class="w-full sm:w-60"
+          class="animate-in w-full sm:w-60"
           style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
         >
           <Button
@@ -66,7 +66,7 @@ const {
           </Button>
         </div>
         <div
-          class="w-full sm:w-60"
+          class="animate-in w-full sm:w-60"
           style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
         >
           <Button class="w-full !px-4" href={getLocalePath('/pricing')}>
@@ -96,7 +96,7 @@ const {
     const debug = false
 
     const elements = document.querySelectorAll(
-      '#header h1 b, #header p, #header div:has(a), #header video, #header ul'
+      '#header h1 b, #header p, #header .animate-in, #header video, #header ul'
     )
 
     animate(elements, {
@@ -119,4 +119,5 @@ const {
     })
   }
   initAnimations()
+  document.addEventListener('astro:page-load', initAnimations)
 </script>
