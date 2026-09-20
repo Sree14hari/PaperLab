@@ -373,6 +373,10 @@
           "discordLink": "Paper Lab's Discord",
           "github": "GitHub: ",
           "githubLink": "Organization"
+        },
+        "paymentSecurity": {
+          "title": "11. Payment Security",
+          "body": "All credit/debit card and payment transactions are handled through Razorpay's PCI-DSS compliant secure servers. Paper Lab never stores raw card or banking credentials."
         }
       }
     },
@@ -395,6 +399,14 @@
         "disclaimer": {
           "title": "3. Disclaimer of Warranties",
           "body": "Paper Lab is provided 'as is' without warranties of any kind. We do not guarantee that the software will be error-free or uninterrupted."
+        },
+        "payment": {
+          "title": "4. Payments and Subscriptions",
+          "body": "Payments are securely processed through the Razorpay payment gateway. We do not store your raw payment details. By subscribing to Pro, you agree to our billing terms."
+        },
+        "jurisdiction": {
+          "title": "5. Governing Law and Jurisdiction",
+          "body": "These terms shall be governed by the laws of India, under the jurisdiction of the courts of Alappuzha, Kerala."
         }
       }
     },
@@ -474,12 +486,53 @@
         "title": "Start writing your report with Paper Lab",
         "text": "Join thousands of researchers and students creating publication-ready academic papers with ease.",
         "buttonText": "Start writing for free!"
-      }
+      },
+      "delivery": "Shipping & Delivery: Paper Lab provides digital software and SaaS services. No physical goods are shipped. All Pro features and licenses are activated instantly upon successful payment."
     },
     "blogs": {
       "title": "Paper Lab Insights",
       "subtitle": "Articles, Guides & Deep Dives",
       "description": "Explore thoughts on academic research, LaTeX workflows, typesetting, and product updates."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with the Paper Lab team.",
+      "companyName": "R3ACTR INNOVATIONS",
+      "addressTitle": "Registered Address",
+      "address": "Alappuzha, Kerala, India",
+      "emailTitle": "Official Email",
+      "email": "r3actr@gmail.com",
+      "phoneTitle": "",
+      "phone": "",
+      "hoursTitle": "Working Hours",
+      "hours": "Monday to Friday, 9:00 AM - 6:00 PM IST",
+      "responseTime": "Inquiries are typically addressed within 24-48 hours."
+    },
+    "refundPolicy": {
+      "title": "Cancellation and Refund Policy",
+      "lastUpdated": "Last updated: 2026-09-20",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "body": "This policy governs the cancellation and refund of your subscriptions to Paper Lab."
+        },
+        "cancellation": {
+          "title": "1. Cancellation Policy",
+          "body": "You may cancel your subscription at any time through your account settings. Upon cancellation, you will retain access to Pro features until the end of your current billing cycle."
+        },
+        "refunds": {
+          "title": "2. Refund Policy",
+          "body": "All sales are final and funds are strictly non-refundable once the subscription is activated. By completing your purchase, you agree to these terms."
+        },
+        "timeline": {
+          "title": "3. Exceptional Circumstances",
+          "body": "While our policy is non-refundable, if an accidental duplicate charge or technical error occurs on our billing side, approved refunds for these edge cases will be processed and credited to the customer's original payment method / bank account within 5 to 7 business days."
+        },
+        "request": {
+          "title": "4. How to Request a Refund",
+          "body": "To request a refund, please email our support team with your Razorpay Payment ID or Order ID."
+        }
+      }
     }
   },
   "layout": {
@@ -533,6 +586,14 @@
     },
     "whatsNew": {
       "title": "What's New in {latestVersion.version}!"
+    },
+    "contact": {
+      "title": "Contact Us - Paper Lab",
+      "description": "Contact the Paper Lab team."
+    },
+    "refundPolicy": {
+      "title": "Refund Policy - Paper Lab",
+      "description": "Cancellation and refund policy for Paper Lab."
     }
   },
   "components": {
@@ -555,7 +616,9 @@
       "uptimeStatus": "Uptime Status",
       "reportAnIssue": "Report an Issue",
       "twilight": "Beta",
-      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='paper-link font-bold whitespace-nowrap'>Paper Lab Team</a>"
+      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='paper-link font-bold whitespace-nowrap'>Paper Lab Team</a>",
+      "contactUs": "Contact Us",
+      "refundPolicy": "Refund Policy"
     },
     "nav": {
       "brand": "Paper Lab",

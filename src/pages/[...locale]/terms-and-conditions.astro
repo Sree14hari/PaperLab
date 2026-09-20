@@ -14,7 +14,9 @@ const {
 
 <Layout title={layout.termsAndConditions.title} description={layout.termsAndConditions.description}>
   <main class="mx-auto mt-52 w-1/2 pb-24">
-    <Title id="terms-and-conditions" class="xl:text-6xl xl:leading-none">{termsAndConditions.title}</Title>
+    <Title id="terms-and-conditions" class="xl:text-6xl xl:leading-none"
+      >{termsAndConditions.title}</Title
+    >
     <div class="ml-4 font-bold">{termsAndConditions.lastUpdated}</div>
     <Title class="mt-16 text-4xl font-bold" id="introduction">
       {termsAndConditions.sections.introduction.title}
@@ -35,6 +37,16 @@ const {
       {termsAndConditions.sections.disclaimer.title}
     </Title>
     <p>{termsAndConditions.sections.disclaimer.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="4-payment">
+      {termsAndConditions.sections.payment.title}
+    </Title>
+    <p>{termsAndConditions.sections.payment.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="5-jurisdiction">
+      {termsAndConditions.sections.jurisdiction.title}
+    </Title>
+    <p>{termsAndConditions.sections.jurisdiction.body}</p>
   </main>
 </Layout>
 <style>
@@ -42,7 +54,7 @@ const {
 
   p,
   li {
-    @apply opacity-55 mt-4;
+    @apply mt-4 opacity-55;
   }
 
   ul {

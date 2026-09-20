@@ -1,0 +1,51 @@
+---
+import Title from '~/components/Title.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+const {
+  routes: { contact },
+  layout,
+} = getUI(locale)
+---
+
+<Layout title={layout.contact.title} description={layout.contact.description}>
+  <main class="mx-auto mt-52 w-1/2 pb-24">
+    <Title id="contact-us" class="xl:text-6xl xl:leading-none">{contact.title}</Title>
+    <p class="mt-4 opacity-55">{contact.description}</p>
+
+    <Title class="mt-16 text-4xl font-bold">
+      {contact.companyName}
+    </Title>
+
+    <div class="mt-8 flex flex-col gap-6">
+      <div>
+        <h3 class="text-xl font-bold">{contact.addressTitle}</h3>
+        <p class="mt-2 opacity-55">{contact.address}</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">{contact.emailTitle}</h3>
+        <p class="mt-2 opacity-55">
+          <a href={`mailto:${contact.email}`} class="paper-link">{contact.email}</a>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">{contact.hoursTitle}</h3>
+        <p class="mt-2 opacity-55">{contact.hours}</p>
+        <p class="mt-1 opacity-55">{contact.responseTime}</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+<style>
+  @reference '../../styles/global.css';
+
+  p {
+    @apply mt-4 opacity-55;
+  }
+</style>

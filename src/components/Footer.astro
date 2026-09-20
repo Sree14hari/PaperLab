@@ -40,7 +40,7 @@ const {
           <Button
             href="https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
             isPrimary
-            class="bg-coral w-fit font-bold !text-white shadow-lg hover:opacity-90"
+            class="w-fit font-bold shadow-lg hover:opacity-90"
             aria-label={footer.getStarted}
           >
             {footer.getStarted}
@@ -181,6 +181,22 @@ const {
                 class="hover:text-coral opacity-80 transition-colors"
               >
                 {footer.termsAndConditions}
+              </a>
+            </li>
+            <li>
+              <a
+                href={getLocalePath('/refund-policy')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
+                {footer.refundPolicy}
+              </a>
+            </li>
+            <li>
+              <a
+                href={getLocalePath('/contact')}
+                class="hover:text-coral opacity-80 transition-colors"
+              >
+                {footer.contactUs}
               </a>
             </li>
           </ul>

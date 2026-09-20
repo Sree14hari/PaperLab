@@ -1,0 +1,52 @@
+---
+import Title from '~/components/Title.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+const {
+  routes: { refundPolicy },
+  layout,
+} = getUI(locale)
+---
+
+<Layout title={layout.refundPolicy.title} description={layout.refundPolicy.description}>
+  <main class="mx-auto mt-52 w-1/2 pb-24">
+    <Title id="refund-policy" class="xl:text-6xl xl:leading-none">{refundPolicy.title}</Title>
+    <div class="ml-4 font-bold">{refundPolicy.lastUpdated}</div>
+
+    <Title class="mt-16 text-4xl font-bold" id="introduction">
+      {refundPolicy.sections.introduction.title}
+    </Title>
+    <p>{refundPolicy.sections.introduction.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="1-cancellation">
+      {refundPolicy.sections.cancellation.title}
+    </Title>
+    <p>{refundPolicy.sections.cancellation.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="2-refund-eligibility">
+      {refundPolicy.sections.refunds.title}
+    </Title>
+    <p>{refundPolicy.sections.refunds.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="3-refund-timeline">
+      {refundPolicy.sections.timeline.title}
+    </Title>
+    <p>{refundPolicy.sections.timeline.body}</p>
+
+    <Title class="mt-16 text-4xl font-bold" id="4-how-to-request">
+      {refundPolicy.sections.request.title}
+    </Title>
+    <p>{refundPolicy.sections.request.body}</p>
+  </main>
+</Layout>
+<style>
+  @reference '../../styles/global.css';
+
+  p {
+    @apply mt-4 opacity-55;
+  }
+</style>
