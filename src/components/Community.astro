@@ -16,30 +16,12 @@ const {
   class="relative flex w-full flex-col items-center gap-6 py-12 text-start md:text-center lg:py-36"
 >
   <h2 class="mb-2 text-4xl font-bold sm:text-6xl">
-    {
-      community.title.map(title =>
-        title !== '\n' ? <span>{title}</span> : <br class="hidden md:block" />
-      )
-    }
+    {community.title}
   </h2>
   <p class="text-base lg:w-1/2 lg:px-0">
     <span class="opacity-80">{community.description}</span>
   </p>
-  <div class="community__button flex w-full justify-center">
-    <script is:inline type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
-    ></script>
-    <ms-store-badge
-      id="community-ms-badge"
-      productid="9P0XRRPBC34P"
-      productname="Paper Lab"
-      window-mode="popup"
-      theme="dark"
-      size="small"
-      language="en-us"
-      animation="on"
-    >
-    </ms-store-badge>
-  </div>
+  <div class="community__button flex w-full justify-center"></div>
   <div class="flex max-w-full justify-center lg:max-w-none">
     <Video
       name="citation"
@@ -52,42 +34,3 @@ const {
     />
   </div>
 </section>
-
-<script>
-  import { animate, onScroll, stagger } from 'animejs'
-
-  function initAnimations() {
-    const video = document.querySelector('#community video') as HTMLVideoElement | null
-    if (video) {
-      const videoObserver = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              video.play().catch(() => {})
-            } else {
-              video.pause()
-            }
-          })
-        },
-        { threshold: 0.1 }
-      )
-      videoObserver.observe(video)
-    }
-
-    const badge = document.getElementById('community-ms-badge')
-    if (badge) {
-      const updateTheme = () => {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
-        badge.setAttribute('theme', isDark ? 'light' : 'dark')
-      }
-      updateTheme()
-      const observer = new MutationObserver(updateTheme)
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['data-theme'],
-      })
-    }
-  }
-  initAnimations()
-  document.addEventListener('astro:page-load', initAnimations)
-</script>
