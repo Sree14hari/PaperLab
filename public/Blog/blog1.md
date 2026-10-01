@@ -57,7 +57,7 @@ Beyond the features, Paper Lab’s underlying philosophy is highly appealing to 
 
 ### Is It Worth Your Time (and Money)?
 
-Paper Lab is currently split into two tiers. The **Free plan** is incredibly generous, offering three projects, unlimited diagram boards, full LaTeX editing, and IEEE templates. It’s a perfect sandbox for students or anyone wanting to test the waters.
+Paper Lab is currently split into two tiers. The **Free plan** is incredibly generous, offering unlimited projects, free standard LaTeX compiles, unlimited diagram boards, and IEEE templates. It’s a perfect sandbox for students or anyone wanting to test the waters.
 
 If you need more, the **Pro plan is just $10 a month**. It unlocks unlimited folders, version control, a dedicated citation manager, and custom pets (yes, really). Given that it replaces a word processor, a LaTeX editor, a reference manager, and a diagramming tool, $10 a month is a steal for professionals and researchers.
 

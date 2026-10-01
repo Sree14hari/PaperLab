@@ -19,12 +19,12 @@ const pricing = {
         href: 'https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare',
       },
       features: [
-        '3 projects',
-        'Unlimited diagram boards',
-        'Unlimited compiles',
-        'Full LaTeX editor',
-        'Single boba pet',
-        'IEEE and journal templates',
+        'Unlimited projects',
+        'Free & unlimited standard LaTeX compiling',
+        '10 IEEE & journal compiles / month each',
+        'Desktop companion skins (Boba only)',
+        'Daily limited AI content detection',
+        'Unlimited diagram boards & full LaTeX editor',
         '.reporter exports and imports',
       ],
     },
@@ -39,13 +39,13 @@ const pricing = {
       featured: true,
       features: [
         'Everything in Free Plan',
-        'Unlimited folders',
-        'Version control',
-        'Preview tree',
-        'Custom pets',
-        'Citation manager',
-        'ORIGYN AI Content Detection (future update)',
-        'Collaboration (future update)',
+        'Unlimited IEEE & journal compiles',
+        'IEEE Word (.docx) export unlocked',
+        'All 6 desktop skins + custom upload',
+        'Global reference library unlocked',
+        'Live scholar search & AI auto-citation',
+        'AI content detection (5 checks / day)',
+        'LaTeX Git integration unlocked',
       ],
     },
   ],
@@ -121,6 +121,22 @@ const pricing = {
         </div>
       ))
     }
+  </div>
+
+  <div class="mt-12 flex justify-center">
+    <a
+      href={getLocalePath('/pricing#comparison')}
+      class="border-dark/15 text-dark hover:border-coral hover:text-coral bg-subtle/50 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition-all hover:shadow-sm"
+    >
+      <span>Compare all features in detail</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
   </div>
 </section>
 

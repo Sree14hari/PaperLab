@@ -442,12 +442,12 @@
             "href": "https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
           },
           "features": [
-            "3 projects",
-            "Unlimited diagram boards",
-            "Unlimited compiles",
-            "Full LaTeX editor",
-            "Single boba pet",
-            "IEEE and journal templates",
+            "Unlimited projects",
+            "Free & unlimited standard LaTeX compiling",
+            "10 IEEE & journal compiles / month each",
+            "Desktop companion skin (Boba only)",
+            "Daily limited AI content detection",
+            "Unlimited diagram boards & full LaTeX editor",
             ".reporter exports and imports"
           ]
         },
@@ -471,16 +471,78 @@
           "featured": true,
           "features": [
             "Everything in Free Plan",
-            "Unlimited folders",
-            "Version control",
-            "Preview tree",
-            "Custom pets",
-            "Citation manager",
-            "ORIGYN AI Content Detection",
-            "Collaboration (future update)"
+            "Unlimited IEEE & journal compiles",
+            "IEEE Word (.docx) export unlocked",
+            "All 6 desktop skins + custom upload",
+            "Global reference library unlocked",
+            "Live scholar search & AI auto-citation",
+            "AI content detection (5 checks / day)",
+            "LaTeX Git integration unlocked"
           ]
         }
       ],
+      "comparison": {
+        "title": "Feature Breakdown",
+        "subtitle": "Compare Plans",
+        "description": "Comprehensive breakdown of features available in Paper Lab Free vs Pro / Premium.",
+        "headers": {
+          "category": "Feature Category",
+          "free": "Free Tier",
+          "pro": "Pro / Premium"
+        },
+        "rows": [
+          {
+            "category": "Projects",
+            "free": "Unlimited",
+            "pro": "Unlimited"
+          },
+          {
+            "category": "Standard LaTeX Compiling",
+            "free": "Free & Unlimited",
+            "pro": "Free & Unlimited"
+          },
+          {
+            "category": "IEEE & Journal Compiles",
+            "free": "10 compiles / month each",
+            "pro": "Unlimited"
+          },
+          {
+            "category": "IEEE Word (.docx) Export",
+            "free": "🔒 Locked",
+            "pro": "Unlocked"
+          },
+          {
+            "category": "Desktop Companion Skins",
+            "free": "Boba only",
+            "pro": "All 6 Skins + Custom Upload"
+          },
+          {
+            "category": "Global Reference Library",
+            "free": "🔒 Locked",
+            "pro": "Unlocked"
+          },
+          {
+            "category": "Live Scholar Search",
+            "free": "🔒 Locked",
+            "pro": "Unlocked"
+          },
+          {
+            "category": "AI Auto-Citation",
+            "free": "🔒 Locked",
+            "pro": "Unlocked"
+          },
+          {
+            "category": "AI Content Detection",
+            "free": "Daily limited",
+            "pro": "5 checks / day"
+          },
+          {
+            "category": "LaTeX Git Integration",
+            "free": "🔒 Locked",
+            "pro": "Unlocked"
+          }
+        ]
+      },
       "faq": {
         "title": "Everything you need to know about plans & billing",
         "subtitle": "Pricing FAQ"

@@ -4,7 +4,7 @@ import { getLocale, getUI } from '~/utils/i18n'
 import Title from '~/components/Title.astro'
 import Description from '~/components/Description.astro'
 import PricingCard from '~/components/PricingCard.astro'
-import Button from '~/components/Button.astro'
+import PricingTable from '~/components/PricingTable.astro'
 export { getStaticPaths } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
@@ -81,6 +81,16 @@ const {
           }
         })()
       </script>
+
+      <!-- Feature Comparison Table -->
+      <PricingTable
+        id="comparison"
+        title={pricing.comparison?.title}
+        subtitle={pricing.comparison?.subtitle}
+        description={pricing.comparison?.description}
+        headers={pricing.comparison?.headers}
+        rows={pricing.comparison?.rows}
+      />
 
       <!-- FAQ Section -->
       <section
