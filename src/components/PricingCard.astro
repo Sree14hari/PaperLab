@@ -124,10 +124,10 @@ const {
     {
       cta && featured && (
         <div
-          class="razorpay-trigger w-full"
+          class="cashfree-trigger w-full"
           data-plan={id}
-          data-amount={prices?.annually ? prices.annually * 100 : 0}
-          data-key={import.meta.env.PUBLIC_RAZORPAY_KEY_ID}
+          data-amount={prices?.annually ? prices.annually : 0}
+          data-key={import.meta.env.CASHFREEAPPID}
         >
           <button class="bg-coral hover:bg-coral-dark w-full cursor-pointer rounded-xl py-4 text-center font-semibold text-white shadow-md transition-colors hover:shadow-lg">
             {cta.label}
@@ -138,10 +138,10 @@ const {
   </div>
 </div>
 
-<script is:inline src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script is:inline src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 <script is:inline>
   if (typeof window !== 'undefined') {
-    const initRazorpay = () => {
+    const initCashfree = () => {
       const showError = (title, message) => {
         let errModal = document.getElementById('custom-error-modal')
         if (!errModal) {
@@ -173,7 +173,7 @@ const {
         errModal.showModal()
       }
 
-      const triggers = document.querySelectorAll('.razorpay-trigger')
+      const triggers = document.querySelectorAll('.cashfree-trigger')
       triggers.forEach(trigger => {
         const planId = trigger.getAttribute('data-plan')
         if (planId === 'pro') {
@@ -181,8 +181,8 @@ const {
             e.preventDefault()
             e.stopPropagation()
 
-            const rzpKey = trigger.getAttribute('data-key')
-            const amount = 14900
+            const cfKey = trigger.getAttribute('data-key')
+            const amount = 149
 
             let modal = document.getElementById('custom-email-modal')
             if (!modal) {
@@ -259,25 +259,25 @@ const {
                 return
               }
 
-              const options = {
-                key: rzpKey,
-                amount: order.amount,
-                currency: order.currency,
-                name: 'Paper Lab',
-                description: 'Upgrade to Pro',
-                order_id: order.id,
-                prefill: {
-                  email: userEmail,
-                },
-                handler: async function (response) {
+              const cashfree = await Cashfree({
+                mode: cfKey.startsWith('TEST') ? 'sandbox' : 'production',
+              })
+
+              let checkoutOptions = {
+                paymentSessionId: order.payment_session_id,
+              }
+
+              cashfree.checkout(checkoutOptions).then(async result => {
+                if (result.error) {
+                  showError('Payment Failed', result.error.message)
+                }
+                if (result.paymentDetails) {
                   try {
                     const verifyRes = await fetch('/api/verify-payment', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify({
-                        razorpay_order_id: response.razorpay_order_id,
-                        razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_signature: response.razorpay_signature,
+                        order_id: order.order_id,
                       }),
                     })
                     const verifyData = await verifyRes.json()
@@ -292,15 +292,8 @@ const {
                   } catch (err) {
                     showError('Verification Error', 'Failed to verify payment with our servers.')
                   }
-                },
-                theme: { color: '#ea580c' },
-              }
-
-              const rzp = new window.Razorpay(options)
-              rzp.on('payment.failed', function (response) {
-                showError('Payment Failed', response.error.description)
+                }
               })
-              rzp.open()
             } catch (err) {
               console.error(err)
               showError('Checkout Error', 'Failed to initiate checkout. Please try again later.')
@@ -311,11 +304,11 @@ const {
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initRazorpay)
+      document.addEventListener('DOMContentLoaded', initCashfree)
     } else {
-      initRazorpay()
+      initCashfree()
     }
 
-    document.addEventListener('astro:page-load', initRazorpay)
+    document.addEventListener('astro:page-load', initCashfree)
   }
 </script>

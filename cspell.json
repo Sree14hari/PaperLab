@@ -55,7 +55,9 @@
     "xmark",
     "XRRPBC",
     "Zotero",
-    "ACTRLOGOWHITE"
+    "ACTRLOGOWHITE",
+    "CASHFREEAPPID",
+    "CASHFREESECRET"
   ],
   "flagWords": [],
   "ignorePaths": [

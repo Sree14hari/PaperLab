@@ -378,7 +378,7 @@
         },
         "paymentSecurity": {
           "title": "11. Payment Security",
-          "body": "All credit/debit card and payment transactions are handled through Razorpay's PCI-DSS compliant secure servers. Paper Lab never stores raw card or banking credentials."
+          "body": "All credit/debit card and payment transactions are handled through Cashfree's PCI-DSS compliant secure servers. Paper Lab never stores raw card or banking credentials."
         }
       }
     },
@@ -404,7 +404,7 @@
         },
         "payment": {
           "title": "4. Payments and Subscriptions",
-          "body": "Payments are securely processed through the Razorpay payment gateway. We do not store your raw payment details. By subscribing to Pro, you agree to our billing terms."
+          "body": "Payments are securely processed through the Cashfree payment gateway. We do not store your raw payment details. By subscribing to Pro, you agree to our billing terms."
         },
         "jurisdiction": {
           "title": "5. Governing Law and Jurisdiction",
@@ -533,7 +533,7 @@
         },
         "request": {
           "title": "4. How to Request a Refund",
-          "body": "To request a refund, please email our support team with your Razorpay Payment ID or Order ID."
+          "body": "To request a refund, please email our support team with your Cashfree Payment ID or Order ID."
         }
       }
     }
