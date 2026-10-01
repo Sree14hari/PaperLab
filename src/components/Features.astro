@@ -24,7 +24,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     {
       (titles || features.titles).map((title, index) =>
         title !== '\n' ? (
-          <span class="title-line opacity-0" data-index={index}>
+          <span class="title-line" data-index={index}>
             {title}
           </span>
         ) : (
@@ -34,7 +34,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     }
   </Description>
 
-  <p class="feature-description-text opacity-0 lg:w-1/2">
+  <p class="feature-description-text lg:w-1/2">
     {features.description}
   </p>
 
@@ -45,7 +45,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
         {
           Object.entries(features.featureTabs).map(([key, tab], i) => (
             <button
-              class="feature-tab whitespace-nowrap opacity-0"
+              class="feature-tab whitespace-nowrap"
               data-index={i}
               data-feature-key={key}
               data-active={i === 0 ? 'true' : undefined}
@@ -61,7 +61,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
         {
           Object.entries(features.featureTabs).map(([key, tab], i) => (
             <div
-              class="feature opacity-0"
+              class="feature"
               data-index={i}
               data-feature-key={key}
               data-active={i === 0 ? 'true' : undefined}
@@ -131,28 +131,6 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     const section = document.getElementById('features')
     if (!section) return
 
-    // Animate Titles
-    animate('.title-line', {
-      opacity: [0, 1],
-      delay: stagger(200, { start: 200 }),
-      duration: 600,
-      easing: 'easeOutQuad',
-    })
-
-    animate('.feature-description-text', {
-      opacity: [0, 1],
-      delay: 600,
-      duration: 600,
-      easing: 'easeOutQuad',
-    })
-
-    animate('.feature-tab, .feature', {
-      opacity: [0, 1],
-      delay: stagger(200, { start: 800 }),
-      duration: 500,
-      easing: 'easeOutQuad',
-    })
-
     const features = document.querySelectorAll('.feature, .feature-tab') as NodeListOf<HTMLElement>
     const descriptionEl = document.querySelector('.feature-description') as HTMLDivElement | null
     const descriptions = descriptionEl?.dataset.descriptions?.split('|||')
@@ -214,7 +192,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
   @reference '../styles/global.css';
 
   .feature {
-    @apply hover:bg-subtle w-full cursor-pointer rounded-lg p-4 opacity-0 select-none;
+    @apply hover:bg-subtle w-full cursor-pointer rounded-lg p-4 select-none;
     transition: background 0.2s ease-in-out;
 
     &[data-active='true'] {
@@ -223,7 +201,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
   }
 
   .feature-tab {
-    @apply hover:bg-subtle rounded-lg px-4 py-2 text-lg font-medium opacity-0;
+    @apply hover:bg-subtle rounded-lg px-4 py-2 text-lg font-medium;
     transition: background 0.2s ease-in-out;
 
     &[data-active='true'] {

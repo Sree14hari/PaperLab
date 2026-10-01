@@ -18,26 +18,14 @@ const {
   <h2 class="mb-2 text-4xl font-bold sm:text-6xl">
     {
       community.title.map(title =>
-        title !== '\n' ? (
-          <span style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-            {title}
-          </span>
-        ) : (
-          <br class="hidden md:block" />
-        )
+        title !== '\n' ? <span>{title}</span> : <br class="hidden md:block" />
       )
     }
   </h2>
-  <p
-    class="text-base lg:w-1/2 lg:px-0"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-  >
+  <p class="text-base lg:w-1/2 lg:px-0">
     <span class="opacity-80">{community.description}</span>
   </p>
-  <div
-    class="community__button flex w-full justify-center"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-  >
+  <div class="community__button flex w-full justify-center">
     <script is:inline type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
     ></script>
     <ms-store-badge
@@ -61,7 +49,6 @@ const {
       playsinline
       preload="none"
       class="max-w-full rounded-3xl shadow-md lg:mx-auto dark:opacity-90"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
     />
   </div>
 </section>
@@ -70,25 +57,6 @@ const {
   import { animate, onScroll, stagger } from 'animejs'
 
   function initAnimations() {
-    const debug = false
-
-    const elements = document.querySelectorAll(
-      '#community h2 span, #community p, #community .community__button, #community img, #community video'
-    )
-
-    animate(elements, {
-      opacity: { from: 0.001, to: 1 },
-      translateY: { from: 20, to: 0 },
-      filter: { from: 'blur(4px)', to: 'blur(0px)' },
-      duration: 300,
-      delay: stagger(150),
-      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
-      autoplay: onScroll({
-        target: '#community',
-        debug,
-      }),
-    })
-
     const video = document.querySelector('#community video') as HTMLVideoElement | null
     if (video) {
       const videoObserver = new IntersectionObserver(

@@ -182,7 +182,11 @@ const {
             e.stopPropagation()
 
             const cfKey = trigger.getAttribute('data-key')
-            const amount = 9
+
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+            const isIndian = tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta'
+            const amount = isIndian ? 149 : 9
+            const currency = isIndian ? 'INR' : 'USD'
 
             let modal = document.getElementById('custom-email-modal')
             if (!modal) {
@@ -238,7 +242,7 @@ const {
               const orderRes = await fetch('/api/create-order', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ amount, currency: 'INR', email: userEmail }),
+                body: JSON.stringify({ amount, currency, email: userEmail }),
               })
               const order = await orderRes.json()
 

@@ -456,8 +456,8 @@
           "name": "Pro",
           "tagline": "Advanced LaTeX engine & unlimited features",
           "prices": {
-            "annually": 10,
-            "monthly": 10
+            "annually": 9,
+            "monthly": 9
           },
           "prices_notes": {
             "annually": "/month (billed monthly)",

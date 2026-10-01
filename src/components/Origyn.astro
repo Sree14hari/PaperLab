@@ -34,10 +34,7 @@ const features = [
 <section id="origyn" class="relative flex w-full flex-col py-12 lg:py-32">
   <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-14">
     <!-- Image on Left -->
-    <div
-      class="origyn-anim flex justify-center lg:col-span-5"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-    >
+    <div class="origyn-anim flex justify-center lg:col-span-5">
       <img
         src="/Mapping%20the%20Origin%20of%20Text.png"
         alt="Mapping the Origin of Text - ORIGYN AI Content Detection"
@@ -53,30 +50,22 @@ const features = [
     <div class="flex flex-col items-start gap-5 text-start lg:col-span-7">
       <div
         class="origyn-anim border-coral/20 bg-coral/10 text-coral inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
         <span>✨</span>
         <span>{hero.origynTitle}</span>
       </div>
 
-      <h2
-        class="origyn-anim text-3xl font-bold text-balance sm:text-5xl lg:text-6xl"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-      >
+      <h2 class="origyn-anim text-3xl font-bold text-balance sm:text-5xl lg:text-6xl">
         Mapping the Origin of Text
       </h2>
 
       <p
         class="origyn-anim text-dark/80 text-base leading-relaxed text-balance opacity-90 sm:text-lg"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
         {hero.origynDesc}
       </p>
 
-      <div
-        class="origyn-anim flex flex-col gap-4 pt-2"
-        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-      >
+      <div class="origyn-anim flex flex-col gap-4 pt-2">
         {
           features.map(item => (
             <div class="flex items-start gap-3.5">
@@ -148,21 +137,6 @@ const features = [
 <script>
   import { animate, onScroll, stagger } from 'animejs'
 
-  function initAnimations() {
-    const elements = document.querySelectorAll('#origyn .origyn-anim')
-
-    animate(elements, {
-      opacity: { from: 0.001, to: 1 },
-      translateY: { from: 20, to: 0 },
-      filter: { from: 'blur(4px)', to: 'blur(0px)' },
-      duration: 600,
-      delay: stagger(120),
-      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
-      autoplay: onScroll({
-        target: '#origyn',
-      }),
-    })
-  }
-  initAnimations()
+  function initAnimations() {}
   document.addEventListener('astro:page-load', initAnimations)
 </script>
