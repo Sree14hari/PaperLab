@@ -388,7 +388,7 @@
       "sections": {
         "introduction": {
           "title": "Introduction",
-          "body": "Welcome to Paper Lab. By accessing or using our application, you agree to be bound by these Terms and Conditions."
+          "body": "Welcome to Paper Lab. Paper Lab is owned and operated by SREEHARI RAJESH (trading as R3ACTR INNOVATIONS). By accessing or using our application, you agree to be bound by these Terms and Conditions."
         },
         "license": {
           "title": "1. License to Use",
@@ -404,7 +404,7 @@
         },
         "payment": {
           "title": "4. Payments and Subscriptions",
-          "body": "Payments are securely processed through the Cashfree payment gateway. We do not store your raw payment details. By subscribing to Pro, you agree to our billing terms."
+          "body": "Payments are securely processed through the Cashfree payment gateway for merchant SREEHARI RAJESH. We do not store your raw payment details. By subscribing to Pro, you agree to our billing terms."
         },
         "jurisdiction": {
           "title": "5. Governing Law and Jurisdiction",
@@ -571,15 +571,22 @@
       "phone": "",
       "hoursTitle": "Working Hours",
       "hours": "Monday to Friday, 9:00 AM - 6:00 PM IST",
-      "responseTime": "Inquiries are typically addressed within 24-48 hours."
+      "responseTime": "Inquiries are typically addressed within 24-48 hours.",
+      "paymentInfo": {
+        "title": "Billing & Payment Merchant Details",
+        "description": "For transactions, billing support, and payment verification via Cashfree:",
+        "legalName": "SREEHARI RAJESH (R3ACTR INNOVATIONS)",
+        "email": "sreehari14shr@gmail.com",
+        "phone": "+91 8848538969"
+      }
     },
     "refundPolicy": {
       "title": "Cancellation and Refund Policy",
-      "lastUpdated": "Last updated: 2026-09-20",
+      "lastUpdated": "Last updated: 2026-10-10",
       "sections": {
         "introduction": {
           "title": "Introduction",
-          "body": "This policy governs the cancellation and refund of your subscriptions to Paper Lab."
+          "body": "This policy governs the cancellation and refund of your subscriptions to Paper Lab, owned and operated by SREEHARI RAJESH (R3ACTR INNOVATIONS)."
         },
         "cancellation": {
           "title": "1. Cancellation Policy",
@@ -595,7 +602,15 @@
         },
         "request": {
           "title": "4. How to Request a Refund",
-          "body": "To request a refund, please email our support team with your Cashfree Payment ID or Order ID."
+          "body": "To request a refund or cancellation in eligible circumstances, please contact our support team at sreehari14shr@gmail.com or via phone/WhatsApp at +91 8848538969 with your registered account email and Cashfree Payment ID / Order ID."
+        },
+        "contact": {
+          "title": "5. Merchant & Contact Details",
+          "body": "For any questions, refund disputes, or cancellation inquiries, you may reach out directly to the legal merchant:",
+          "legalName": "SREEHARI RAJESH (Operating as Paper Lab / R3ACTR INNOVATIONS)",
+          "email": "sreehari14shr@gmail.com",
+          "phone": "+91 8848538969",
+          "address": "Alappuzha, Kerala, India"
         }
       }
     }

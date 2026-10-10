@@ -41,6 +41,45 @@ const {
       {refundPolicy.sections.request.title}
     </Title>
     <p>{refundPolicy.sections.request.body}</p>
+
+    {
+      refundPolicy.sections.contact && (
+        <>
+          <Title class="mt-16 text-4xl font-bold" id="5-merchant-contact">
+            {refundPolicy.sections.contact.title}
+          </Title>
+          <p>{refundPolicy.sections.contact.body}</p>
+          <div class="mt-6 flex flex-col gap-3 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <div>
+              <span class="font-semibold text-white/90">Legal Name / Proprietor:</span>
+              <span class="ml-2 opacity-80">{refundPolicy.sections.contact.legalName}</span>
+            </div>
+            <div>
+              <span class="font-semibold text-white/90">Email:</span>
+              <a
+                href={`mailto:${refundPolicy.sections.contact.email}`}
+                class="paper-link ml-2 font-medium"
+              >
+                {refundPolicy.sections.contact.email}
+              </a>
+            </div>
+            <div>
+              <span class="font-semibold text-white/90">Phone / WhatsApp:</span>
+              <a
+                href={`tel:${refundPolicy.sections.contact.phone}`}
+                class="paper-link ml-2 font-medium"
+              >
+                {refundPolicy.sections.contact.phone}
+              </a>
+            </div>
+            <div>
+              <span class="font-semibold text-white/90">Registered Address:</span>
+              <span class="ml-2 opacity-80">{refundPolicy.sections.contact.address}</span>
+            </div>
+          </div>
+        </>
+      )
+    }
   </main>
 </Layout>
 <style>

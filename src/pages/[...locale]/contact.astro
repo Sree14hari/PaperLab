@@ -40,6 +40,33 @@ const {
         <p class="mt-1 opacity-55">{contact.responseTime}</p>
       </div>
     </div>
+
+    {
+      contact.paymentInfo && (
+        <div class="mt-12 rounded-xl border border-white/10 bg-white/5 p-5 text-sm backdrop-blur-sm">
+          <h4 class="font-bold text-white/90">{contact.paymentInfo.title}</h4>
+          <p class="mt-1 text-xs opacity-60">{contact.paymentInfo.description}</p>
+          <div class="mt-3 flex flex-col gap-1.5 opacity-80">
+            <div>
+              <span class="font-semibold text-white/90">Legal Entity / Merchant:</span>{' '}
+              {contact.paymentInfo.legalName}
+            </div>
+            <div>
+              <span class="font-semibold text-white/90">Email:</span>{' '}
+              <a href={`mailto:${contact.paymentInfo.email}`} class="paper-link">
+                {contact.paymentInfo.email}
+              </a>
+            </div>
+            <div>
+              <span class="font-semibold text-white/90">Phone:</span>{' '}
+              <a href={`tel:${contact.paymentInfo.phone}`} class="paper-link">
+                {contact.paymentInfo.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      )
+    }
   </main>
 </Layout>
 <style>
