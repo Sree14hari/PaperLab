@@ -68,7 +68,7 @@ const {
       prices && (
         <div class="border-dark/10 mb-8 flex items-baseline gap-2 border-b pb-8">
           <span
-            class="font-headings text-dark text-5xl font-bold"
+            class="font-headings text-dark card-price-amount text-5xl font-bold"
             data-price-monthly={prices.monthly}
             data-price-annually={prices.annually}
           >
@@ -76,7 +76,7 @@ const {
           </span>
           {pricesNotes && (
             <span
-              class="text-sm font-medium opacity-60"
+              class="card-price-note text-sm font-medium opacity-60"
               data-price-monthly-note={pricesNotes.monthly}
               data-price-annually-note={pricesNotes.annually}
             >
@@ -124,10 +124,9 @@ const {
     {
       cta && featured && (
         <div
-          class="cashfree-trigger w-full"
+          class="pricing-subscription-trigger w-full"
           data-plan={id}
           data-amount={prices?.annually ? prices.annually : 0}
-          data-key={import.meta.env.CASHFREEAPPID}
         >
           <button class="bg-coral hover:bg-coral-dark w-full cursor-pointer rounded-xl py-4 text-center font-semibold text-white shadow-md transition-colors hover:shadow-lg">
             {cta.label}
@@ -138,10 +137,14 @@ const {
   </div>
 </div>
 
-<script is:inline src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+<script is:inline src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script
+  is:inline
+  src="https://www.paypal.com/sdk/js?client-id=BAA56C1JxmDMtnB_EsDCnfz5Vzax1zw-4lX97d0wH4R3LjVkgJ7u4VMi-e2BDfS85jY7rq8SeQmoPJbiFc&vault=true&intent=subscription"
+  data-sdk-integration-source="button-factory"></script>
 <script is:inline>
   if (typeof window !== 'undefined') {
-    const initCashfree = () => {
+    const initSubscriptions = () => {
       const showError = (title, message) => {
         let errModal = document.getElementById('custom-error-modal')
         if (!errModal) {
@@ -173,7 +176,110 @@ const {
         errModal.showModal()
       }
 
-      const triggers = document.querySelectorAll('.cashfree-trigger')
+      const showSuccess = (title, message) => {
+        let successModal = document.getElementById('custom-success-modal')
+        if (!successModal) {
+          successModal = document.createElement('dialog')
+          successModal.id = 'custom-success-modal'
+          successModal.className =
+            'p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-sm m-auto fixed inset-0 z-[60] transition-opacity'
+          successModal.innerHTML = `
+            <div class="bg-paper border border-dark/10 rounded-2xl p-6 shadow-xl relative overflow-hidden text-center">
+              <div class="relative z-10">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-emerald-100 mb-4">
+                  <svg class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <h3 id="success-modal-title" class="text-xl font-bold text-dark mb-2">Success</h3>
+                <p id="success-modal-message" class="text-dark/70 mb-6 text-sm"></p>
+                <button type="button" id="success-modal-close" class="w-full px-5 py-2.5 rounded-xl font-medium bg-coral hover:bg-coral-dark text-white transition-colors cursor-pointer">Awesome!</button>
+              </div>
+            </div>
+          `
+          document.body.appendChild(successModal)
+          document
+            .getElementById('success-modal-close')
+            .addEventListener('click', () => successModal.close())
+        }
+        document.getElementById('success-modal-title').innerText = title
+        document.getElementById('success-modal-message').innerText = message
+        successModal.showModal()
+      }
+
+      const renderPayPalButton = modal => {
+        const container = document.getElementById(
+          'paypal-button-container-P-2YH05054R07055225NLGNFMI'
+        )
+        if (container && container.children.length === 0 && window.paypal) {
+          try {
+            window.paypal
+              .Buttons({
+                style: {
+                  shape: 'rect',
+                  color: 'gold',
+                  layout: 'vertical',
+                  label: 'subscribe',
+                },
+                createSubscription: function (data, actions) {
+                  const input = document.getElementById('premium-email')
+                  const email = input ? input.value.trim() : ''
+                  if (!email || !email.includes('@')) {
+                    showError(
+                      'Email Required',
+                      'Please enter your Paper Lab account email above before clicking subscribe.'
+                    )
+                    return
+                  }
+                  return actions.subscription.create({
+                    plan_id: 'P-2YH05054R07055225NLGNFMI',
+                  })
+                },
+                onApprove: async function (data, actions) {
+                  const input = document.getElementById('premium-email')
+                  const email = input ? input.value.trim() : ''
+                  try {
+                    const res = await fetch('/api/verify-paypal-subscription', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        subscriptionId: data.subscriptionID,
+                        email: email,
+                      }),
+                    })
+                    const result = await res.json()
+                    if (result.success) {
+                      modal.close()
+                      showSuccess(
+                        'Subscription Activated!',
+                        'Payment successful! You are now subscribed to Paper Lab Pro with PayPal.'
+                      )
+                    } else {
+                      showError(
+                        'Activation Failed',
+                        result.error || 'Failed to activate your subscription.'
+                      )
+                    }
+                  } catch (err) {
+                    showError(
+                      'Verification Error',
+                      'Failed to communicate with verification server.'
+                    )
+                  }
+                },
+                onError: function (err) {
+                  console.error('PayPal checkout error:', err)
+                  showError('PayPal Error', 'Could not complete PayPal checkout. Please try again.')
+                },
+              })
+              .render('#paypal-button-container-P-2YH05054R07055225NLGNFMI')
+          } catch (e) {
+            console.error('Failed to initialize PayPal button:', e)
+          }
+        }
+      }
+
+      const triggers = document.querySelectorAll('.pricing-subscription-trigger')
       triggers.forEach(trigger => {
         const planId = trigger.getAttribute('data-plan')
         if (planId === 'pro') {
@@ -181,12 +287,8 @@ const {
             e.preventDefault()
             e.stopPropagation()
 
-            const cfKey = trigger.getAttribute('data-key')
-
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
             const isIndian = tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta'
-            const amount = isIndian ? 149 : 9
-            const currency = isIndian ? 'INR' : 'USD'
 
             let modal = document.getElementById('custom-email-modal')
             if (!modal) {
@@ -195,124 +297,213 @@ const {
               modal.className =
                 'p-0 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-2xl w-[90%] max-w-md m-auto fixed inset-0 z-50 transition-opacity'
               modal.innerHTML = `
-                <div class="bg-paper border border-dark/10 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                <div class="bg-paper border border-dark/20 rounded-2xl p-6 shadow-2xl relative overflow-hidden text-dark">
                   <div class="relative z-10 text-left">
-                    <h3 class="text-xl font-bold text-dark mb-2">Upgrade to Premium</h3>
-                    <p class="text-dark/70 mb-6 text-sm">Please enter your email address to securely link your payment and activate your premium features.</p>
-                    <form id="email-modal-form">
-                      <div class="mb-6">
-                        <label for="premium-email" class="block text-sm font-medium text-dark/80 mb-2">Email Address</label>
-                        <input type="email" id="premium-email" required class="w-full px-4 py-3 rounded-xl border border-dark/20 bg-white text-dark focus:outline-none focus:ring-2 focus:ring-coral transition-shadow" placeholder="you@example.com" />
+                    <h3 class="text-xl font-bold text-dark mb-2">Subscribe to Paper Lab Pro</h3>
+                    <p class="text-dark/80 mb-5 text-sm">Please enter your email address to link your subscription and activate your premium features.</p>
+                    
+                    <div class="mb-5">
+                      <label for="premium-email" class="block text-sm font-semibold text-dark mb-2">Account Email Address</label>
+                      <input type="email" id="premium-email" required class="w-full px-4 py-3 rounded-xl border border-dark/25 bg-paper text-dark placeholder:text-dark/40 focus:outline-none focus:ring-2 focus:ring-coral transition-all font-medium" placeholder="you@example.com" />
+                    </div>
+
+                    <!-- Payment Provider Selector Tabs -->
+                    <div class="mb-5">
+                      <label class="block text-xs font-bold uppercase tracking-wider text-dark/70 mb-2">Payment Method</label>
+                      <div class="grid grid-cols-2 gap-1.5 p-1.5 bg-dark/10 rounded-xl border border-dark/15">
+                        <button type="button" id="tab-inr" class="py-2.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer text-center">
+                          India (UPI / Cards)
+                        </button>
+                        <button type="button" id="tab-intl" class="py-2.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer text-center">
+                          International (PayPal)
+                        </button>
                       </div>
-                      <div class="flex gap-3 justify-end">
-                        <button type="button" id="email-modal-cancel" class="px-5 py-2.5 rounded-xl font-medium text-dark/70 hover:bg-dark/5 transition-colors cursor-pointer">Cancel</button>
-                        <button type="submit" class="px-5 py-2.5 rounded-xl font-medium bg-coral hover:bg-coral-dark text-white transition-colors shadow-md hover:shadow-lg cursor-pointer">Continue</button>
-                      </div>
-                    </form>
+                    </div>
+
+                    <!-- Razorpay Panel (India) -->
+                    <div id="panel-razorpay" class="space-y-4">
+                      <p class="text-xs text-dark/80 font-medium">Includes UPI AutoPay (GPay, PhonePe, Paytm), RuPay & Cards.</p>
+                      <button type="button" id="btn-razorpay-submit" class="w-full py-3.5 rounded-xl font-bold bg-coral hover:bg-coral-dark text-white transition-colors shadow-md hover:shadow-lg cursor-pointer text-center text-sm">
+                        Pay with Razorpay
+                      </button>
+                    </div>
+
+                    <!-- PayPal Panel (International) -->
+                    <div id="panel-paypal" class="space-y-3">
+                      <p class="text-xs text-dark/80 font-medium">Recurring billing via PayPal account or international credit/debit cards.</p>
+                      <div id="paypal-button-container-P-2YH05054R07055225NLGNFMI" class="min-h-[45px]"></div>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-dark/15 flex justify-end">
+                      <button type="button" id="email-modal-cancel" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-dark border border-dark/20 hover:bg-dark/10 transition-colors cursor-pointer">Cancel</button>
+                    </div>
                   </div>
                 </div>
               `
               document.body.appendChild(modal)
             }
 
-            const input = document.getElementById('premium-email')
-            const form = document.getElementById('email-modal-form')
+            const tabInr = document.getElementById('tab-inr')
+            const tabIntl = document.getElementById('tab-intl')
+            const panelRazorpay = document.getElementById('panel-razorpay')
+            const panelPaypal = document.getElementById('panel-paypal')
             const cancelBtn = document.getElementById('email-modal-cancel')
+            const btnRazorpay = document.getElementById('btn-razorpay-submit')
+            const input = document.getElementById('premium-email')
 
-            input.value = ''
-            modal.showModal()
+            const activeTabClass =
+              'py-2.5 px-3 rounded-lg text-xs font-bold bg-coral text-white shadow-sm cursor-pointer text-center transition-all'
+            const inactiveTabClass =
+              'py-2.5 px-3 rounded-lg text-xs font-semibold text-dark opacity-75 hover:opacity-100 hover:bg-dark/10 cursor-pointer text-center transition-all'
 
-            const userEmail = await new Promise(resolve => {
-              form.onsubmit = event => {
-                event.preventDefault()
-                resolve(input.value)
-                modal.close()
+            const setTab = useInr => {
+              if (useInr) {
+                tabInr.className = activeTabClass
+                tabIntl.className = inactiveTabClass
+                panelRazorpay.style.display = 'block'
+                panelPaypal.style.display = 'none'
+              } else {
+                tabIntl.className = activeTabClass
+                tabInr.className = inactiveTabClass
+                panelRazorpay.style.display = 'none'
+                panelPaypal.style.display = 'block'
+                renderPayPalButton(modal)
               }
-              cancelBtn.onclick = () => {
-                resolve(null)
-                modal.close()
-              }
-            })
-
-            if (!userEmail || !userEmail.includes('@')) {
-              return
             }
 
-            try {
-              const orderRes = await fetch('/api/create-order', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ amount, currency, email: userEmail }),
-              })
-              const order = await orderRes.json()
+            tabInr.onclick = () => setTab(true)
+            tabIntl.onclick = () => setTab(false)
+            cancelBtn.onclick = () => modal.close()
 
-              if (order.error) {
-                if (order.error.includes('Account not found')) {
-                  showError(
-                    'Account Not Found',
-                    "We couldn't find an account with that email. Please download and log into the Paper Lab app first!"
-                  )
-                } else if (
-                  order.error.includes('already have Premium access') ||
-                  order.error.includes('Lifetime Premium')
-                ) {
-                  showError('Already Premium', order.error)
-                } else {
-                  showError('Order Failed', order.error)
-                }
+            // Initialize default tab based on user region
+            setTab(isIndian)
+            modal.showModal()
+
+            // Razorpay submit handler
+            btnRazorpay.onclick = async () => {
+              const userEmail = input.value.trim()
+              if (!userEmail || !userEmail.includes('@')) {
+                showError('Email Required', 'Please enter a valid email address.')
                 return
               }
 
-              const cashfree = await Cashfree({
-                mode: cfKey.startsWith('TEST') ? 'sandbox' : 'production',
-              })
+              try {
+                const res = await fetch('/api/create-subscription', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ email: userEmail, planId: 'plan_TmbvTD9LHNr84K' }),
+                })
+                const data = await res.json()
 
-              let checkoutOptions = {
-                paymentSessionId: order.payment_session_id,
-              }
-
-              cashfree.checkout(checkoutOptions).then(async result => {
-                if (result.error) {
-                  showError('Payment Failed', result.error.message)
-                }
-                if (result.paymentDetails) {
-                  try {
-                    const verifyRes = await fetch('/api/verify-payment', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({
-                        order_id: order.order_id,
-                      }),
-                    })
-                    const verifyData = await verifyRes.json()
-                    if (verifyData.success) {
-                      alert('Payment successful! You are now a Premium user.')
-                    } else {
-                      showError(
-                        'Verification Failed',
-                        'Payment verification failed. If you were charged, please contact support.'
-                      )
-                    }
-                  } catch (err) {
-                    showError('Verification Error', 'Failed to verify payment with our servers.')
+                if (data.error) {
+                  if (data.error.includes('Account not found')) {
+                    showError(
+                      'Account Not Found',
+                      "We couldn't find an account with that email. Please download and log into the Paper Lab app first!"
+                    )
+                  } else if (
+                    data.error.includes('already have Premium access') ||
+                    data.error.includes('Lifetime Premium')
+                  ) {
+                    showError('Already Premium', data.error)
+                  } else {
+                    showError('Subscription Failed', data.error)
                   }
+                  return
                 }
-              })
-            } catch (err) {
-              console.error(err)
-              showError('Checkout Error', 'Failed to initiate checkout. Please try again later.')
+
+                if (!window.Razorpay) {
+                  showError(
+                    'Payment Error',
+                    'Razorpay SDK failed to load. Please refresh and try again.'
+                  )
+                  return
+                }
+
+                modal.close()
+
+                const options = {
+                  key: data.key_id,
+                  subscription_id: data.subscription_id,
+                  name: 'Paper Lab',
+                  description: 'Pro Monthly Subscription',
+                  prefill: {
+                    email: userEmail,
+                  },
+                  theme: {
+                    color: '#E06B53',
+                  },
+                  handler: async function (response) {
+                    try {
+                      const verifyRes = await fetch('/api/verify-subscription', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          razorpay_payment_id: response.razorpay_payment_id,
+                          razorpay_subscription_id: response.razorpay_subscription_id,
+                          razorpay_signature: response.razorpay_signature,
+                          email: userEmail,
+                        }),
+                      })
+                      const verifyData = await verifyRes.json()
+                      if (verifyData.success) {
+                        showSuccess(
+                          'Subscription Activated!',
+                          'Payment successful! You are now subscribed to Paper Lab Pro. Enjoy all premium features!'
+                        )
+                      } else {
+                        showError(
+                          'Verification Failed',
+                          verifyData.error ||
+                            'Payment verification failed. If you were charged, please contact support.'
+                        )
+                      }
+                    } catch (err) {
+                      showError('Verification Error', 'Failed to verify payment with our servers.')
+                    }
+                  },
+                  modal: {
+                    ondismiss: function () {
+                      console.log('Razorpay checkout dismissed')
+                    },
+                  },
+                }
+
+                const rzp = new window.Razorpay(options)
+                rzp.open()
+              } catch (err) {
+                console.error(err)
+                showError('Checkout Error', 'Failed to initiate checkout. Please try again later.')
+              }
             }
           })
         }
       })
+
+      const updateRegionalPricing = () => {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+        const isIndian = tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta'
+
+        const priceElements = document.querySelectorAll('.card-price-amount')
+        priceElements.forEach(el => {
+          const annually = el.getAttribute('data-price-annually')
+          if (annually === '9') {
+            el.innerHTML = isIndian ? '&#8377;149' : '$9'
+          } else if (annually === '0') {
+            el.innerHTML = isIndian ? '&#8377;0' : '$0'
+          }
+        })
+      }
+
+      updateRegionalPricing()
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initCashfree)
+      document.addEventListener('DOMContentLoaded', initSubscriptions)
     } else {
-      initCashfree()
+      initSubscriptions()
     }
 
-    document.addEventListener('astro:page-load', initCashfree)
+    document.addEventListener('astro:page-load', initSubscriptions)
   }
 </script>
