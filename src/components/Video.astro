@@ -9,7 +9,9 @@ const { name, class: className, autoplay, ...rest }: Props = Astro.props
 
 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
 <video
-  class:list={['lazy-video w-fit', className]}
+  class:list={['lazy-video aspect-video w-fit', className]}
+  width="960"
+  height="534"
   preload="none"
   poster={`/media/${name}/poster.webp`}
   data-autoplay={autoplay ? 'true' : undefined}
