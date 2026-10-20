@@ -14,15 +14,21 @@ const {
   <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-14">
     <!-- Image on Left -->
     <div class="origyn-anim flex justify-center lg:col-span-5">
-      <img
-        src="/illustrations/Seamless%20Team%20Collaboration%20Workspace.png"
-        alt="Seamless Team Collaboration Workspace - Paper Lab"
-        class="w-full max-w-sm drop-shadow-md sm:max-w-md lg:max-w-full"
-        width={1200}
-        height={800}
-        decoding="async"
-        loading="lazy"
-      />
+      <picture class="w-full max-w-sm drop-shadow-md sm:max-w-md lg:max-w-full">
+        <source
+          srcset="/illustrations/Seamless%20Team%20Collaboration%20Workspace.webp"
+          type="image/webp"
+        />
+        <img
+          src="/illustrations/Seamless%20Team%20Collaboration%20Workspace.png"
+          alt="Seamless Team Collaboration Workspace - Paper Lab"
+          class="h-auto w-full drop-shadow-md"
+          width={1200}
+          height={800}
+          decoding="async"
+          loading="lazy"
+        />
+      </picture>
     </div>
 
     <!-- Text on Right -->

@@ -60,6 +60,14 @@ const locale = getLocale(Astro)
       href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.com')}
     />
     <meta name="robots" content="index, follow" />
+    <!-- Preload LCP Hero Poster for Faster Speed Index & LCP -->
+    <link
+      rel="preload"
+      as="image"
+      href="/media/hero-video/poster.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <meta
       name="keywords"
       content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab, collaborative workspace, real-time collaboration, team writing, AI content detection, BibTeX citation"

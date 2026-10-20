@@ -19,15 +19,21 @@
 
     <!-- Image on Right -->
     <div class="flex justify-center lg:col-span-5">
-      <img
-        src="/illustrations/AI%20Detection%20Workspace%20Illustration.png"
-        alt="AI Detection Workspace Illustration - Paper Lab"
-        class="w-full max-w-sm drop-shadow-md sm:max-w-md lg:max-w-full"
-        width={1200}
-        height={800}
-        decoding="async"
-        loading="lazy"
-      />
+      <picture class="w-full max-w-sm drop-shadow-md sm:max-w-md lg:max-w-full">
+        <source
+          srcset="/illustrations/AI%20Detection%20Workspace%20Illustration.webp"
+          type="image/webp"
+        />
+        <img
+          src="/illustrations/AI%20Detection%20Workspace%20Illustration.png"
+          alt="AI Detection Workspace Illustration - Paper Lab"
+          class="h-auto w-full drop-shadow-md"
+          width={1200}
+          height={800}
+          decoding="async"
+          loading="lazy"
+        />
+      </picture>
     </div>
   </div>
 </section>
