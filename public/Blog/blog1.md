@@ -10,7 +10,7 @@ Here is a deep dive into how Paper Lab is trying to change the way we write, and
 
 <div class="not-prose my-10 overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-950 shadow-2xl dark:border-neutral-700">
   <video
-    src="https://paperlab.r3actr.work/media/hero-video/video.mp4"
+    src="https://paperlab.r3actr.com/media/hero-video/video.mp4"
     autoplay
     loop
     muted

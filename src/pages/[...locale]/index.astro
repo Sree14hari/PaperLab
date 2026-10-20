@@ -5,6 +5,7 @@ import Faq from '~/components/Faq.astro'
 import Features from '~/components/Features.astro'
 import Hero from '~/components/Hero.astro'
 import Origyn from '~/components/Origyn.astro'
+import AIDetection from '~/components/AIDetection.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
@@ -20,6 +21,7 @@ const { layout } = getUI(locale)
     <Features />
     <Community />
     <Origyn />
+    <AIDetection />
     <Pricing />
     <Faq />
   </main>

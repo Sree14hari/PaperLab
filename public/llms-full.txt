@@ -3,7 +3,7 @@
 > A modern academic report editor built for students and researchers.
 
 ## Introduction
-Paper Lab (available at https://paperlab.r3actr.work) is a comprehensive online platform designed to streamline the academic writing process. It addresses the common pain points of setting up local LaTeX environments by providing a powerful, accessible, and fast web-based editor.
+Paper Lab (available at https://paperlab.r3actr.com) is a comprehensive online platform designed to streamline the academic writing process. It addresses the common pain points of setting up local LaTeX environments by providing a powerful, accessible, and fast web-based editor.
 
 ## Core Capabilities
 
@@ -23,4 +23,4 @@ Paper Lab is primarily built for:
 - Anyone who needs the typesetting power of LaTeX combined with a modern UI.
 
 ## Support & Resources
-- **Main Platform**: https://paperlab.r3actr.work
+- **Main Platform**: https://paperlab.r3actr.com

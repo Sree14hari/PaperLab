@@ -3,8 +3,8 @@
     "index": {
       "title": "Paper Lab",
       "hero": {
-        "origynTitle": "Introducing ORIGYN AI",
-        "origynDesc": "Compare content across 6 different neural and statistical models to generate comprehensive AI detection reports. Available exclusively for Premium users.",
+        "origynTitle": "Real-Time Collaboration",
+        "origynDesc": "Co-author papers, share feedback, and streamline academic research together in real-time with dedicated collaborative workspaces.",
         "title": [
           {
             "text": "Write ",
@@ -64,7 +64,7 @@
         "sponsors": {
           "r3actr": {
             "name": "R3ACTR",
-            "url": "https://r3actr.work/"
+            "url": "https://r3actr.com/"
           }
         }
       },
@@ -471,6 +471,7 @@
           "featured": true,
           "features": [
             "Everything in Free Plan",
+            "Real-time team collaboration workspaces",
             "Unlimited IEEE & journal compiles",
             "IEEE Word (.docx) export unlocked",
             "All 6 desktop skins + custom upload",
@@ -491,6 +492,11 @@
           "pro": "Pro / Premium"
         },
         "rows": [
+          {
+            "category": "Team Collaboration Workspaces",
+            "free": "🔒 Locked",
+            "pro": "Unlocked (Real-time)"
+          },
           {
             "category": "Projects",
             "free": "Unlimited",

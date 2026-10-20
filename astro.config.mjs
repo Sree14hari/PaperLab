@@ -11,7 +11,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://paperlab.r3actr.work',
+  site: 'https://paperlab.r3actr.com',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],

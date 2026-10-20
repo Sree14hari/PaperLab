@@ -3,4 +3,4 @@ Allow: /
 Disallow: /.env/
 Disallow: /api/
 
-Sitemap: https://paperlab.r3actr.work/sitemap-0.xml
+Sitemap: https://paperlab.r3actr.com/sitemap-0.xml

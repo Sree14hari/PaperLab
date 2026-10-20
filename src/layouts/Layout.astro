@@ -57,12 +57,12 @@ const locale = getLocale(Astro)
     <link rel="sitemap" href="/sitemap-0.xml" />
     <link
       rel="canonical"
-      href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.work')}
+      href={new URL(Astro.url.pathname, Astro.site || 'https://paperlab.r3actr.com')}
     />
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab, ORIGYN AI, AI content detection, AI report"
+      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab, collaborative workspace, real-time collaboration, team writing, AI content detection, BibTeX citation"
     />
 
     {
@@ -76,20 +76,23 @@ const locale = getLocale(Astro)
               '@context': 'https://schema.org',
               '@type': ['SoftwareApplication', 'Organization'],
               name: 'Paper Lab',
-              url: 'https://paperlab.r3actr.work',
+              url: 'https://paperlab.r3actr.com',
               applicationCategory: 'EducationalApplication',
               operatingSystem: 'Windows, macOS, Linux, Web',
               featureList: [
                 'WYSIWYG LaTeX Editor',
                 'Cloud Compilation',
-                'ORIGYN AI Content Detection across 6 neural and statistical models',
+                'Real-Time Team Collaboration Workspaces',
+                'AI Content Detection & Lineage Mapping',
+                'Interactive WYSIWYG Diagramming',
+                'Automated BibTeX Citations',
               ],
               offers: {
                 '@type': 'Offer',
                 price: '0',
                 priceCurrency: 'USD',
               },
-              logo: 'https://paperlab.r3actr.work/favicon.png',
+              logo: 'https://paperlab.r3actr.com/favicon.png',
               description: defaultDescription,
             })}
           />
@@ -115,7 +118,7 @@ const locale = getLocale(Astro)
     <meta
       property="og:image"
       content={ogImage ??
-        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href}
+        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.com').href}
     />
     <meta property="og:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <meta property="og:description" content={description ?? defaultDescription} />
@@ -128,7 +131,7 @@ const locale = getLocale(Astro)
     <meta
       name="twitter:image"
       content={ogImage ??
-        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.work').href}
+        new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.com').href}
     />
     <meta name="twitter:image:alt" content="Paper Lab - Modern Academic Report Editor" />
     <!-- RSS Feed -->

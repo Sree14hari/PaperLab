@@ -11,4 +11,4 @@ Paper Lab is a platform that features a full LaTeX engine, priority cloud compil
 - **WYSIWYG Diagram Editor**: Create diagrams visually and embed them seamlessly into your reports.
 
 ## Official Resources
-- **Website**: [Paper Lab](https://paperlab.r3actr.work)
+- **Website**: [Paper Lab](https://paperlab.r3actr.com)
