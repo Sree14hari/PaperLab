@@ -93,8 +93,9 @@ const {
 </div>
 
 <!-- Overlay for Mobile Menu -->
-{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-<label
-  for="mobile-menu-toggle"
+<div
   class="pointer-events-none fixed inset-0 z-30 bg-black opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-50"
-  aria-hidden="true"></label>
+  onclick="document.getElementById('mobile-menu-toggle').checked = false"
+  aria-hidden="true"
+>
+</div>
