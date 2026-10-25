@@ -23,13 +23,13 @@ Here is a deep dive into how Paper Lab is trying to change the way we write, and
   </div>
 </div>
 
-### The Best of Both Worlds: Visual Writing Meets Raw Code
+### The Best of Both Worlds: Publication Power Meets Visual Flow
 
-The biggest hurdle in academic writing is the false choice between ease of use and typesetting power. Traditional word processors are easy but choke on complex math and strict journal templates. LaTeX is incredibly powerful but feels like programming a document, complete with a steep learning curve and endless compilation errors.
+The biggest hurdle in academic writing is the friction between ease of use and typesetting rigor. Traditional word processors are easy but struggle with mathematical equations, two-column layouts, and strict journal formats. Raw LaTeX is powerful but presents a steep learning curve and constant compilation errors.
 
-Paper Lab’s standout feature is its **dual-mode editing system**. You can write in a clean, intuitive WYSIWYG interface when you just want to get words on the page. But the moment you need precision—like a complex mathematical equation or a custom LaTeX command—you can seamlessly switch into a raw LaTeX workspace powered by the Monaco editor. It gives you syntax highlighting, autocompletion, and line numbers.
+Paper Lab’s core innovation is its **dedicated IEEE & Journal WYSIWYG editor**. You write in a clean, intuitive visual interface while Paper Lab automatically structures your work to conform strictly to IEEE and leading journal templates (Elsevier, Springer Nature, ACM, MDPI). Equations, tables, references, and multi-column balances are rendered accurately on the fly.
 
-For beginners, this means you can write a complete paper without ever touching a line of code. For LaTeX veterans, it means you aren’t trapped in a restrictive visual editor when you need to tweak the underlying source.
+For beginners and researchers alike, this means you can write and publish complete academic papers without struggling with raw markup commands or broken environment setups.
 
 ### Seeing the Final Page Before You Finish Writing
 
@@ -51,15 +51,15 @@ But Paper Lab doesn’t stop at text. Technical papers live and die by their fig
 
 ### The Final Mile: Exporting and Privacy
 
-Ultimately, a document needs to be published. Paper Lab handles the final PDF compilation in-house, ensuring clean typography and proper equation numbering. But it also respects the reality of academic publishing: sometimes you need to submit raw source files to a journal like IEEE or Springer. Paper Lab lets you export the entire project as a raw LaTeX archive, complete with your figures, templates, and BibTeX files. You’re never locked into a proprietary format.
+Ultimately, a document needs to be published. Paper Lab handles the final PDF compilation with clean academic typography, headers, footers, and equation numbering. It also supports exporting to IEEE Word (.docx) format or archiving your project with all figures and bib files intact.
 
-Beyond the features, Paper Lab’s underlying philosophy is highly appealing to the academic crowd. It’s built as a **local-first** application with zero telemetry. Your unpublished research, sensitive datasets, and intellectual property stay on your machine, not floating in a third-party cloud. It’s also open-source, backed by an active Discord community and a dedicated team of developers and researchers who are actively shaping the tool's roadmap.
+Beyond the features, Paper Lab’s underlying philosophy is highly appealing to the academic crowd. It’s built as a **local-first** application with zero telemetry. Your unpublished research, sensitive datasets, and intellectual property stay on your machine, not floating in a third-party cloud. It’s backed by an active Discord community and a dedicated team of developers and researchers who are actively shaping the tool's roadmap.
 
 ### Is It Worth Your Time (and Money)?
 
-Paper Lab is currently split into two tiers. The **Free plan** is incredibly generous, offering unlimited projects, free standard LaTeX compiles, unlimited diagram boards, and IEEE templates. It’s a perfect sandbox for students or anyone wanting to test the waters.
+Paper Lab is currently split into two tiers. The **Free plan** is incredibly generous, offering unlimited projects, IEEE and journal WYSIWYG editing, 10 compiles per month, unlimited diagram boards, and full bib references. It’s a perfect sandbox for students or anyone wanting to test the waters.
 
-If you need more, the **Pro plan is just $10 a month**. It unlocks unlimited folders, version control, a dedicated citation manager, and custom pets (yes, really). Given that it replaces a word processor, a LaTeX editor, a reference manager, and a diagramming tool, $10 a month is a steal for professionals and researchers.
+If you need more, the **Pro plan is just $10 a month**. It unlocks unlimited IEEE & journal compiles, global reference library access, and custom companion skins. Given that it streamlines academic manuscript creation, reference management, and diagramming in one place, $10 a month is a steal for professionals and researchers.
 
 ### The Verdict
 

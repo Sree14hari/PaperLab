@@ -29,7 +29,7 @@
         ],
         "description": [
           "Built for academics and professionals.",
-          "Paper Lab combines the ease of a rich-text WYSIWYG editor with the power of Python-based templating and LaTeX compilation."
+          "Paper Lab combines the ease of a rich-text WYSIWYG editor with automated styling for IEEE and leading academic journals."
         ],
         "buttons": {
           "beta": "Start writing for free!",
@@ -38,7 +38,7 @@
       },
       "features": {
         "titles": ["Formatting ", "made ", "simple"],
-        "description": "Paper Lab is packed with features that help you stay productive and focused. Focus on writing, and let us handle the complex LaTeX formatting.",
+        "description": "Paper Lab is packed with features that help you stay productive and focused. Focus on writing, and let us handle complex IEEE and journal typesetting.",
         "featureTabs": {
           "workspaces": {
             "title": "Section-Based Editing",
@@ -49,8 +49,8 @@
             "description": "Synchronously render the document as it will appear in print or PDF format while you type."
           },
           "glance": {
-            "title": "Dedicated LaTeX Workspace",
-            "description": "Advanced academic writing with an integrated Monaco editor, syntax highlighting, and a dedicated compilation pipeline."
+            "title": "IEEE & Journal WYSIWYG",
+            "description": "Effortless academic authoring with real-time WYSIWYG layouts tailored for IEEE and major journal publications."
           },
           "splitView": {
             "title": "Diagrams & Vector Graphics",
@@ -148,11 +148,11 @@
       "hero": {
         "badge": "Paper Lab Features",
         "title": "Everything You Need for Academic & Technical Writing",
-        "description": "Discover our comprehensive suite of tools designed to streamline report writing, reference management, figure design, and LaTeX compilation."
+        "description": "Discover our comprehensive suite of tools designed to streamline IEEE & journal paper writing, reference management, figure design, and camera-ready exports."
       },
       "cta": {
         "title": "Start writing your next paper today",
-        "description": "Join researchers, students, and professionals creating publication-ready academic reports effortlessly.",
+        "description": "Join researchers, students, and professionals creating publication-ready academic papers effortlessly.",
         "buttonText": "Start writing for free!",
         "buttonLink": "https://apps.microsoft.com/detail/9P0XRRPBC34P?hl=en-us&gl=IN&ocid=pdpshare"
       },
@@ -163,12 +163,12 @@
           "features": [
             {
               "title": "Visual WYSIWYG Editor",
-              "description": "Write intuitively with rich formatting, live A4 document layout, and instant visual feedback without managing raw markup manually.",
+              "description": "Write intuitively with rich formatting, live academic document layout, and instant visual feedback without managing raw markup manually.",
               "icon": "document-text"
             },
             {
-              "title": "Monaco LaTeX Mode",
-              "description": "Toggle into a full-featured Monaco LaTeX code editor complete with syntax highlighting, line numbers, and autocompletion.",
+              "title": "IEEE & Journal WYSIWYG",
+              "description": "Format flawlessly for IEEE and premier journal templates with built-in section structures, columns, and guidelines.",
               "icon": "code-bracket"
             },
             {
@@ -229,8 +229,8 @@
               "icon": "flag"
             },
             {
-              "title": "LaTeX Source Zip Export",
-              "description": "Download raw compiled LaTeX source archives including figures, templates, and bib files anytime.",
+              "title": "Publication Archive Export",
+              "description": "Download production packages including high-resolution figures, formatted bibliographies, and documents anytime.",
               "icon": "server-stack"
             }
           ]
@@ -257,7 +257,7 @@
         "title": "Why Partner with Paper Lab?",
         "market": {
           "title": "Massive Academic Market",
-          "description": "Millions of researchers, students, and professors struggle daily with complex LaTeX compilation and fragmented reference management tools."
+          "description": "Millions of researchers, students, and professors struggle daily with complex formatting syntax and fragmented reference management tools."
         },
         "privacy": {
           "title": "Local-First Privacy",
@@ -265,7 +265,7 @@
         },
         "innovation": {
           "title": "All-in-One Writing Suite",
-          "description": "Seamlessly blending visual WYSIWYG editing, raw Monaco LaTeX code, automatic citations, and vector diagramming into a single cohesive ecosystem."
+          "description": "Seamlessly blending visual WYSIWYG editing for IEEE and journals, automatic citations, and vector diagramming into a single cohesive ecosystem."
         }
       }
     },
@@ -423,7 +423,7 @@
     "pricing": {
       "title": "Choose the Plan That Fits Your Research Workflow",
       "subtitle": "Paper Lab Pricing",
-      "text": "Start writing for free or upgrade for advanced vector diagramming, global citation sync, and priority cloud LaTeX compilation.",
+      "text": "Start writing for free or upgrade for advanced vector diagramming, global citation sync, and priority IEEE & journal compiles.",
       "plans": [
         {
           "id": "free",
@@ -443,18 +443,18 @@
           },
           "features": [
             "Unlimited projects",
-            "Free & unlimited standard LaTeX compiling",
+            "IEEE & Journal WYSIWYG editor",
             "10 IEEE & journal compiles / month each",
             "Desktop companion skin (Boba only)",
             "Daily limited AI content detection",
-            "Unlimited diagram boards & full LaTeX editor",
-            ".reporter exports and imports"
+            "Unlimited diagram boards & vector figures",
+            ".paperlab project backup exports and imports"
           ]
         },
         {
           "id": "pro",
           "name": "Pro",
-          "tagline": "Advanced LaTeX engine & unlimited features",
+          "tagline": "Advanced journal engine & unlimited features",
           "prices": {
             "annually": 9,
             "monthly": 9
@@ -471,14 +471,10 @@
           "featured": true,
           "features": [
             "Everything in Free Plan",
-            "Real-time team collaboration workspaces",
             "Unlimited IEEE & journal compiles",
-            "IEEE Word (.docx) export unlocked",
             "All 6 desktop skins + custom upload",
             "Global reference library unlocked",
-            "Live scholar search & AI auto-citation",
-            "AI content detection (5 checks / day)",
-            "LaTeX Git integration unlocked"
+            "AI content detection (5 checks / day)"
           ]
         }
       ],
@@ -493,17 +489,12 @@
         },
         "rows": [
           {
-            "category": "Team Collaboration Workspaces",
-            "free": "🔒 Locked",
-            "pro": "Unlocked (Real-time)"
-          },
-          {
             "category": "Projects",
             "free": "Unlimited",
             "pro": "Unlimited"
           },
           {
-            "category": "Standard LaTeX Compiling",
+            "category": "IEEE & Journal WYSIWYG Editor",
             "free": "Free & Unlimited",
             "pro": "Free & Unlimited"
           },
@@ -511,11 +502,6 @@
             "category": "IEEE & Journal Compiles",
             "free": "10 compiles / month each",
             "pro": "Unlimited"
-          },
-          {
-            "category": "IEEE Word (.docx) Export",
-            "free": "🔒 Locked",
-            "pro": "Unlocked"
           },
           {
             "category": "Desktop Companion Skins",
@@ -528,24 +514,9 @@
             "pro": "Unlocked"
           },
           {
-            "category": "Live Scholar Search",
-            "free": "🔒 Locked",
-            "pro": "Unlocked"
-          },
-          {
-            "category": "AI Auto-Citation",
-            "free": "🔒 Locked",
-            "pro": "Unlocked"
-          },
-          {
             "category": "AI Content Detection",
             "free": "Daily limited",
             "pro": "5 checks / day"
-          },
-          {
-            "category": "LaTeX Git Integration",
-            "free": "🔒 Locked",
-            "pro": "Unlocked"
           }
         ]
       },
@@ -554,7 +525,7 @@
         "subtitle": "Pricing FAQ"
       },
       "cta": {
-        "title": "Start writing your report with Paper Lab",
+        "title": "Start writing your paper with Paper Lab",
         "text": "Join thousands of researchers and students creating publication-ready academic papers with ease.",
         "buttonText": "Start writing for free!"
       },
@@ -563,7 +534,7 @@
     "blogs": {
       "title": "Paper Lab Insights",
       "subtitle": "Articles, Guides & Deep Dives",
-      "description": "Explore thoughts on academic research, LaTeX workflows, typesetting, and product updates."
+      "description": "Explore thoughts on academic research, IEEE & journal workflows, typesetting, and product updates."
     },
     "contact": {
       "title": "Contact Us",
@@ -623,8 +594,8 @@
   },
   "layout": {
     "index": {
-      "title": "Paper Lab | Modern Academic Report Editor",
-      "description": "Paper Lab is a comprehensive, modern Research and Academic Editor designed to streamline the process of writing, formatting, and collaborating on academic papers and professional documents."
+      "title": "Paper Lab | IEEE & Journal WYSIWYG Academic Editor",
+      "description": "Paper Lab is a modern academic and research paper editor designed for IEEE and journal formats. Write intuitively in rich WYSIWYG with automated styling and camera-ready exports."
     },
     "mods": {
       "title": "Templates",
@@ -636,7 +607,7 @@
     },
     "about": {
       "title": "About - Paper Lab",
-      "description": "Learn more about Paper Lab, the modern academic paper and report editor built for researchers and students."
+      "description": "Learn more about Paper Lab, the modern academic paper and IEEE/journal WYSIWYG editor built for researchers and students."
     },
     "blogs": {
       "title": "Blog | Paper Lab",
@@ -644,7 +615,7 @@
     },
     "features": {
       "title": "Features | Paper Lab",
-      "description": "Explore the complete feature set of Paper Lab — visual WYSIWYG editing, Monaco LaTeX editor, global citation management, research diagramming, and publication-ready exports."
+      "description": "Explore the complete feature set of Paper Lab — visual IEEE & journal WYSIWYG editing, global citation management, research diagramming, and publication-ready exports."
     },
     "invest": {
       "title": "Invest & Partner | Paper Lab",
@@ -656,7 +627,7 @@
     },
     "download": {
       "title": "Download - Paper Lab",
-      "description": "Download Paper Lab and experience modern academic report and paper editing."
+      "description": "Download Paper Lab and experience modern IEEE & journal academic paper editing."
     },
     "privacyPolicy": {
       "title": "Privacy Policy - Paper Lab",
@@ -664,7 +635,7 @@
     },
     "termsAndConditions": {
       "title": "Terms and Conditions - Paper Lab",
-      "description": "Read the terms and conditions for using Paper Lab, the modern academic report editor."
+      "description": "Read the terms and conditions for using Paper Lab, the modern academic paper editor."
     },
     "welcome": {
       "title": "Welcome!",
@@ -685,7 +656,7 @@
   "components": {
     "footer": {
       "title": "Paper Lab",
-      "description": "Modern Academic Report Editor. Built for academics and professionals.",
+      "description": "Modern Academic Editor for IEEE & Journals. Built for academics and researchers.",
       "followUs": "Follow Us",
       "aboutUs": "About Us",
       "teamAndContributors": "Team & Contributors",
@@ -712,7 +683,7 @@
         "gettingStarted": "Getting Started",
         "usefulLinks": "Useful Links",
         "features": "Features",
-        "featuresDesc": "Explore WYSIWYG editing, LaTeX, citations, and diagramming.",
+        "featuresDesc": "Explore IEEE & Journal WYSIWYG editing, citations, and diagramming.",
         "blogs": "Blog",
         "blogsDesc": "Insights, deep dives, and tutorials on academic writing.",
         "mods": "Mods",

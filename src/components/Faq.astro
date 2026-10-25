@@ -1,25 +1,30 @@
 ---
 const defaultItems = [
-	{
-		question: "What makes Paper Lab different from Overleaf or Word?",
-		answer: "Paper Lab bridges the gap between visual WYSIWYG editing and complex LaTeX compilation. You get a rich live-preview editor, built-in vector diagramming tools, automatic citation management, and instant export to publication-ready PDFs without wrestling with manual formatting or environment setups."
-	},
-	{
-		question: "Do I need to know LaTeX syntax to write papers?",
-		answer: "Not at all. You can write your entire paper using our intuitive visual WYSIWYG editor. If you do need complex math or specific LaTeX commands, you can switch or inspect the code anytime using the built-in Monaco LaTeX editor."
-	},
-	{
-		question: "How does the Global Citation Manager work?",
-		answer: "Paper Lab lets you maintain a centralized reference library across all your projects. Simply import BibTeX files or search entries, and Paper Lab will automatically format citations in IEEE, APA, Nature, or custom style templates."
-	},
-	{
-		question: "Can I draw and embed vector diagrams directly in my document?",
-		answer: "Yes! Paper Lab includes a built-in diagramming engine. You can draw research-grade schematics and flowcharts, then insert them seamlessly as scalable SVG, PNG, or vector PDF figures into your paper."
-	},
-	{
-		question: "Can I export raw LaTeX source files or final PDFs?",
-		answer: "Yes. You can compile publication-ready PDFs with a single click or export complete LaTeX source zip packages ready for journal submissions (IEEE, Springer, Elsevier, Nature, etc.)."
-	}
+  {
+    question: 'What makes Paper Lab different from Overleaf or Word?',
+    answer:
+      'Paper Lab bridges the gap between intuitive visual WYSIWYG editing and complex academic publishing. You get a rich live-preview editor tailored specifically for IEEE and top journals, built-in vector diagramming tools, automatic citation management, and instant export to camera-ready PDFs without wrestling with manual formatting or LaTeX syntax.',
+  },
+  {
+    question: 'Do I need to know LaTeX syntax to write papers?',
+    answer:
+      'Not at all. Paper Lab is designed specifically as an IEEE and Journal WYSIWYG workspace. You write your entire paper using our intuitive visual editor with real-time academic layouts, columns, equations, and bibliography formatting automatically applied.',
+  },
+  {
+    question: 'How does the Global Citation Manager work?',
+    answer:
+      'Paper Lab lets you maintain a centralized reference library across all your projects. Simply import BibTeX files or search entries, and Paper Lab will automatically format citations in IEEE, APA, Nature, or custom style templates.',
+  },
+  {
+    question: 'Can I draw and embed vector diagrams directly in my document?',
+    answer:
+      'Yes! Paper Lab includes a built-in diagramming engine. You can draw research-grade schematics and flowcharts, then insert them seamlessly as scalable SVG, PNG, or vector PDF figures into your paper.',
+  },
+  {
+    question: 'Can I export publication-ready PDFs or Word documents?',
+    answer:
+      'Yes. You can compile publication-ready PDFs with a single click, export to IEEE Word (.docx) format, or package complete publication archives ready for journal submissions (IEEE, Springer, Elsevier, Nature, etc.).',
+  },
 ]
 ---
 
@@ -33,21 +38,26 @@ const defaultItems = [
 
   <div class="mx-auto flex w-full max-w-4xl flex-col gap-6">
     {
-      defaultItems.map((item) => (
-        <details class="group rounded-3xl bg-subtle p-8 shadow-sm transition-all hover:bg-muted">
-          <summary class="flex cursor-pointer items-center justify-between font-bold text-2xl outline-none list-none [&::-webkit-details-marker]:hidden">
+      defaultItems.map(item => (
+        <details class="group bg-subtle hover:bg-muted rounded-3xl p-8 shadow-sm transition-all">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-2xl font-bold outline-none [&::-webkit-details-marker]:hidden">
             <span>{item.question}</span>
-            <svg 
-              class="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180 text-coral" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              class="text-coral h-6 w-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </summary>
           <div class="mt-4">
-            <p class="text-lg opacity-80 leading-relaxed">{item.answer}</p>
+            <p class="text-lg leading-relaxed opacity-80">{item.answer}</p>
           </div>
         </details>
       ))

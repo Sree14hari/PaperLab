@@ -1,26 +1,26 @@
 # Paper Lab: Complete Overview
 
-> A modern academic report editor built for students and researchers.
+> A modern academic paper editor designed specifically for IEEE and journal formats.
 
 ## Introduction
-Paper Lab (available at https://paperlab.r3actr.com) is a comprehensive online platform designed to streamline the academic writing process. It addresses the common pain points of setting up local LaTeX environments by providing a powerful, accessible, and fast web-based editor.
+Paper Lab (available at https://paperlab.r3actr.com) is a comprehensive online platform designed to streamline the academic paper authoring process. It eliminates the steep learning curve of raw LaTeX environments by providing a powerful, accessible, and fast IEEE & Journal WYSIWYG editor.
 
 ## Core Capabilities
 
-### 1. Advanced LaTeX Editing
-At its core, Paper Lab offers a fully functional LaTeX engine running in the cloud. This allows users to write complex mathematical formulas, format references automatically, and generate professional-grade PDF documents without installing any local dependencies.
+### 1. IEEE & Journal WYSIWYG Editing
+At its core, Paper Lab offers a rich-text visual WYSIWYG editor tailored specifically for IEEE and top academic journals (Elsevier, Springer Nature, ACM, MDPI). Users can structure sections, insert mathematical formulas, manage references, and generate camera-ready PDF and Word (.docx) documents without wrestling with LaTeX syntax or local dependencies.
 
 ### 2. High-Performance Cloud Compiling
-To ensure a smooth user experience, Paper Lab uses priority cloud compilation. This means that document previews and final PDF generations are processed quickly on dedicated servers, significantly reducing wait times for large documents.
+To ensure a smooth user experience, Paper Lab uses priority cloud compilation. This means that document previews and final camera-ready PDF generations are processed quickly on dedicated servers, significantly reducing wait times for large manuscripts.
 
 ### 3. Integrated WYSIWYG Diagram Editor
-One of the most unique features is the built-in "What You See Is What You Get" (WYSIWYG) diagram editor. Instead of writing complex TikZ or importing external images, users can draw diagrams directly within the platform and insert them instantly into their reports.
+One of the most unique features is the built-in "What You See Is What You Get" (WYSIWYG) diagram editor. Instead of writing complex TikZ or importing external images, users can draw diagrams directly within the platform and insert them instantly into their research papers as sharp vector figures.
 
 ## Target Audience
 Paper Lab is primarily built for:
-- University students writing assignments, lab reports, and theses.
-- Academic researchers publishing papers in scientific journals.
-- Anyone who needs the typesetting power of LaTeX combined with a modern UI.
+- University students and graduate researchers writing IEEE conference and journal papers.
+- Academic researchers publishing manuscripts in scientific journals.
+- Anyone who wants camera-ready academic typesetting combined with a modern visual WYSIWYG interface.
 
 ## Support & Resources
 - **Main Platform**: https://paperlab.r3actr.com

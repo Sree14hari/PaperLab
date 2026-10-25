@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description, ogImage, isHome, redirect } = Astro.props
 const defaultDescription =
-  'Paper Lab is a modern academic report editor built for students and researchers. Features a full LaTeX engine, priority cloud compiles, and a WYSIWYG diagram editor.'
+  'Paper Lab is a modern academic paper editor designed specifically for IEEE and journal formats. Features an intuitive WYSIWYG editor, priority cloud compiles, and a built-in vector diagram editor.'
 import '@fontsource/bricolage-grotesque/400.css'
 import '@fontsource/bricolage-grotesque/500.css'
 import '@fontsource/bricolage-grotesque/600.css'
@@ -79,7 +79,7 @@ const locale = getLocale(Astro)
     />
     <meta
       name="keywords"
-      content="LaTeX editor, academic report, WYSIWYG diagram, student tools, research writing, cloud compile, paper lab, collaborative workspace, real-time collaboration, team writing, AI content detection, BibTeX citation"
+      content="IEEE editor, journal paper editor, academic paper WYSIWYG, research writing, IEEE Word export, BibTeX citation, collaborative workspace, team writing, AI content detection, paper lab"
     />
 
     {
@@ -97,12 +97,13 @@ const locale = getLocale(Astro)
               applicationCategory: 'EducationalApplication',
               operatingSystem: 'Windows, macOS, Linux, Web',
               featureList: [
-                'WYSIWYG LaTeX Editor',
-                'Cloud Compilation',
+                'IEEE & Journal WYSIWYG Editor',
+                'Priority Cloud Compilation',
                 'Real-Time Team Collaboration Workspaces',
                 'AI Content Detection & Lineage Mapping',
                 'Interactive WYSIWYG Diagramming',
                 'Automated BibTeX Citations',
+                'IEEE Word (.docx) Export',
               ],
               offers: {
                 '@type': 'Offer',
@@ -137,7 +138,7 @@ const locale = getLocale(Astro)
       content={ogImage ??
         new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.com').href}
     />
-    <meta property="og:image:alt" content="Paper Lab - Modern Academic Report Editor" />
+    <meta property="og:image:alt" content="Paper Lab - IEEE & Journal WYSIWYG Academic Editor" />
     <meta property="og:description" content={description ?? defaultDescription} />
     <meta property="og:color" content="#da755b" />
     <!-- Twitter card -->
@@ -150,7 +151,7 @@ const locale = getLocale(Astro)
       content={ogImage ??
         new URL('/previewpplab.png', Astro.site || 'https://paperlab.r3actr.com').href}
     />
-    <meta name="twitter:image:alt" content="Paper Lab - Modern Academic Report Editor" />
+    <meta name="twitter:image:alt" content="Paper Lab - IEEE & Journal WYSIWYG Academic Editor" />
     <!-- RSS Feed -->
     <link
       rel="alternate"
